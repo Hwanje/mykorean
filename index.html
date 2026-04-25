@@ -1,0 +1,4065 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+<title>심화 국어 · 중간고사 대비</title>
+
+<!-- PWA / iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="심화국어">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#f4ede1">
+<meta name="format-detection" content="telephone=no">
+
+<!-- Icon: 국(國) seal -->
+<link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='38' fill='%23f4ede1'/><rect x='22' y='22' width='136' height='136' rx='8' fill='none' stroke='%23232323' stroke-width='3'/><text x='90' y='128' font-family='serif' font-weight='900' font-size='108' text-anchor='middle' fill='%23b63a2a'>國</text></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='38' fill='%23f4ede1'/><rect x='22' y='22' width='136' height='136' rx='8' fill='none' stroke='%23232323' stroke-width='3'/><text x='90' y='128' font-family='serif' font-weight='900' font-size='108' text-anchor='middle' fill='%23b63a2a'>國</text></svg>">
+
+<link rel="manifest" href="data:application/json;utf8,{%22name%22:%22심화국어%22,%22short_name%22:%22국어%22,%22start_url%22:%22./%22,%22display%22:%22standalone%22,%22background_color%22:%22%23f4ede1%22,%22theme_color%22:%22%23f4ede1%22,%22icons%22:[{%22src%22:%22data:image/svg+xml;utf8,<svg xmlns=\u0027http://www.w3.org/2000/svg\u0027 viewBox=\u00270 0 180 180\u0027><rect width=\u0027180\u0027 height=\u0027180\u0027 rx=\u002738\u0027 fill=\u0027%23f4ede1\u0027/><text x=\u002790\u0027 y=\u0027128\u0027 font-family=\u0027serif\u0027 font-weight=\u0027900\u0027 font-size=\u0027108\u0027 text-anchor=\u0027middle\u0027 fill=\u0027%23b63a2a\u0027>國</text></svg>%22,%22sizes%22:%22180x180%22,%22type%22:%22image/svg+xml%22}]}">
+
+<!-- Fonts: Noto Serif KR for body, Gowun Batang for display, JetBrains for number -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Serif+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============ RESET & BASE ============ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; overscroll-behavior-y: none; }
+body {
+  font-family: 'Noto Serif KR', 'Nanum Myeongjo', serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #1f1a15;
+  background: #f4ede1;
+  min-height: 100vh;
+  overflow-x: hidden;
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: calc(72px + env(safe-area-inset-bottom));
+}
+
+/* ============ PAPER TEXTURE BACKGROUND ============ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(182, 58, 42, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(74, 54, 36, 0.05) 0%, transparent 40%),
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(74, 54, 36, 0.012) 2px, rgba(74, 54, 36, 0.012) 3px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body.dark {
+  background: #14110d;
+  color: #e8dfce;
+}
+body.dark::before {
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(217, 106, 87, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(230, 200, 140, 0.04) 0%, transparent 40%),
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(230, 200, 140, 0.02) 2px, rgba(230, 200, 140, 0.02) 3px);
+}
+
+/* ============ COLOR TOKENS ============ */
+:root {
+  --ink: #1f1a15;
+  --ink-soft: #4a3624;
+  --ink-dim: #8c7960;
+  --paper: #f4ede1;
+  --paper-soft: #ede3d1;
+  --paper-warm: #e8dcc2;
+  --seal: #b63a2a;
+  --seal-deep: #8f2a1e;
+  --gold: #a37c2c;
+  --moss: #5a6b3a;
+  --line: rgba(74, 54, 36, 0.18);
+  --line-strong: rgba(74, 54, 36, 0.4);
+  --shadow-soft: 0 1px 2px rgba(31, 26, 21, 0.05), 0 2px 8px rgba(31, 26, 21, 0.04);
+  --shadow-lift: 0 4px 12px rgba(31, 26, 21, 0.08), 0 8px 24px rgba(31, 26, 21, 0.06);
+}
+body.dark {
+  --ink: #e8dfce;
+  --ink-soft: #d4c5a8;
+  --ink-dim: #8c7960;
+  --paper: #14110d;
+  --paper-soft: #1f1a14;
+  --paper-warm: #2a221a;
+  --seal: #d96a57;
+  --seal-deep: #b84a38;
+  --gold: #d9b764;
+  --moss: #a5b674;
+  --line: rgba(230, 200, 140, 0.15);
+  --line-strong: rgba(230, 200, 140, 0.35);
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-lift: 0 4px 12px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* ============ HEADER ============ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(244, 237, 225, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  padding-top: env(safe-area-inset-top);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+body.dark header {
+  background: rgba(20, 17, 13, 0.92);
+}
+header.hidden { transform: translateY(-100%); }
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1.2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.logo-seal {
+  width: 34px;
+  height: 34px;
+  background: var(--seal);
+  color: #f4ede1;
+  font-family: 'Noto Serif KR', serif;
+  font-weight: 900;
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  letter-spacing: -2px;
+  transform: rotate(-2deg);
+  box-shadow: 0 1px 3px rgba(143, 42, 30, 0.3);
+  flex-shrink: 0;
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.logo-title {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+.logo-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  color: var(--ink-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.header-right {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+.icon-btn {
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.icon-btn:active { transform: scale(0.94); background: var(--paper-soft); }
+
+/* ============ D-DAY BANNER ============ */
+.dday-banner {
+  max-width: 900px;
+  margin: 0.6rem auto 0;
+  padding: 0 1.2rem;
+}
+.dday-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 0.8rem 1rem;
+  background: linear-gradient(135deg, var(--paper-soft) 0%, var(--paper-warm) 100%);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--seal);
+  border-radius: 4px;
+  box-shadow: var(--shadow-soft);
+}
+.dday-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--ink-dim);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.15rem;
+}
+.dday-title {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.dday-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--seal);
+  letter-spacing: -0.02em;
+}
+
+/* ============ MAIN CONTAINER ============ */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.2rem 1.2rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============ SECTION TITLES ============ */
+.section-title {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin: 1.5rem 0 0.8rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.section-title::before {
+  content: "";
+  width: 4px;
+  height: 16px;
+  background: var(--seal);
+  display: inline-block;
+  margin-right: 0.1rem;
+}
+.section-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--ink-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+/* ============ HOME: CATEGORY TILES ============ */
+.home-hero {
+  margin: 0.5rem 0 1.2rem;
+  padding: 1.5rem 1.2rem;
+  background:
+    linear-gradient(180deg, rgba(244, 237, 225, 0) 0%, rgba(237, 227, 209, 0.6) 100%),
+    var(--paper-soft);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.home-hero::after {
+  content: "試";
+  position: absolute;
+  right: -10px;
+  bottom: -30px;
+  font-family: 'Noto Serif KR', serif;
+  font-weight: 900;
+  font-size: 120px;
+  color: var(--ink);
+  opacity: 0.04;
+  line-height: 1;
+}
+.hero-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--seal);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.hero-title {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 0.6rem;
+}
+.hero-desc {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+.cat-tile {
+  position: relative;
+  padding: 1rem 1rem 1.1rem;
+  background: var(--paper-soft);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  overflow: hidden;
+  min-height: 112px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cat-tile::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 2px;
+  background: var(--tile-accent, var(--seal));
+  transform-origin: left;
+  transform: scaleX(0.3);
+  transition: transform 0.3s;
+}
+.cat-tile:active { transform: scale(0.98); }
+.cat-tile:active::before { transform: scaleX(1); }
+.cat-tile[data-cat="gojeon_siga"] { --tile-accent: #b63a2a; }
+.cat-tile[data-cat="hyundae_si"] { --tile-accent: #5a6b3a; }
+.cat-tile[data-cat="gojeon_sanmun"] { --tile-accent: #a37c2c; }
+.cat-tile[data-cat="dokseo"] { --tile-accent: #2d5a7e; }
+.cat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--ink-dim);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+.cat-name {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
+}
+.cat-count {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  margin-top: auto;
+}
+.cat-count-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--tile-accent, var(--ink));
+}
+.cat-count-unit {
+  font-size: 0.75rem;
+  color: var(--ink-dim);
+}
+.cat-progress {
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 3px;
+  background: var(--tile-accent, var(--seal));
+  transition: width 0.4s ease;
+  opacity: 0.6;
+}
+
+/* ============ QUICK ACTIONS ============ */
+.quick-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin: 1.2rem 0;
+}
+.quick-btn {
+  padding: 0.9rem 0.9rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  transition: all 0.2s;
+}
+.quick-btn:active { transform: scale(0.97); background: var(--paper-soft); }
+.quick-btn-icon {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+.quick-btn-title {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+.quick-btn-desc {
+  font-size: 0.72rem;
+  color: var(--ink-dim);
+}
+
+/* ============ WORK LIST ============ */
+.work-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.work-card {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.9rem 1rem;
+  background: var(--paper-soft);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+.work-card:active { transform: scale(0.99); }
+.work-card.done {
+  background: linear-gradient(90deg, rgba(90, 107, 58, 0.08) 0%, var(--paper-soft) 50%);
+  border-left: 3px solid var(--moss);
+}
+.work-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink-dim);
+  min-width: 24px;
+}
+.work-info {
+  flex: 1;
+  min-width: 0;
+}
+.work-title {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+}
+.work-meta {
+  font-size: 0.72rem;
+  color: var(--ink-dim);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.05em;
+}
+.work-check {
+  width: 24px; height: 24px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: transparent;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.work-card.done .work-check {
+  background: var(--moss);
+  border-color: var(--moss);
+  color: var(--paper);
+}
+
+/* ============ DETAIL VIEW ============ */
+.detail-view {
+  display: none;
+  animation: fadeUp 0.3s ease;
+}
+.detail-view.active { display: block; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.7rem;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  cursor: pointer;
+  margin-bottom: 0.8rem;
+}
+.back-btn:active { background: var(--paper-soft); }
+
+.detail-header {
+  margin-bottom: 1.2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+.detail-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--seal);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+.detail-title {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 800;
+  font-size: 1.55rem;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 0.3rem;
+}
+.detail-sub {
+  font-size: 0.82rem;
+  color: var(--ink-dim);
+  font-style: italic;
+}
+
+/* ============ TABS in detail ============ */
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid var(--line);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.tabs::-webkit-scrollbar { display: none; }
+.tab {
+  padding: 0.6rem 0.9rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 500;
+  font-size: 0.88rem;
+  color: var(--ink-dim);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.tab.active {
+  color: var(--ink);
+  border-bottom-color: var(--seal);
+  font-weight: 700;
+}
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeUp 0.25s ease; }
+
+/* ============ ORIGINAL TEXT (poem/prose) ============ */
+.work-original {
+  background: var(--paper-soft);
+  border: 1px solid var(--line);
+  padding: 1.4rem 1.1rem;
+  border-radius: 4px;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.work-original::before {
+  content: "原文";
+  position: absolute;
+  top: -10px;
+  left: 14px;
+  background: var(--paper);
+  padding: 0 0.5rem;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.72rem;
+  color: var(--ink-dim);
+  letter-spacing: 0.1em;
+}
+body.dark .work-original::before { background: var(--paper); }
+.poem-line {
+  display: block;
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 1rem;
+  line-height: 2;
+  color: var(--ink);
+  padding-left: 0;
+}
+.poem-stanza { margin-bottom: 1rem; }
+.poem-note {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--ink-dim);
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px dashed var(--line);
+  line-height: 1.6;
+}
+.prose-text {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--ink);
+}
+.prose-text p { margin-bottom: 0.8rem; }
+.prose-text .dialogue {
+  padding-left: 1rem;
+  border-left: 2px solid var(--line);
+  color: var(--ink-soft);
+  font-style: normal;
+  margin: 0.5rem 0;
+}
+
+/* ============ ANALYSIS BLOCKS ============ */
+.analysis-block {
+  margin-bottom: 1rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.analysis-head {
+  padding: 0.8rem 1rem;
+  background: linear-gradient(180deg, var(--paper-soft) 0%, var(--paper) 100%);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.analysis-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--seal);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.4rem;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+}
+.analysis-title {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+.analysis-body {
+  padding: 0.9rem 1rem;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--ink);
+}
+.analysis-body strong {
+  color: var(--seal);
+  font-weight: 700;
+}
+.kv-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  list-style: none;
+}
+.kv-list li {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.35rem 0;
+}
+.kv-key {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 700;
+  color: var(--seal-deep);
+  min-width: 90px;
+  font-size: 0.88rem;
+  flex-shrink: 0;
+}
+body.dark .kv-key { color: var(--seal); }
+.kv-val {
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+
+/* ============ CHIPS / TAGS ============ */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+.chip {
+  padding: 0.22rem 0.55rem;
+  background: var(--paper-warm);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  font-family: 'Nanum Myeongjo', serif;
+}
+.chip.accent {
+  background: var(--seal);
+  color: var(--paper);
+  border-color: var(--seal);
+}
+
+/* ============ READING-GUIDE (독서) ============ */
+.para-card {
+  margin-bottom: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--paper);
+}
+.para-head {
+  padding: 0.7rem 1rem;
+  background: var(--paper-soft);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+.para-card.open .para-head { border-bottom-color: var(--line); }
+.para-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--paper);
+  background: var(--ink-soft);
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.para-title {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--ink);
+  flex: 1;
+}
+.para-chevron {
+  color: var(--ink-dim);
+  font-size: 0.8rem;
+  transition: transform 0.25s;
+}
+.para-card.open .para-chevron { transform: rotate(180deg); }
+.para-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.para-card.open .para-body { max-height: 4000px; }
+.para-content {
+  padding: 0.9rem 1rem 1.1rem;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--ink);
+}
+.para-content p { margin-bottom: 0.7rem; }
+.para-content .summary-box {
+  background: var(--paper-soft);
+  border-left: 3px solid var(--gold);
+  padding: 0.7rem 0.9rem;
+  margin: 0.8rem 0;
+  font-size: 0.85rem;
+}
+.para-content .summary-box b {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+.para-content .core-box {
+  background: rgba(182, 58, 42, 0.06);
+  border-left: 3px solid var(--seal);
+  padding: 0.7rem 0.9rem;
+  margin: 0.8rem 0;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+.para-content .core-box b {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--seal);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+/* ============ QUIZ / OX ============ */
+.quiz-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.quiz-progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--ink-dim);
+}
+.quiz-bar {
+  width: 100%;
+  height: 3px;
+  background: var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 1.4rem;
+}
+.quiz-bar-fill {
+  height: 100%;
+  background: var(--seal);
+  transition: width 0.3s;
+}
+.quiz-question {
+  padding: 1.5rem 1.2rem;
+  background: var(--paper-soft);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  margin-bottom: 1.2rem;
+  min-height: 120px;
+  position: relative;
+}
+.quiz-q-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--seal);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.quiz-q-text {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--ink);
+  font-weight: 500;
+}
+.quiz-q-passage {
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  background: var(--paper);
+  border: 1px dashed var(--line-strong);
+  padding: 0.9rem 1rem;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  max-height: 320px;
+  overflow-y: auto;
+}
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+}
+.quiz-opt {
+  padding: 0.85rem 1rem;
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: 4px;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+.quiz-opt:active { transform: scale(0.99); }
+.quiz-opt-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--ink-dim);
+  flex-shrink: 0;
+  min-width: 18px;
+}
+.quiz-opt.selected {
+  background: var(--paper-warm);
+  border-color: var(--ink-soft);
+}
+.quiz-opt.correct {
+  background: rgba(90, 107, 58, 0.12);
+  border-color: var(--moss);
+}
+.quiz-opt.correct .quiz-opt-num { color: var(--moss); }
+.quiz-opt.wrong {
+  background: rgba(182, 58, 42, 0.08);
+  border-color: var(--seal);
+}
+.quiz-opt.wrong .quiz-opt-num { color: var(--seal); }
+
+.quiz-ox-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+.quiz-ox {
+  padding: 1.5rem 0;
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: 4px;
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 800;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: var(--ink);
+}
+.quiz-ox:active { transform: scale(0.96); }
+.quiz-ox.correct { background: rgba(90, 107, 58, 0.15); border-color: var(--moss); color: var(--moss); }
+.quiz-ox.wrong { background: rgba(182, 58, 42, 0.12); border-color: var(--seal); color: var(--seal); }
+
+.quiz-fill-input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: 4px;
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.quiz-fill-input:focus { border-color: var(--seal); }
+.quiz-fill-input.correct { border-color: var(--moss); background: rgba(90, 107, 58, 0.05); }
+.quiz-fill-input.wrong { border-color: var(--seal); background: rgba(182, 58, 42, 0.05); }
+
+.quiz-explain {
+  margin-top: 0.9rem;
+  padding: 0.9rem 1rem;
+  background: var(--paper-soft);
+  border-left: 3px solid var(--gold);
+  border-radius: 2px;
+  font-size: 0.86rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.quiz-explain-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.quiz-controls {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+.btn {
+  flex: 1;
+  padding: 0.9rem 1rem;
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: 1.5px solid transparent;
+}
+.btn:active { transform: scale(0.98); }
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+body.dark .btn-primary {
+  background: var(--paper);
+  color: var(--ink);
+}
+.btn-secondary {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+}
+
+/* ============ FLASHCARD ============ */
+.flashcard-stack {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: 280px;
+  margin: 1.2rem auto;
+  perspective: 1500px;
+}
+.flashcard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.4, 0.1, 0.3, 1);
+  cursor: pointer;
+}
+.flashcard.flipped { transform: rotateY(180deg); }
+.flashcard-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  padding: 1.8rem 1.5rem;
+  background: var(--paper-soft);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-lift);
+  overflow: hidden;
+}
+.flashcard-front::before,
+.flashcard-back::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--seal);
+}
+.flashcard-back { transform: rotateY(180deg); }
+.flashcard-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--seal);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+.flashcard-term {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 800;
+  font-size: 1.7rem;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+}
+.flashcard-hint {
+  margin-top: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--ink-dim);
+  letter-spacing: 0.1em;
+  text-align: right;
+}
+.flashcard-def {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink);
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.flashcard-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.flashcard-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--ink-dim);
+  min-width: 60px;
+  text-align: center;
+}
+.fc-nav-btn {
+  width: 42px; height: 42px;
+  background: var(--paper);
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: var(--ink);
+  font-size: 1rem;
+}
+.fc-nav-btn:active { transform: scale(0.92); background: var(--paper-soft); }
+.fc-nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.fc-category-pills {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+.fc-pill {
+  padding: 0.3rem 0.7rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: 'Nanum Myeongjo', serif;
+}
+.fc-pill.active {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+body.dark .fc-pill.active {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* ============ BOTTOM NAV ============ */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(244, 237, 225, 0.95);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-top: 1px solid var(--line);
+  padding: 0.5rem 0 calc(0.3rem + env(safe-area-inset-bottom));
+  z-index: 90;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 900px;
+  margin: 0 auto;
+}
+body.dark .bottom-nav { background: rgba(20, 17, 13, 0.95); }
+.nav-item {
+  background: transparent;
+  border: none;
+  padding: 0.4rem 0.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  cursor: pointer;
+  color: var(--ink-dim);
+  transition: color 0.15s;
+}
+.nav-item.active { color: var(--seal); }
+.nav-icon {
+  font-family: 'Noto Serif KR', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.nav-label {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* ============ RESULT SCREEN ============ */
+.result-screen {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.result-seal {
+  width: 90px; height: 90px;
+  margin: 0 auto 1.2rem;
+  background: var(--seal);
+  color: var(--paper);
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  font-family: 'Noto Serif KR', serif;
+  font-weight: 900;
+  font-size: 50px;
+  transform: rotate(-3deg);
+  letter-spacing: -3px;
+  box-shadow: 0 2px 6px rgba(143, 42, 30, 0.3);
+}
+.result-title {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.result-score {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-size: 2.2rem;
+  color: var(--seal);
+  margin: 0.8rem 0 0.4rem;
+  letter-spacing: -0.02em;
+}
+.result-meta {
+  color: var(--ink-dim);
+  font-size: 0.88rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ============ MODAL ============ */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 17, 13, 0.6);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.modal-overlay.active { display: flex; animation: fadeIn 0.2s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.modal {
+  width: 100%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: var(--paper);
+  border-radius: 6px;
+  padding: 1.5rem;
+  position: relative;
+  animation: modalIn 0.3s ease;
+}
+@keyframes modalIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.modal-close {
+  position: absolute;
+  top: 0.8rem; right: 0.8rem;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--ink-dim);
+  cursor: pointer;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+}
+.modal-close:active { background: var(--paper-soft); }
+.modal h3 {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--ink);
+}
+
+/* ============ QUIZ SETUP ============ */
+.quiz-setup {
+  padding: 1rem 0;
+}
+.setup-group {
+  margin-bottom: 1.4rem;
+}
+.setup-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--ink-dim);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.setup-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.setup-opt {
+  padding: 0.5rem 0.9rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 0.88rem;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.setup-opt.active {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+body.dark .setup-opt.active {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* ============ EMPTY STATE ============ */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--ink-dim);
+}
+.empty-mark {
+  font-family: 'Noto Serif KR', serif;
+  font-weight: 900;
+  font-size: 3rem;
+  color: var(--line-strong);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+.empty-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ============ SMALL MOBILE ============ */
+@media (max-width: 380px) {
+  .hero-title { font-size: 1.4rem; }
+  .detail-title { font-size: 1.35rem; }
+  .cat-name { font-size: 1.05rem; }
+  main { padding: 1rem 1rem 2rem; }
+}
+
+/* ============ STANDALONE PWA ============ */
+body.pwa-mode { background: var(--paper); }
+
+/* ============ UTILITY ============ */
+.hidden { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+.text-center { text-align: center; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 1.5rem; }
+
+/* ============ HIGHLIGHT TEXT ============ */
+.hl { background: rgba(182, 58, 42, 0.12); padding: 0 2px; color: var(--seal-deep); font-weight: 500; }
+body.dark .hl { background: rgba(217, 106, 87, 0.18); color: var(--seal); }
+.hl-gold { background: rgba(163, 124, 44, 0.14); padding: 0 2px; color: var(--gold); font-weight: 500; }
+
+</style>
+</head>
+<body>
+<script>
+// ===== data_part1.js =====
+// ============================================================
+// DATA: 심화 국어 중간고사 대비 (2026학년도 1학기)
+// ============================================================
+
+const EXAM_DATE = '2026-04-27';  // 시험일
+
+const WORKS = {
+  // ========================================
+  // 고전 시가 (5 작품)
+  // ========================================
+  gojeon_siga: {
+    label: '고전 시가',
+    hanja: '古典 詩歌',
+    accent: '#b63a2a',
+    items: [
+      {
+        id: 'myeonangjeongga',
+        title: '면앙정가',
+        author: '송순',
+        hanja: '俛仰亭歌',
+        genre: '가사',
+        period: '조선 전기',
+        theme: '면앙정 주변 자연의 아름다움과 강호한정(江湖閑情), 임금의 은혜',
+        source: '수능특강 문학 58-62쪽',
+        summary: '송순이 낙향 후 제월봉 중턱에 지은 면앙정을 배경으로, 그 주변의 사계절 자연 풍광을 굽어보고(면) 우러러보는(앙) 시선으로 묘사한 가사. 자연과 벗하며 풍류를 즐기는 화자의 모습을 드러내면서 마지막에 "역군은(亦君恩)이샷다"로 맺어 유교적 충의 의식을 표현한다.',
+        original: [
+          { stanza: '봄·여름 풍경 [A]~[B]', lines: [
+            '무등산 한 줄기 동쪽으로 뻗어 있어',
+            '멀리 떨쳐 와 제월봉이 되었거늘',
+            '넓은 들판에 무슨 짐작 하느라',
+            '일곱 굽이 한데 모아서 문득문득 벌였는 듯',
+            '너럭바위 위에 송죽(松竹)을 헤치고',
+            '정자를 얹었는데 구름탄청학이',
+            '천 리를 가리라 두 날개 벌였는 듯',
+            '옥천산 용천산 내린 물이',
+            '정자 앞 넓은 들에 올올이 펼친 듯이',
+            '쌍룡이 뒤트는 듯 긴 비단을 펼친 듯',
+            '물가의 모래밭은 눈같이 펼쳤는데',
+            '어지러운 기러기는 무엇을 어르노라',
+          ]},
+          { stanza: '여름·가을 [C]~[D]', lines: [
+            '흰 구름 뿌연 연하(煙霞) 푸른 것은 산람(山嵐)이라',
+            '수많은 바위 골짜기를 제집으로 삼아 두고',
+            '나면서 들면서 아양도 떠는구나',
+            '녹양에 우는 꾀꼬리 교태 겨워하는구나',
+            '나무 풀 우거지어 녹음이 짙어진 때',
+            '기다란 난간에서 긴 졸음을 내어 펴니',
+            '된서리 걷힌 후에 산빛이 금수(錦繡)로다',
+            '황운(黃雲)은 또 어찌 만경(萬頃)에 펼쳤는가',
+            '어부 피리도 흥에 겨워 달을 따라 부는구나',
+          ]},
+          { stanza: '겨울과 풍류 [D]', lines: [
+            '초목이 다 진 후에 강산이 묻혔거늘',
+            '조물주 헌사하여 빙설로 꾸며 내니',
+            '경궁요대와 옥해은산이 눈 아래 벌였구나',
+            '이것도 보려 하고 저것도 들으려 하고',
+            '술이 익었으니 벗이야 없을쏘냐',
+            '부르며 타이며 혀이며 이아며',
+            '온갖 소리로 취흥을 재촉하니',
+            '누웠다가 앉았다가 굽혔다가 젖혔다가',
+            '읊다가 휘파람 불다가 마음 놓고 노니',
+            '천지도 넓디넓고 세월도 한가하다',
+          ]},
+          { stanza: '결사 [E]', lines: [
+            '태평성대 몰랐는데 이때가 그때로다',
+            '신선이 어떠한가 이 몸이 그로구나',
+            '강산풍월 거느리고 내 백 년을 다 누리면',
+            '악양루 위의 이백이 살아온들',
+            '호탕한 회포는 이보다 더할쏘냐',
+            '이 몸이 이러함도 역군은(亦君恩)이샷다',
+          ]}
+        ],
+        notes: '산람: 산아지랑이 | 경궁요대: 구슬로 장식한 집과 누각, 여기선 눈 덮인 산천 | 옥해은산: 옥 같은 바다와 은빛 산 | 악양루: 중국 동정호의 누각, 이백이 풍류를 즐긴 곳',
+        analysis: [
+          { label: '구조', title: '"면(俛)"과 "앙(仰)"의 시선', body: '<strong>면(굽어보다)</strong>: 정자 앞 들, 물가 기러기 등 <strong>아래 쪽 풍경</strong> 중심. <strong>앙(우러러보다)</strong>: 긴 하늘 아래 봉우리·절벽 등 <strong>위 쪽 풍경</strong> 중심. 시간적으로도 <strong>앙=과거 되돌아보기</strong>, <strong>면=현재 살펴보기</strong>로 확장된다.' },
+          { label: '표현', title: '핵심 수사법', body: '<strong>비유:</strong> 구름 탄 청학(정자), 쌍룡이 뒤트는 듯(강물), 눈 같은 모래밭. <strong>대구·대조:</strong> "넓거든 길지 말든지 푸르거든 희지 말든지". <strong>설의:</strong> "악양루 위의 이백이 살아온들 호탕한 회포는 이보다 더할쏘냐".' },
+          { label: '주제', title: '자연 합일과 유교적 충', body: '자연과 한 몸이 되어 풍류를 누리는 강호한정(江湖閑情)을 펼치다가도, 마지막은 <strong>"역군은이샷다"</strong>로 끝맺어 <span class="hl">임금의 은혜 덕분이라는 유교적 이념</span>으로 수렴. 사대부 가사의 전형적 구조.' },
+          { label: '출제', title: '자주 나오는 포인트', body: '① [A]~[E] 부분을 "면/앙"의 시선으로 구분하는 문제 ② 이미지(백색/시각/청각)와 관련 시어 매칭 ③ 김득연 「지수정가」 등 다른 작품과의 비교 감상.' },
+        ],
+        tags: ['가사', '강호한정', '자연친화', '충의', '송순'],
+      },
+      {
+        id: 'sachinga',
+        title: '사친가',
+        author: '작자 미상',
+        hanja: '思親歌',
+        genre: '가사',
+        period: '조선 후기',
+        theme: '달마다 부모를 그리워하며 효를 실천하라는 권면',
+        source: '수능특강 문학 63-66쪽',
+        summary: '"사친(思親)"은 "어버이를 그리워하며 생각한다"는 뜻. 정월 대보름부터 오월 단오까지 각 달의 절기·풍속·자연의 변화를 배경으로, "슬프도다 우리 부모 ~ 모르시나"라는 구절을 반복하며 부모 생각·효의 실천을 강조한 월령체 계열 가사.',
+        original: [
+          { stanza: '[A] 정월 — 대보름', lines: [
+            '정월이라 십오 일에 달구경하는 소년들아',
+            '흉풍(凶豐)도 보려니와 부모 봉양 생각하라',
+            '㉠신체발부 사대절을 부모님께 타고났으니',
+            '㉡태산같이 높은 덕과 하해같이 깊은 정을',
+            '어이하여 잊으리오 천세 만세 믿었더니',
+            '봉래 방장 영주산에 ㉢불로초와 불사약을',
+            '인력(人力)으로 얻을쏜가 슬프다',
+            '수욕정이 풍부지하고 자욕양이 친부재라',
+            '㉣공산낙목 한 줌 흙 되어 영원한 이별 되겠구나',
+            '㉤일 년 삼백육십 일에 일일 사친(事親) 십이시라',
+            '슬프다 우리 부모 대보름인 줄 모르시나',
+          ]},
+          { stanza: '[B] 이월 — 한식', lines: [
+            '그달을 허송하고 이월이라 한식일에',
+            '천추절이 적막하다 개자추의 넋이로다',
+            '원산에 봄이 드니 불탄 풀에 속잎 난다',
+            '후인들이 슬퍼하여 한식을 지었도다',
+            '슬프도다 우리 부모 청명인 줄 모르시나',
+          ]},
+          { stanza: '[C] 삼월 — 삼짇날(답청절)', lines: [
+            '그달 그믐 다 지나고 삼월이라 삼짇날에',
+            '제비 새끼 날아들어 옛집을 찾아오고',
+            '호랑나비 분분하여 옛빛을 자랑한다',
+            '산화(山花)는 붉은 비단이오 세류(細柳)는 푸른 실이로다',
+            '촌가에 농부들은 신춘(新春)을 만났다고',
+            '농구(農具)를 둘러메고 처처(處處)에 왕래하며',
+            '슬프도다 우리 부모 답청절을 모르시나',
+          ]},
+          { stanza: '[D] 사월 — 관등절(초파일)', lines: [
+            '그달을 허송하고 사월이라 초파일에',
+            '남풍지훈혜하고 해오민지온혜로다',
+            '삼각산 제일봉에 봉황 앉아 춤을 추고',
+            '한강수 깊은 물에 하도 낙서 나왔단 말인가',
+            '요지일월 순지건곤 태평성대 이 아닌가',
+            '장안 많은 집 등을 달아 산호만세 하는구나',
+            '슬프도다 우리 부모 관등절을 모르시나',
+          ]},
+          { stanza: '[E] 오월 — 단오', lines: [
+            '그달을 허송하고 오월이라 단오일에',
+            '광풍제월 넓은 곳에 솔개 날고 물고기 뛰노는구나',
+            '나물 먹고 물 마시고 팔을 베고 누웠으니',
+            '대장부 살림살이 이 아니 넉넉한가',
+            '일촌간장 맺힌 설움 부모 생각뿐이로다',
+            '송백양류 긴긴 나무에 높다랗게 그네 매고',
+            '녹의홍상 미인들은 오락가락하는구나',
+            '슬프도다 우리 부모 단오절을 모르시나',
+          ]},
+        ],
+        notes: '수욕정이 풍부지~: 나무는 고요하려 하나 바람이 그치지 않고, 자식은 부모를 공양하려 하나 부모는 이미 돌아가셨도다 | 개자추: 한식의 유래 인물 | 적인걸: 당나라 효성 깊은 명신 | 답청절: 삼짇날의 별칭',
+        analysis: [
+          { label: '구조', title: '월령체(月令體) 형식', body: '정월~오월까지 월별로 내용을 구성. 각 달의 <strong>명절·절기</strong>(대보름, 한식, 삼짇날, 초파일, 단오)를 매개로 부모 생각을 환기한다. "슬프도다 우리 부모 ~ 모르시나" 후렴 반복.' },
+          { label: '기호', title: '㉠~㉤의 의미', body: '㉠ <strong>신체발부</strong>=부모께 받은 몸 → 효의 당위성 / ㉡ <strong>태산·하해</strong>=부모 은혜 비유 / ㉢ <strong>불로초·불사약</strong>=얻을 수 없는 것(부모의 죽음은 불가항력) / ㉣ <strong>공산낙목</strong>=부모 사후의 상황 / ㉤ <strong>일일 사친 십이시</strong>=항상 부모를 그리워해야 함.' },
+          { label: '표현', title: '특징적 어법', body: '시간 표지(<span class="hl">정월·이월·삼월...</span>) → 내용 구분 / 청자 설정(<span class="hl">소년·후인·아이</span>) → 교훈 전달 / 절기·풍속 제시(<span class="hl">대보름·한식·답청절</span>) → 생활상 반영 / 유사 문장 반복(<span class="hl">"슬프도다 우리 부모"</span>) → 주제 부각.' },
+          { label: '확장', title: '"사친" 이상의 내용', body: '효라는 핵심 주제에 한정되지 않고, <strong>자연의 사계, 절기 행사, 당시 농촌 생활상</strong>까지 다양하게 담아낸다. [C]·[E]의 "촌가 농부", "보리타작 농부가" 등은 당대인들의 생활에 대한 관심을 드러낸다.' },
+        ],
+        tags: ['가사', '월령체', '효', '사친', '절기'],
+      },
+      {
+        id: 'soksamiingok',
+        title: '속사미인곡',
+        author: '이진유',
+        hanja: '續思美人曲',
+        genre: '가사',
+        period: '조선 후기',
+        theme: '유배지의 시련과 임금에 대한 충정, 자신의 결백함 호소',
+        source: '수능특강 문학 67-70쪽',
+        summary: '작가 이진유가 해도에 유배된 상황에서, 유배지의 고난을 자세히 서술하고 임(임금)을 그리워하며 자신의 결백과 억울함을 호소한 조선 후기 유배 가사. 정철의 「사미인곡」을 계승하면서도 유배지 고통의 구체적 묘사, 자신이 임금에게 가치 있는 신하임을 적극 밝히는 태도에서 차이를 보인다.',
+        original: [
+          { stanza: '유배와 원망', lines: [
+            '삼 년을 임을 떠나 해도(海島)에 유배되니',
+            '내 언제 무심하여 임에게 득죄했나',
+            '임이 언제 박정하여 날 대접 소홀히 했나',
+            '내 얼굴 고왔던지 질투하는 건 뭇여자로다',
+            '유한(幽閑)한 이내 몸을 선음한다 이르로세',
+          ]},
+          { stanza: '[A] 유배지의 참담한 생활', lines: [
+            '㉠추운 겨울 깊어지고 육지는 못 통(通)하니',
+            '양식도 핍절(乏絶)커늘 반찬이야 의논하며',
+            '설날 큰 명절에 솟국에 떡을 쑤어',
+            '갯물에 절인 배추 반찬으로 올랐으니',
+            '어와 이 몰골은 태어나 처음 보네',
+            '여름 석 달 다 지내고 괴로움 실컷 겪으니',
+            '찌는 더위도 그지없고 습한 기운도 더욱 심하다',
+            '파리 떼와 모기 떼는 백 가지로 쏘아 제치고',
+            '뱀과 전갈, 지네는 네 벽에 마구 기어다니니',
+          ]},
+          { stanza: '외로움과 임 생각', lines: [
+            '밤중에 잠이 없어 이불 두르고 일어나 앉아',
+            '신세를 한탄하고 평생을 생각하니',
+            '외로운 이내 몸이 자손도 없는 게요',
+            '㉡뜰 안에 가득한 꽃을 베어 버린들 누가 금할꼬',
+            '천지에 죄 없는 이 나밖에 또 있을까',
+            '주 문왕이 기산 다스릴 제 어진 정치를 베푸시면',
+            '가련한 이내 몸이 반드시 먼저 들려니',
+            '우리 임 아니시면 누구를 다시 의지할꼬',
+            '㉢내 신세 외로운 줄 임이 모르실까',
+            '긴 소매 들고 앉아 옛 잘못을 헤아리니',
+            '우직하기 본성이요 망령됨도 내 죄로되',
+            '근본을 생각하면 임 위한 정성일세',
+            '㉣일월 같은 우리 임이 거의 아니 굽어볼까',
+          ]},
+          { stanza: '꿈속의 재회와 소망', lines: [
+            '광주리의 가을 부채 어느 날 다시 날꼬',
+            '맑은 새벽 혼자 누워 백두음(白頭吟)을 슬피 읊고',
+            '마름과 연으로 옷을 짓고 부용으로 치마 지어',
+            '고향에 돌아갈 꿈 벽해(碧海)를 밟아 건너',
+            '옥루(玉樓) 높은 곳에 밤마다 임을 모셔',
+            '어촌의 먼 닭 소리에 긴 잠을 깨어나니',
+            '우리 임 옥음(玉音)은 귓가에 완연하고',
+            '㉤어느 날 이내 꿈을 진짜로 삼을 건가',
+            '두어라 임금께서 고치시기를 날마다 바라노라',
+          ]}
+        ],
+        notes: '염장: 소금 간 음식 | 솟국: 고기 없이 끓인 국 | 낙모가절: 중양절(9/9) | 백두음: 사마상여의 첩 논쟁 때 탁문군의 시 | 장문부: 진 황후가 사마상여에게 청해 지은 글',
+        analysis: [
+          { label: '기호', title: '㉠~㉤ 이해', body: '㉠ 유배지의 <strong>악화 원인</strong>(겨울·단절) 제시 / ㉡ 본래 집의 현재 상황 <strong>짐작하며 안타까움</strong> / ㉢ 임이 무심한 데 대한 <strong>서운함</strong> / ㉣ 임이 자신을 <strong>헤아려 줄 것이라는 기대</strong> / ㉤ 임을 다시 <strong>모시고 싶은 소망</strong>.' },
+          { label: '[A]', title: '유배지 생활의 구체적 서술', body: '의문의 형식("양식도 ~ 바랄쏘냐") 사용으로 <strong>참담한 생활상을 부각</strong>. "솟국에 떡", "갯물에 절인 배추 반찬" 같은 디테일은 조선 후기 유배 가사의 특징인 <span class="hl">시련의 자세한 서술</span>을 보여준다.' },
+          { label: '시어', title: 'ⓐ·ⓑ 대비', body: '<strong>ⓐ 가을 부채:</strong> 쓸모없어 버려진 화자 자신을 상징 → 임과 <strong>헤어진 처지</strong>. <strong>ⓑ 부용(芙蓉) 치마:</strong> 임을 위해 단장하고자 하는 마음 → <strong>임을 향한 애정</strong>.' },
+          { label: '특징', title: '전대 유배 가사 VS 조선 후기', body: '<strong>계승:</strong> 임금에 대한 사랑·그리움, 지난 일 반성·해명. <strong>달라진 점:</strong> 유배 고통의 자세한 서술 / 임금에 대한 <span class="hl">"맹목적" 사랑을 넘어 문제 해결 주체로서의 믿음</span> / 자신이 임금에게 가치 있는 신하임을 <span class="hl">적극적으로 밝히는 태도</span>("이내 몸이 반드시 먼저 들려니").' },
+        ],
+        tags: ['가사', '유배가사', '충', '연군', '이진유'],
+      },
+      {
+        id: 'monggeumpo',
+        title: '몽금포 타령',
+        author: '작자 미상',
+        hanja: '夢金浦 打令',
+        genre: '민요',
+        period: '조선 후기',
+        theme: '포구에서의 이별과 재회, 어부들의 생활과 정서',
+        source: '수능특강 문학 71-73쪽 (가)',
+        summary: '황해도 몽금포를 배경으로 한 민요. 어부들의 출항·귀항과 관련된 활력, 이별의 아쉬움과 재회의 기쁨, 만선(봉죽 받은)의 환희가 담겼다. 포구는 바다를 통해 다른 곳과 연결된 제한되지 않은 출입구로, 이별과 재회가 교차하는 공간으로 형상화된다.',
+        original: [
+          { stanza: '출항 — 임 만날 기대', lines: [
+            '장산곶 마루에 북소리 나더니',
+            '금일도 상봉에 임 만나 보겠네',
+            '에헤요 에헤요 에헤야 임 만나 보겠네',
+            '갈 길은 멀고요 행선은 더디니',
+            '늦바람 불라고 성황님 조른다',
+            '바람새 좋다고 돛 달지 말고요',
+            '몽금이 개암포 들렀다 가소레',
+          ]},
+          { stanza: '이별의 외로움과 재회', lines: [
+            '㉠바다에 흰 돛은 쌍쌍이 조으나',
+            '외로운 사랑엔 눈물만 겨워라',
+            '에헤요 에헤요 에헤야 눈물만 겨워라',
+            '몽금포 백사장 해당화 불고요',
+            '푸른 솔가지엔 두루미 앉았네',
+            '장산곶 마루에 새 소식 들리니',
+            '원포귀범에 정든 임 오셨네',
+          ]},
+          { stanza: '만선의 기쁨', lines: [
+            '무정한 우리 임 말없이 가더니',
+            '봉죽을 받고서 돌아를 오셨네',
+            '㉡임 실러 갈 적엔 반돛을 달고요',
+            '임 싣고 올 적엔 온 돛을 단다네',
+            '거친 물결에 출렁이면서',
+            '북소리 울리며 떠들어 온다네',
+            '가는 임 야속타 속태우지 말고요',
+            '갔다가 올 때가 더 반갑답니다',
+          ]}
+        ],
+        notes: '바람새: 바람이 부는 형세 | 봉죽: 만선을 뜻하는 대나무 깃대 (황해도 표현) | 몽금이 개암포: 몽금포, 개암포 | 원포귀범: 먼 포구로 돛단배가 돌아옴',
+        analysis: [
+          { label: '공간', title: '포구의 성격', body: '① <strong>활력의 공간</strong>: "장산곶 마루에 북소리" → 출항 활기. ② <strong>이별·원망의 장소</strong>: "바람새 좋다고 돛 달지 말고요". ③ <strong>제한되지 않은 출입구</strong>: "몽금이 개암포 들렀다 가소레". ④ <strong>재회의 공간</strong>: "장산곶 마루에 새 소식 들리니 ~ 정든 임 오셨네". ⑤ <strong>시각적 풍경</strong>: 백사장·솔가지·두루미.' },
+          { label: '기호', title: '㉠·㉡ 이해', body: '㉠ 쌍쌍이 나는 돛 vs 외로운 자신 → <strong>대비</strong>를 통한 고독감 / ㉡ <strong>반돛(갈 때) vs 온 돛(올 때)</strong> → 고기를 가득 싣고 돌아오는 만선의 기쁨을 시각화.' },
+          { label: '주체', title: '진어옹(眞漁翁)의 모습', body: '생계를 위해 고기 잡는 실제 어부 = <strong>진어옹/실어옹</strong>. (가)에는 <span class="hl">배가 출항하고 고기 잡아 돌아오는 현실적 상황</span>, 어촌 사람들의 고민, 순조로운 운항의 기원 등이 <strong>일상의 언어</strong>로 묘사됨.' },
+          { label: '표현', title: '민요적 특성', body: '후렴구 <span class="hl">"에헤요 에헤요 에헤야"</span>의 반복으로 흥을 돋움. 장소의 구체성(장산곶·몽금포·개암포) + 감각적 이미지(시각·청각). 짧은 대구를 통한 리듬감.' },
+        ],
+        tags: ['민요', '황해도', '포구', '어부', '이별과재회'],
+      },
+      {
+        id: 'eobubyeolgok',
+        title: '어부별곡',
+        author: '이중경',
+        hanja: '漁父別曲',
+        genre: '연시조',
+        period: '조선 후기',
+        theme: '시비(是非)에서 벗어나 강호에서 살아가는 어부의 삶',
+        source: '수능특강 문학 72-73쪽 (나)',
+        summary: '사대부 이중경이 지은 연시조. 젊은 날 명리를 좇다가 자연에 돌아와 어부로 자처하며 살아가는 삶을 그린다. 실제 어부가 아닌 <strong>가어옹(假漁翁)</strong>의 전형. 사회적 혼란·불의를 겪은 자신에 대한 성찰을 바탕으로 자연에서 참된 즐거움을 찾는다.',
+        original: [
+          { stanza: '<제2수>', lines: [
+            '처음에 못 생각하여 시서를 일삼도다',
+            '중간에 망령되어 명리를 바라도다',
+            '물외의 풍월강산이 내 분인가 하노라',
+          ]},
+          { stanza: '<제3수>', lines: [
+            '이런들 뉘 옳다 하며 저러한들 뉘 외다 하료',
+            '㉢옳거나 외거나 나도 내일 모르노라',
+            '세상이 시비를 마라 어부 무삼 그르리',
+          ]},
+          { stanza: '<제4수>', lines: [
+            '㉣경륜을 내 알더냐 제세할 이 없을러냐',
+            '태평시세는 얼마나 멀었는고',
+            '필부의 위국 충심을 내어 뵐 데 없어라',
+          ]},
+          { stanza: '<제6수>', lines: [
+            '창산은 높고 높고 유수는 길고 길고',
+            '㉤산고수장(山高水長)하니 그 아니 좋을쏘냐',
+            '산수 간 일한인(一閑人) 되어 허물 없이 사노라',
+          ]}
+        ],
+        notes: '시서: 시경과 서경(유교 경전) | 명리: 이름과 이익 | 물외: 세상의 바깥 | 제세: 세상을 구제함 | 일한인: 한가로운 한 사람',
+        analysis: [
+          { label: '기호', title: '㉢·㉣·㉤ 이해', body: '㉢ 옳고 그름을 <strong>내일 모르겠다</strong>고 하는 것은 세상의 시비에서 벗어나려는 태도 (※ "남에게 기준을 정해 주겠다"는 뜻 아님). ㉣ 자신의 <span class="hl">위국 충심을 펼칠 데 없다</span>는 사회적 좌절. ㉤ 자연의 높고 긺(산고수장)을 즐기는 삶.' },
+          { label: '주체', title: '가어옹(假漁翁)의 모습', body: '사대부가 자연에 머물며 소일거리로 고기 잡는 모습. (나)는 사회적 혼란으로 <strong>불의를 겪은 자신에 대한 성찰</strong>과, 자연에서 <span class="hl">참된 즐거움을 얻는 모습</span>을 동시에 드러낸다. 속세에 대한 미련("중간에 망령되어 명리를 바라도다")도 함께 고백.' },
+          { label: '비교', title: '(가) 진어옹 vs (나) 가어옹', body: '<strong>(가) 몽금포 타령:</strong> 생계를 위해 고기 잡는 <strong>실제 어부(진어옹)</strong>. 만선·풍랑 등 현실적 고민. <strong>(나) 어부별곡:</strong> 강호 생활을 즐기는 <strong>사대부(가어옹)</strong>. 시비·경륜 등 관념적 고뇌가 자연 속 즐거움으로 극복.' },
+          { label: '출제', title: '자주 나오는 포인트', body: '① ㉢~㉤ 해석 정확성 ② 진어옹/가어옹 구분 ③ (가)와 (나)의 공통 주제(어부의 삶)와 차이(현실 vs 관념).' },
+        ],
+        tags: ['연시조', '강호', '어부', '가어옹', '이중경'],
+      },
+    ]
+  },
+
+  // ========================================
+  // 현대시 (3 작품)
+  // ========================================
+  hyundae_si: {
+    label: '현대시',
+    hanja: '現代詩',
+    accent: '#5a6b3a',
+    items: [
+      {
+        id: 'ppaeatgin_deul',
+        title: '빼앗긴 들에도 봄은 오는가',
+        author: '이상화',
+        hanja: '',
+        genre: '자유시',
+        period: '일제 강점기 (1926)',
+        theme: '국권 상실 속에서 국토의 아름다움과 상실감이 공존하는 저항적 인식',
+        source: '수능특강 문학 81-83쪽 (가)',
+        summary: '봄날 우리 국토의 아름다움에 경탄하면서도, 국권 상실로 인해 <strong>상징적 의미로서의 "봄"</strong>이 올 것이라고 확신하기 어려웠던 당대 현실에 대한 인식을 드러낸 저항시. 1연의 질문이 마지막 연의 답으로 수렴되는 구조.',
+        original: [
+          { stanza: '도입', lines: [
+            '지금은 남의 땅─빼앗긴 들에도 봄은 오는가?',
+            '나는 온몸에 햇살을 받고',
+            '푸른 하늘 푸른 들이 맞붙은 곳으로',
+            '가르마 같은 논길을 따라 꿈속을 가듯 걸어만 간다.',
+          ]},
+          { stanza: '질문과 응답', lines: [
+            '입술을 다문 하늘아 들아',
+            '내 맘에는 나 혼자 온 것 같지를 않구나',
+            '㉠네가 끌었느냐 누가 부르더냐 답답워라 말을 해 다오.',
+            '바람은 내 귀에 속삭이며',
+            '한 자욱도 섰지 마라 옷자락을 흔들고',
+            '종다리는 울타리 너머 아씨같이 구름 뒤에서 반갑다 웃네.',
+          ]},
+          { stanza: '보리밭과 도랑', lines: [
+            '고맙게 잘 자란 보리밭아',
+            '간밤 자정이 넘어 내리던 고운 비로',
+            '㉡너는 삼단 같은 머리를 감았구나 내 머리조차 가뿐하다.',
+            '혼자라도 가쁘게나 가자',
+            '마른 논을 안고 도는 착한 도랑이',
+            '㉢젖먹이 달래는 노래를 하고 제 혼자 어깨춤만 추고 가네.',
+          ]},
+          { stanza: '들에 대한 그리움', lines: [
+            '나비 제비야 깝치지 마라',
+            '맨드라미 들마꽃에도 인사를 해야지',
+            '아주까리기름을 바른 이가 지심매던 그 들이라 다 보고 싶다.',
+            '내 손에 호미를 쥐어 다오',
+            '살찐 젖가슴과 같은 부드러운 이 흙을',
+            '발목이 시도록 밟아도 보고 좋은 땀조차 흘리고 싶다.',
+          ]},
+          { stanza: '자아 성찰과 결말', lines: [
+            '강가에 나온 ⓐ아이와 같이',
+            '짬도 모르고 끝도 없이 닫는 내 혼아',
+            '무엇을 찾느냐 어디로 가느냐 우스웁다 답을 하려무나.',
+            '나는 온몸에 풋내를 띠고',
+            '푸른 웃음 푸른 설움이 어우러진 사이로',
+            '다리를 절며 하루를 걷는다 아마도 봄 신령이 지폈나 보다.',
+            '그러나 지금은─들을 빼앗겨 봄조차 빼앗기겠네.',
+          ]},
+        ],
+        notes: '깝치지 마라: 재촉하지 마라 | 지심매던: 김매던 | 풋내: 풀에서 나는 싱그러운 냄새 | 봄 신령: 봄의 기운, 계절이 화자에게 내린 듯한 상태',
+        analysis: [
+          { label: '구조', title: '수미상관의 질문-응답', body: '1연의 "<strong>빼앗긴 들에도 봄은 오는가?</strong>"라는 질문 → 마지막 연의 "<strong>들을 빼앗겨 봄조차 빼앗기겠네</strong>"라는 답으로 수렴. 국권 상실로 인해 상징적 의미로서의 봄조차 빼앗길 위기의식이 수사의문으로 표현됨.' },
+          { label: '기호', title: '㉠~㉤ 이해', body: '㉠ 연달은 <strong>의문문</strong>을 통해 화자의 답답함 표출. ㉡ 보리밭을 <strong>의인화</strong>("삼단 같은 머리")하여 청신함 부각. ㉢ 도랑을 <strong>모성적 존재</strong>로 형상화("젖먹이 달래는 노래"=청각 이미지). ④ <strong>"한 자욱도 섰지 마라", "깝치지 마라"</strong>는 민족 공동체가 국권을 되찾기 위해 어겨서는 안 되는 행동에 대한 인식.' },
+          { label: 'ⓐ', title: '"아이"의 의미', body: '화자가 <strong>자조(自嘲)의 대상</strong>으로 삼는 <span class="hl">자기 자신</span>을 가리킴. 짬도 모르고 끝도 없이 닫는 내 혼에 대한 반성적 인식.' },
+          { label: '주제', title: '모순된 정서의 공존', body: '"<strong>푸른 웃음 푸른 설움</strong>"이 어우러져 있다는 표현은, 우리 국토의 아름다움에 대한 경탄과 일제 강점으로 인한 암담한 현실 인식이 공존함으로써 빚어진 <span class="hl">부조화의 감정</span>을 환기한다.' },
+        ],
+        tags: ['자유시', '저항시', '일제강점기', '봄', '이상화'],
+      },
+      {
+        id: 'choto',
+        title: '초토의 시 1',
+        author: '구상',
+        hanja: '焦土의 詩',
+        genre: '자유시',
+        period: '6·25 전쟁 직후',
+        theme: '전쟁 직후 폐허가 된 국토에서 감지하는 생명력과 회복의 희망',
+        source: '수능특강 문학 82쪽 (나)',
+        summary: '"초토(焦土)"는 불에 타 버린 땅. 6·25 전쟁으로 폐허가 된 우리 국토를 배경으로, 어린 아이들의 생동감·개나리의 생명력을 통해 <strong>암담한 현실을 극복할 수 있다는 희망</strong>을 감지한 작품. "그림자"의 변화(울상→웃음)가 회복의 희망을 상징한다.',
+        original: [
+          { stanza: '', lines: [
+            '판잣집 유리딱지에',
+            '아이들 얼굴이',
+            '㉣불타는 해바라기마냥 걸려 있다.',
+          ]},
+          { stanza: '', lines: [
+            '내려쪼이던 햇발이 눈부시어 돌아선다.',
+            '㉤나도 돌아선다.',
+          ]},
+          { stanza: '', lines: [
+            '울상이 된 그림자 나의 뒤를 따른다.',
+            '어느 접어든 골목에서 걸음을 멈춘다.',
+            '잿더미가 소복한 울타리에',
+            '개나리가 망울졌다.',
+          ]},
+          { stanza: '', lines: [
+            '저기 언덕을 내려 달리는',
+            'ⓑ소녀의 미소엔 앞니가 빠져',
+            '죄 하나도 없다.',
+          ]},
+          { stanza: '', lines: [
+            '나는 술 취한 듯 흥그러워진다.',
+            '그림자 웃으며 앞장을 선다.',
+          ]},
+        ],
+        notes: '판잣집: 전쟁 직후 임시 주거 | 유리딱지: 작은 유리 조각 | 초토: 불에 타서 검게 그을린 땅 | 흥그러워진다: 흥이 나서 기분이 좋아진다',
+        analysis: [
+          { label: '기호', title: '㉣·㉤ 이해', body: '㉣ <strong>직유법("해바라기마냥")</strong>으로 공간의 누추함(판잣집 유리딱지)과 대비되는 아이들 얼굴의 생동감 강조. ㉤ <strong>현재형 어미</strong>로 돌아서는 햇발과 같은 화자의 행동을 제시 (※ "달관"이 아니라 눈부심에 대한 자연스러운 반응).' },
+          { label: 'ⓑ', title: '"소녀"의 의미', body: '앞니가 빠진 순진무구한 모습의 <span class="hl">관찰 대상</span>. <strong>역동적 움직임</strong>(언덕을 내려 달리는)을 보이는 존재로, 비극적 결과에 대한 책임에서 자유롭다.' },
+          { label: '대비', title: '"그림자"의 변화', body: '앞부분: "울상이 된 그림자 나의 뒤를 따른다" → 암담한 현실. 뒷부분: "<strong>그림자 웃으며 앞장을 선다</strong>" → 현실 극복의 희망 감지. 그림자의 태도 변화가 <span class="hl">화자의 내면 변화</span>를 투영.' },
+          { label: '소재', title: '"잿더미"와 "개나리"', body: '"잿더미가 소복한 울타리"는 6·25 전쟁의 포화로 불에 타 버린 국토. 그 속에서 "<strong>개나리가 망울졌다</strong>"는 표현은 폐허 속에서도 <span class="hl">피어나는 생명력</span>에 대한 주목을 의미.' },
+        ],
+        tags: ['자유시', '전후시', '6·25', '생명력', '구상'],
+      },
+      {
+        id: 'owol_sosik',
+        title: '오월 소식',
+        author: '정지용',
+        hanja: '五月 消息',
+        genre: '자유시',
+        period: '1930년대',
+        theme: '강화도에 교원으로 발령 난 이에 대한 그리움과 애정',
+        source: '수능특강 문학 84쪽 (가)',
+        summary: '강화도에 교원으로 발령 난 이를 향한 그리움의 정서를 <strong>감각적 이미지·참신한 비유·이국적 시어</strong>를 활용하여 표현한 정지용의 모더니즘적 경향의 시. "페스탈로치", "로맨틱" 등 이국적 시어와 상상 속 이미지가 어우러진다.',
+        original: [
+          { stanza: '', lines: [
+            '오동나무꽃으로 불 밝힌 이곳 첫여름이 그립지 아니한가?',
+            '어린 나그네 꿈이 시시로 파랑새가 되어 오려니.',
+            '나무 밑으로 가나 책상 턱에 이마를 고일 때나,',
+            '네가 남기고 간 기억만이 소곤소곤거리는구나.',
+          ]},
+          { stanza: '', lines: [
+            '모처럼 만에 날아온 소식에 반가운 마음이 울렁거리어',
+            '가여운 글자마다 먼 황해가 남실거리나니.',
+            '……나는 갈매기 같은 종선*을 한창 치달리고 있다……',
+          ]},
+          { stanza: '', lines: [
+            '쾌활한 오월 넥타이가 내처 난데없는 순풍이 되어,',
+            '하늘과 딱 닿은 푸른 물결 우에 솟은,',
+            '외따른 섬 로맨틱을 찾아갈까나.',
+          ]},
+          { stanza: '', lines: [
+            '일본 말과 아라비아 글씨를 가르치러 간',
+            '쬐그만 이 페스탈로치야, 꾀꼬리 같은 선생님이야,',
+            '날마다 밤마다 섬 둘레가 근심스런 풍랑에 씹히는가 하노니,',
+            '은은히 밀려오는 듯 머얼리 우는 ⓐ오르간 소리……',
+          ]},
+        ],
+        notes: '종선: 큰 배에 딸린 작은 배 | 페스탈로치: 스위스의 교육자 | 로맨틱: 낭만적인 (이국적 시어)',
+        analysis: [
+          { label: '특성', title: '모더니즘적 경향', body: '<strong>감각적 이미지</strong>(오동나무꽃으로 불 밝힌, 소곤소곤거리는), <strong>참신한 비유</strong>(갈매기 같은 종선, 꾀꼬리 같은 선생님), <strong>이국적 시어</strong>(페스탈로치·로맨틱)로 개성을 드러냄. 이전 시의 미학적 낭만이나 사상성과 구별되는 모더니즘 특징.' },
+          { label: 'ⓐ', title: '"오르간 소리"의 의미', body: '화자의 <strong>대상에 대한 소망</strong>이 반영된 소리. (※ 내적 갈등을 유발하는 소리가 아니라) 섬 풍경과 함께 상상되는, 대상이 가르치는 공간의 분위기를 환기.' },
+          { label: '비유', title: '"페스탈로치"와 "꾀꼬리 같은 선생님"', body: '강화도에 교원으로 발령 난 이를 <strong>존경하고 사랑스럽게 바라보는</strong> 비유적 표현. 화자의 정다움과 애정을 드러낸다.' },
+          { label: '구조', title: '상상 속 이동', body: '"순풍이 되어 ~ 로맨틱을 찾아갈까나"는 <strong>상상 속 이미지</strong>를 통해 대상에게 다가가고 싶은 화자의 정서를 표현. 편지를 받고("모처럼 만에 날아온 소식") 상상이 촉발되는 구성.' },
+        ],
+        tags: ['자유시', '모더니즘', '1930년대', '정지용', '그리움'],
+      },
+    ]
+  },
+
+  // will be continued in the next part...
+};
+
+
+// ===== data_part2.js =====
+// DATA PART 2: 고전 산문 (5 작품)
+WORKS.gojeon_sanmun = {
+  label: '고전 산문',
+  hanja: '古典 散文',
+  accent: '#a37c2c',
+  items: [
+    {
+      id: 'pocheonimun',
+      title: '포천이문',
+      author: '이현기',
+      hanja: '抱川異聞',
+      genre: '한문 단편',
+      period: '조선 후기',
+      theme: '이승과 저승의 인물이 나눈 문답을 통한 북벌론 비판과 인재 등용의 중요성',
+      source: '수능특강 문학 116-119쪽',
+      summary: '"포천의 기이한 소문". 포천 현감 정 공(정태화)이 조선 개국 공신 하 공(하륜)의 귀신과 나눈 대화를 통해 <strong>북벌론의 허상</strong>과 <strong>올바른 인재 등용</strong>의 중요성을 드러낸다. 작가는 정치적으로 민감한 주제를 비현실적 존재(귀신)의 목소리를 빌려 우회적으로 비판한다.',
+      passages: [
+        { label: '배경', text: '정 공이 포천 현감으로 부임하던 날 밤, 조선의 개국 공신 하륜의 귀신이 찾아와 폐허가 된 무덤을 돌봐 달라는 부탁을 함. 정 공이 신속히 처리하자 감사 인사차 다시 찾아온 하 공과 문답이 시작됨.' },
+        { label: '[A] 북벌론에 대한 정 공의 주장', text: '"명나라는 큰 은혜를 베풀어 우리나라를 다시 만들어 주었으니, 우리는 청나라의 죄를 묻고 천하에 대의를 펴고자 하는 정대한 논의를 하고 있습니다. 이 일의 길흉이 어떻겠습니까?"' },
+        { label: '[A] 하 공의 답변', text: '"길흉은 너무도 알기 쉽소. 조정 신하들이 큰 절개를 지키고자 최후의 결전을 벌이다 죽는다면 영예로울 것이오. 그러나 나라를 곤란하게 하는 것을 맑은 논의의 바탕으로 삼고, 중화를 존숭하는 대의를 출세의 계단으로 삼으며, 속으로는 오랑캐를 두려워하면서 겉으로만 아름다운 명성을 얻는다면 나는 거기서 인정할 만한 점을 찾지 못하겠소."' },
+        { label: '[B] 정 공의 주장 (백만 군사론)', text: '"우리나라는 백만 군사를 넉넉히 갖추고 몇 년 지탱할 곡식이 있으니, 압록강을 건너면 명나라 유민이 우리 군대를 맞이할 것입니다. 오삼계 군대와 합세하면 명나라 황실을 부흥할 수 있지 않겠습니까?"' },
+        { label: '[B] 하 공의 반론 (천시·지리·인사)', text: '"사또는 아직도 탁상공론을 하고 있소? 천하만사가 천시·지리·인사의 제약을 넘지 못하오. 지금 중화의 운은 쇠하고 북방의 운은 왕성하니 청나라가 300년은 지속될 거요(천시). 산해관은 천험의 요새이며, 영고 여진족이 후방을 치면 전·후군이 호응할 수 없소(지리). 우리 장수는 용렬하고 오삼계는 임금을 저버린 자이니 동맹은 불가하오(인사)."' },
+        { label: '[C] 정 공의 수용', text: '"참으로 말씀하신 그대롭니다. 화의(和議)를 고수해야 하겠습니다."' },
+        { label: '[C] 인재 등용에 대한 가르침 (㉠)', text: '"부유한 권세가에 여덟 가지 일을 맡은 종이 있는데, 종 하나가 직분을 못하면 한 가지, 여덟 명이 못하면 여덟 가지 폐단이 생기오. 가장이 <strong>용렬하고 게으른 종을 도태시키고 똑똑하고 부지런한 자를 그 자리에 대체</strong>하면 모든 일이 잘 돌아가오. 하물며 나랏일이야!" → 정 공: "지금의 가르침은 참으로 <strong>간명하면서도 핵심을 찌른 말씀</strong>이라 마음과 몸이 모두 경복(敬服)하게 만듭니다."' },
+      ],
+      analysis: [
+        { label: '인물', title: '정 공과 하 공의 역할', body: '<strong>정 공(정태화):</strong> 이승의 인물, 현실적 존재. <span class="hl">질문을 통해 하 공의 발언을 이끌어 냄</span>. <strong>하 공(하륜):</strong> 저승의 인물, 비현실적 존재(귀신). <span class="hl">작가의 목소리를 대변</span>하며 북벌론·인재 등용에 대한 견해 제시.' },
+        { label: '표현', title: '유추 (비유를 통한 추론)', body: '하 공은 <strong>국가를 부유한 권세가에 빗대어</strong> 올바른 국정 운영을 위해서는 올바른 인재 등용이 선행되어야 함을 강조. 집안 가장↔임금, 용렬하고 게으른 종↔무능한 신하, 똑똑한 종↔현명한 신하.' },
+        { label: '㉠', title: '"간명하면서도 핵심을 찌른 말씀"', body: '분야별로 나랏일을 맡을 사람을 잘 가려 써야 <strong>국정의 폐단을 막을 수 있다</strong>는 의미. (※ "가장 중요한 분야 우선", "신뢰해야 충실", "경쟁 도태", "재정 풍부" 같은 오답 유형에 주의.)' },
+        { label: '주제', title: '서사 전략', body: '북벌론은 당시 정치적으로 민감한 주제. 작가는 <strong>① 비현실적 존재(귀신)의 목소리</strong>, <strong>② 역사상 실존 인물</strong>(하륜)의 권위, <strong>③ 현실에서 사라지는 인물(작별)</strong>을 통해 논란을 피하며 자신의 견해를 드러냈다.' },
+      ],
+      tags: ['한문단편', '북벌론', '인재등용', '유추', '이현기'],
+    },
+    {
+      id: 'wangsujae',
+      title: '왕수재취득용녀설',
+      author: '작자 미상',
+      hanja: '王秀才取得龍女說',
+      genre: '설화계 소설',
+      period: '',
+      theme: '영웅의 활약을 통한 초월적 존재의 구원과 애정 성취',
+      source: '수능특강 문학 120-124쪽',
+      summary: '왕수재가 바다에서 풍랑을 만나 섬에 남겨지고, 그곳에서 서해 용왕의 아들을 만나 구미호와 대결하는 이야기. 고려 건국 설화인 「거타지 설화」를 서사의 원천으로 삼고 있으며, 부분적으로 내용이 변형·추가된 작품. 주인공이 여우의 둔갑에 속아 활을 쏘지 못하는 장면이 특징적.',
+      passages: [
+        { label: '발단', text: '상사 일행의 배가 사흘 동안 움직이지 않자, 왕수재가 해신의 장난이라 판단하고 "윗옷 옷깃에 이름을 써서 바다에 던져 가라앉지 않는 자가 부정한 자"라 해결책을 제시함. 옷을 던지니 오직 <strong>왕수재의 옷만이 물 위에 떠</strong> 가라앉지 않음.' },
+        { label: '[A] 왕수재의 결심 (바다에 뛰어들려 함)', text: '"이는 신이 초래한 일입니다. 제 운명이 그렇다는데 더 무슨 말을 하겠습니까? 제가 이번 사행에 따라오기를 자청했던 건 중국 수도의 장려한 모습을 보고 대장부의 울울한 심사를 풀고 싶어서였습니다. 하지만 지금 해신이 이처럼 길을 막고 장난을 하니 제가 어찌 감히 억지로 떠날 수가 있겠습니까?"' },
+        { label: '중략', text: '상사 일행은 왕수재를 만류한 후 가까운 섬에 내려 주고 떠남. 섬에 도착한 왕수재는 초가집에서 노인을 만나 음식을 대접받음.' },
+        { label: '[B] 노인의 부탁', text: '"나는 본래 속세 사람이 아니라 서해 용왕의 아들이라오. 이 섬에 산 지 천 년이 넘었소. 구름을 타고 하늘에 오를 날이 몇 년 남았는데, 불행히도 <strong>삼천 년 묵은 구미호</strong>가 내 집을 빼앗으려 하고 있소. 수재의 <strong>귀신같은 활 솜씨</strong>를 좀 빌렸으면 하오."' },
+        { label: '구미호의 출현', text: '오후에 멀리서 음악 소리가 들림. 왕수재가 몸을 숨겨 보니 임금이 타는 가마 위에 앉은 <strong>꽃처럼 아름다운 얼굴의 부인</strong>이 온갖 교태를 피우며 나타남. 위엄 있는 의장(儀仗)이 임금과 똑같고, 곱게 분을 바른 미녀들이 앞뒤를 에워쌈.' },
+        { label: '활을 쏘지 못함', text: '노인이 "내일 한창 싸울 때 명치를 쏘면 성공"이라 일러줌. 이튿날 실제 싸움 때 왕수재는 시위를 당겼으나 <strong>부인의 얼굴이 너무 아름다운 것을 보고 차마 활을 쏘지 못하고</strong> 시위를 풀어 버림. "저건 사람이다. 여우가 둔갑을 한다고 어찌 저리될 수 있겠나?"' },
+      ],
+      analysis: [
+        { label: '원천', title: '「거타지 설화」와의 비교', body: '<strong>공통점:</strong> 주인공의 목적(중국행), 영웅적 능력(뛰어난 활 솜씨), 요괴 정체(여우). <strong>차이점:</strong> 항해 중단 이유(풍랑 vs 배 움직이지 않음), 이름을 적은 사물(나뭇가지 vs 옷), 물에 가라앉는 여부(가라앉음 vs 가라앉지 않음).' },
+        { label: '[A]·[B]', title: '두 요청의 공통점·차이점', body: '<strong>공통점:</strong> 둘 다 <span class="hl">상대방에게 일어날 일을 언급하며 자신의 행동·요구를 정당화</span>. <strong>[A](왕수재):</strong> 자신의 운명을 이유로 바다에 뛰어들겠다는 의지 표명. <strong>[B](노인):</strong> 상대방의 능력("신궁")을 근거로 자신을 도와달라는 요구 전달.' },
+        { label: '㉠~㉤', title: '표현의 특징', body: '㉠ 상사의 <strong>절박함을 연쇄적 행위</strong>로("목욕재계→제문→제사→다시 제사"). ㉡ 왕수재 옷의 특별함을 <strong>대조·부사어</strong>로("모든 옷은 가라앉았지만 유독 수재의 옷 하나만"). ㉢ 구미호 출현 조짐을 <strong>다양한 소리 나열</strong>(종·북·피리). ㉣ 가마 위 부인의 <strong>위엄을 임금의 의장과 비교</strong>. ㉤ 바다 위를 <strong>평지 밟듯</strong> 다니는 노인의 비범함.' },
+        { label: '구조', title: '완전한 영웅 서사와의 차이', body: '「거타지 설화」에서는 영웅이 활을 쏴 요괴를 처치한다. 그러나 「왕수재취득용녀설」에서는 <strong>여우의 미모에 속아 활을 쏘지 못</strong>하는데, 이는 <span class="hl">완전한 영웅이 아닌, 인간적 한계를 지닌 주인공</span>을 그리는 변형이다.' },
+      ],
+      tags: ['설화계소설', '거타지설화', '영웅', '둔갑', '활'],
+    },
+    {
+      id: 'seohae',
+      title: '서해무릉기',
+      author: '작자 미상',
+      hanja: '西海武陵記',
+      genre: '고전 소설',
+      period: '조선 후기',
+      theme: '혼사 장애를 극복하는 남녀의 애정 성취',
+      source: '수능특강 문학 125-128쪽',
+      summary: '유생이 납치당한 아내 최 씨를 찾아 여승으로 변장하여 서해의 섬 "서해무릉"까지 가서 재회하고, 방해자와 대결하며 애정을 성취하는 이야기. <strong>금산사 부처</strong>라는 비현실적 조력자가 두 주인공의 재회를 돕는다.',
+      passages: [
+        { label: '유생의 여정', text: '유생은 여승으로 변장하고 서해에 배를 띄워 방황하다가, 푸른 산이 첩첩이 솟은 아름다운 섬 <strong>"서해무릉"</strong>에 이름. 흰옷·삿갓·바랑·죽장을 한 채 양식을 구하자 마을 사람들이 미모를 부러워함.' },
+        { label: '최 씨의 꿈 — 금산사 부처의 계시', text: '"나는 금산사의 부처로다. 네 지아비의 지극한 정성에 감동하여 너희 두 사람을 도와주러 왔노라. <strong>내일 오시(午時)에 한 여승이 밖에 있을 것이다. 이 사람이 바로 유생이니, 이제 서로 만날 수 있을 것이다</strong>."' },
+        { label: '재회', text: '계선의 안내로 나와 보니, 옥 같은 얼굴의 여승은 자신의 지아비 <strong>유연</strong>이었음. 최 씨가 보니 낯빛·용모가 바뀌고 풍채가 초췌하여 가슴이 찢어지는 듯함. 허다한 풍상과 천신만고의 고생이 모두 자신 때문.' },
+        { label: '장군의 방해와 유생의 잠복', text: '장군이 여승을 수상히 여겨 멀리 내쫓음. 유생은 원촌에 숨어 <strong>바람이 통하는 굴</strong>을 찾아 그곳에 몸을 숨기고 마을에서 얻어 온 양식으로 연명함.' },
+        { label: '[A] 정 부인의 설득', text: '"소저가 여기에 이른 지 벌써 몇 해가 지났습니다. 우리 아들의 청춘이 이제 저물어 가고 소저의 나이도 적지 않으니 <strong>혼례를 이루어 길이 복록을 누리도록 하십시오</strong>. 이제 택일하여 조만간 혼례를 치를 것이니 모름지기 소저는 고집하지 마십시오."' },
+        { label: '최 씨의 거절과 두 번째 꿈', text: '최 씨는 "저의 신세가 이러하니 더욱 죽는 것이 마땅하옵니다"라며 거절. 이부자리에 기대 잠깐 졸다가 꿈에 다시 여승이 나타남.' },
+        { label: '[B] 금산사 부처의 재계시', text: '"나는 금산사 부처로다. 네 지아비의 정성에 감동하여 두 사람을 돕노라. <strong>지금 장원 밖에 유생이 와 있으니 바삐 나가 달아날 기약을 정하여라</strong>."' },
+        { label: '장원 밖의 재회', text: '최 씨가 장원을 향해 "유생과 저의 쇠잔한 목숨을 구해 주시옵소서" 축원. 유생이 담장 안 동정을 살피다가 목소리를 듣고 "낭자가 옛 정인을 아직도 그리워하거든 서로 만날 기약을 정해 알려 주십시오"라 답함.' },
+      ],
+      analysis: [
+        { label: '구조', title: '혼사 장애의 기본 구조', body: '이 작품은 <strong>남녀 간의 혼사 성취 과정</strong>이 중심. 혼사 장애(제삼자=장군의 납치) → 주인공의 여정과 대결 → 비현실적 조력자(<span class="hl">금산사 부처</span>)의 관여 → 완전한 혼사 성취. 계모·악인 대신 납치한 장군이 혼사 방해자.' },
+        { label: '[A]·[B]', title: '두 발화의 특성', body: '<strong>[A] 정 부인:</strong> 최 씨가 처한 상황을 환기하며 <span class="hl">해야 할 일(혼례)을 제시</span>. <strong>[B] 금산사 부처:</strong> 자신이 하는 행위의 이유("네 지아비의 정성")를 밝히며 <span class="hl">해야 할 일(나가서 달아나기)을 제시</span>. 두 발화 모두 "상대가 해야 할 일을 제시"한다는 공통점.' },
+        { label: '꿈', title: '"꿈"의 역할', body: '최 씨가 처음에는 고향 그리움으로 탄식하다가, <strong>꿈에 대한 믿음</strong>으로 계선의 말에 따라 밖에 나가 여승(유생)을 만나게 됨. 꿈은 <strong>계선이 하는 말에 따라 행동하게 되는 계기</strong>로 작용.' },
+        { label: '주제', title: '조력자의 의미', body: '금산사 부처라는 비현실적 조력자는 남녀 주인공에게 도움을 주며 <span class="hl">유생의 애정 성취에 정당성을 부여</span>한다. 또한 유생이 굴에 숨어 양식으로 연명하는 장면은 주인공이 혼사 방해자(장군)와의 대결 구도에서 <strong>열세에 놓여 있음</strong>을 보여준다.' },
+      ],
+      tags: ['고전소설', '혼사장애', '애정소설', '조력자', '변장'],
+    },
+    {
+      id: 'bansijeon',
+      title: '반씨전',
+      author: '작자 미상',
+      hanja: '潘氏傳',
+      genre: '고전 소설',
+      period: '조선 후기',
+      theme: '가문 내 동서 간 갈등과 권선징악',
+      source: '수능특강 문학 129-132쪽',
+      summary: '위윤·위진·위준 삼 형제의 아내 반 씨·채 씨·맹 씨 중, <strong>맏며느리 반 씨</strong>가 두 동서의 시기와 모함에 시달리다 초현실적 존재의 도움으로 위기에서 벗어나는 이야기. 음모 모티프("악인의 음모 → 선인의 위기 → 고난 극복 → 권선징악")의 전형을 따르되, <strong>갈등의 중심축이 동서 간의 대립</strong>이라는 점이 특징.',
+      passages: [
+        { label: '배경', text: '반 씨는 어질지만 두 동서(채 씨·맹 씨)는 반 씨를 시기하고 모함. 시어머니 양 씨가 두 며느리를 꾸짖자, 채 씨는 분해 친정으로 돌아감. 채 씨가 맹 씨에게 "반 씨의 참소를 어찌 견디리오"라며 함께 떠나자고 권함.' },
+        { label: '[A] 친정에서의 상황', text: '채 씨가 본부에 돌아와 양 씨가 반 씨의 참소를 듣고 무죄히 내쳐짐을 이르니, 채영 부부·부자가 <strong>절치부심하여 설분하기를 꾀함</strong>. 채영은 좌승상으로 일곱 아들이 입조해 명망이 조야에 진동하고 천자의 총애를 받음.' },
+        { label: '채영의 상소 모함', text: '채 승상이 대로하여 위윤과 반옥을 모함하는 상소를 올림. "위윤이 병부 상서로 성총을 가리어 상벌이 분명치 못하니 기군망상한 죄인이라. 위윤과 반옥을 함께 참하여 민심을 안정케 하여지이다."' },
+        { label: '[B] 반희의 전언', text: '반 씨의 종형 직금랑 반희가 궐중에 들어갔다가 위 상서(상서 위윤)를 만나 이르되, "<strong>금일 간에 채영의 아들 채원의 상소</strong>를 보니, 형의 허물과 숙부의 죄과를 고달하되... 알지 못하겠노라. 이런 일이 있나니이까."' },
+        { label: '유배', text: '제신(諸臣)이 채영의 권세를 두려워해 상고묵묵(상호 침묵). 상(上)이 탄식하며 위윤은 장사로 원찬, 반옥은 강동에 정배. 채 씨는 반 씨의 여막에 있는 흥(반 씨 아들)이 선관에게 글을 배운다는 소문을 듣고 음일한 행사라고 위진에게 모함.' },
+        { label: '음모 실행', text: '위진이 창두 이십여 인을 보내 "반 씨의 여막에 불을 놓고 반 씨 모자를 들이치라"고 명령함.' },
+        { label: 'ⓐ 일위 부인의 꿈', text: '반 씨가 혼미하여 졸던 중, 비몽사몽간에 <strong>일위 부인</strong>이 "미구에 액이 당도하였거늘 무슨 잠을 자느뇨!" 대호(大呼). 놀라 깨어나니 "어서 피하라. 지체할진대 면치 못하리라"는 목소리가 들림. 흥은 "이는 반드시 왕모(王母)의 혼령의 가르침이라"며 모친을 붙들고 피신.' },
+        { label: 'ⓑ 한 노인의 도움', text: '산중에서 방황하며 통곡하던 중 한 노인이 나타나 "공자가 과도히 놀랐도다" 하고 <strong>소매에서 줄 같은 것을 꺼내 주며 "모자가 하나씩 나눠 먹으라"</strong>고 함. 먹자마자 정신이 쇄락해짐. 노인은 "나는 이 산을 지키는 신령이더니, <strong>양 부인의 청을 듣고 그대 모자를 구하노라</strong>"고 말한 뒤 사라짐.' },
+      ],
+      analysis: [
+        { label: '[A]·[B]', title: '두 발화의 비교', body: '<strong>[A]:</strong> 채 씨가 양 씨의 처분 결과를 친정에 전하자, 가족이 그 원인("반 씨의 참소")을 짐작함. <span class="hl">자신이 겪은 일의 결과를 제시하며 원인을 짐작</span>. <strong>[B]:</strong> 반희가 들은 상소 내용을 위 상서에게 <span class="hl">간접 인용하여 구체적으로 전달</span>. 들은 내용을 상대에게 알려주는 구조.' },
+        { label: 'ⓐ·ⓑ', title: '두 조력자의 역할', body: '<strong>ⓐ 일위 부인</strong>(꿈): 위기가 곧 닥칠 것을 예언하며 지체하지 말고 도망칠 것을 알려줌. <strong>ⓑ 한 노인</strong>(현실): 방황하는 반 씨 모자에게 "줄 같은 것"을 주어 정신을 회복시키고, 산신령임을 밝히며 <span class="hl">양 부인의 청</span>임을 알림. → <strong>반 씨 모자는 ⓐ의 도움으로 목숨을 구하고, 이후 또 다른 조력자 ⓑ를 만남</strong>.' },
+        { label: '구조', title: '음모 모티프의 전개', body: '고전 소설의 음모 모티프는 <strong>"악인의 음모 → 선인의 위기 → 고난 극복 → 권선징악"</strong>의 구조를 따름. 「반씨전」의 특징: ① <span class="hl">갈등 중심축이 동서 간 대립</span>(집안 내 여성 갈등) → ② 형제 간 대립(위진의 공격)으로 확장 → ③ 가문 간 갈등(채씨 가문의 권력 이용)으로 확장.' },
+        { label: '주제', title: '권선징악의 실현', body: '선인의 고난 극복은 <strong>초현실적 존재의 도움</strong>(일위 부인·산신령)으로 이루어지며, 악인의 변화보다는 <span class="hl">권선징악의 실현</span>에 초점을 둔다. 이는 당대 사회의 문제점을 드러내고 바람직한 가치관을 제시하려는 작가의 의도.' },
+      ],
+      tags: ['고전소설', '가문소설', '음모모티프', '동서갈등', '권선징악'],
+    },
+    {
+      id: 'hyeonmongssangryonggi',
+      title: '현몽쌍룡기',
+      author: '작자 미상',
+      hanja: '現夢雙龍記',
+      genre: '가문 소설',
+      period: '조선 후기',
+      theme: '결연 과정에서의 혼사 장애 갈등과 가문의 애정 성취',
+      source: '수능특강 문학 133-137쪽',
+      summary: '송나라 조숙의 두 아들 <strong>용홍(대원수의 기질)</strong>과 <strong>용창(승상의 기품)</strong>이 각각 금가락지·은가락지의 인연을 만난다는 예언을 받음. 용홍의 정혼자 <strong>정채임</strong>이 계모 박 씨의 모함으로 다른 곳에 시집가게 되자 시녀들과 도망치다 강물에 몸을 던지고, 마침 지나가던 용홍·용창 형제가 이들을 구하는 이야기.',
+      passages: [
+        { label: '도입 — 물에서 건지다', text: '용홍·용창이 물에 빠져 죽으려는 두 서동을 구해 실상을 물음. 춘앵·벽란(시비들)이 두 공자의 비범한 풍채를 보고 "반악의 고움과 위개의 미려함을 비웃는 듯"하다고 감탄. 두 공자가 자신이 <strong>조 상국(조숙)의 자제</strong>임을 먼저 밝힘.' },
+        { label: '정 소저의 뜻 — 허물을 숨김', text: '소저가 "내가 외가로 가지 않고 길가에서 분주하게 다닌 것은 조 숙모에게 부끄럽고, <strong>아버지의 허물을 드러내고 싶지 않아서</strong>였다. 은인의 덕이 산과 바다 같으나 차마 근본을 아뢰게 되어 저 집에서 우리 집의 허물을 알게 되면 매우 부끄럽게 될 것이다. 내가 타향에서 떠돌다가 서울의 친척을 찾으러 왔다가 도적을 만났다고만 말하여라."' },
+        { label: '시비들의 결단', text: '벽란과 춘앵이 상의: "이제 하늘이 도와 조 공자를 만났으나 어찌 차마 좋은 기회를 놓치겠는가? 우리 소저의 백년가약을 어느 날 이루겠는가? <strong>우리들이 가만히 사실을 아뢰어 조 공자가 일을 처리하는 것을 보아야겠다</strong>."' },
+        { label: '사연 전달', text: '시비들이 정 소저의 진실을 모두 털어놓음: 정 참정의 딸이며 외가에서 조 공자와 정혼했으나, <strong>계모 박 씨</strong>가 소저를 재해에 빠뜨리고 <strong>박수관의 후실로 위협</strong>하여 시집보내려 함. 고모 이 평장 부인을 찾아가려 했으나 이사 가신 지 수일, 도적을 만나 강물에 투신.' },
+        { label: '용홍의 처리', text: '두 공자가 모두 감복. 용홍 공자의 두 눈에 가을 물처럼 고운 광채. 용홍: "너희들은 우리가 집에 들어가 일을 처리할 사이에 소저를 보호하라." <strong>본부의 강정(江亭)</strong>에 소저를 태우고 가 종들에게 지키게 함. 정 소저의 근본을 <strong>모르는 체</strong>하며 "소저의 재앙이 대단하십니다. 누추한 집이나 화를 피할 곳이니 가볍게 몸을 던지지 마십시오"라고 권함.' },
+        { label: '정 소저의 계획 — 절간 의탁', text: '두 공자가 표연히 떠나자, 정 소저는 자기 형세가 이 지경에 미쳐 외간 남자의 손에 물에서 건져진 것을 생각하니 심신이 놀라 달아날 것 같음. 요행히 그 남자가 조 공자여서 <strong>몸을 절간에 의탁하고 평생을 마치며 조 공자의 은혜를 생각하려고</strong> 하였음. 두 공자가 자기 근본을 들은 줄은 조금도 알지 못함.' },
+      ],
+      analysis: [
+        { label: '사건', title: '만남의 경과', body: '<strong>만나기 전:</strong> 정 소저(계모 박 씨로 인해 떠남, 남장, 도둑 만남) / 조 공자 일행(선영 절사 후 귀환, 구출). <strong>만난 후:</strong> 정 소저(허물 숨기기 위해 사연 숨김) / 조 공자(사연 캐물으며 해 끼치지 않을 것 약속). <strong>시비들:</strong> 사실 털어놓음. <strong>조 공자:</strong> 사연을 모르는 척하며 정 소저 일행을 보호.' },
+        { label: '시비', title: '춘앵과 벽란의 역할', body: '① 두 공자의 선함을 알아보고 <span class="hl">자기 주인의 위급함을 고함</span>. ② 정 소저가 조 상국 자제와 정혼한 것을 이미 알고 있었으며 자신들을 구한 이가 조 공자임을 다행으로 여김. ③ 조 공자에게 신분을 털어놓기 전에 먼저 <span class="hl">정 소저의 뜻을 확인하려</span> 함. ④ 그러나 <span class="hl">정 소저의 지시를 따르지 않고 자신들의 판단대로 행동</span>. ⑤ 좋은 기회로 믿고 위기 과정을 조 공자에게 전달.' },
+        { label: '격차', title: '작중 인물 간 정보의 격차', body: '<strong>정 소저:</strong> 자신을 구한 사람이 정혼자임을 알면서도 <span class="hl">집안 허물이 알려질까 두려워</span> 신분을 밝히지 않음. <strong>시비들:</strong> 조 공자에게는 진실을 털어놓았으나 <span class="hl">정 소저에게는 그 사실을 숨김</span>. <strong>두 공자:</strong> 정 소저의 사정을 이미 알면서도 <span class="hl">모르는 척</span>. <strong>정 소저:</strong> 절간 의탁 계획을 다른 사람에게 숨김.' },
+        { label: '특징', title: '가문 소설로서의 성격', body: '<strong>혼사 장애 갈등</strong>을 중심으로 전개. 정 참정·계모 박 씨 → 제삼자로 인한 결연 방해 → 통속적 재미 추구. <span class="hl">유교적 신분론과 기존 윤리관</span>을 강조하면서도 가문의 융성·화합에 대한 기대감 표현. 교훈적·통속적 성격 병존.' },
+      ],
+      tags: ['고전소설', '가문소설', '혼사장애', '결연', '계모'],
+    },
+  ]
+};
+
+
+// ===== data_part3.js =====
+// DATA PART 3: 독서 5 지문 (인문·예술, 사회·문화, 과학·기술)
+WORKS.dokseo = {
+  label: '독서',
+  hanja: '讀書',
+  accent: '#2d5a7e',
+  items: [
+    {
+      id: 'jayeonbeop',
+      title: '자연법의 역사',
+      subtitle: '마리탱과 메스너를 중심으로',
+      category: '인문·예술 3강',
+      source: '수능특강 독서 62-65쪽',
+      theme: '자연법 개념을 중심으로 한 법의 본질과 정당성에 대한 철학적 논의',
+      summary: '실정법과 자연법의 개념·관계를 설명하고, 자연법 사상의 전개 과정(고대 스토아학파 → 로마법 → 중세 아퀴나스)과 현대의 재해석(마리탱·메스너)을 다룸. 마리탱은 자연법을 인간 본성에 내재한 내면적 질서로, 메스너는 사회적 실천·제도적 구현의 원리로 본다.',
+      paragraphs: [
+        {
+          num: 1,
+          title: '실정법과 자연법의 개념',
+          content: '법은 주로 국가가 제정하고 시행하는 <strong>실정법</strong>을 중심으로 구성된다. 그러나 실정법만으로는 인간 사회의 근본적 정의와 도덕적 정당성을 충분히 설명하기 어렵다. 이러한 한계를 보완하는 개념이 인간의 본성과 이성에 근거한 보편적 규범인 <strong>자연법</strong>이다.',
+          summary: '실정법: 국가가 제정한 구체적 규범, 강제력·절차성. 한계: 근본적 정의·도덕적 정당성 설명 어려움. / 자연법: 인간의 본성과 이성에서 유래한 보편적·도덕적 원리, 시대·사회에 따라 변하지 않음(불변성).',
+          core: '실정법과 자연법의 개념과 관계 — 자연법은 실정법의 한계를 보완하며, 실정법은 자연법에 부합할 때 비로소 정당성을 획득함.'
+        },
+        {
+          num: 2,
+          title: '자연법의 철학적 기초와 발전',
+          content: '자연법의 철학적 기초는 고대 그리스 스토아학파에 의해 체계화. 헤라클레이토스·소피스트·아리스토텔레스 등이 보편적 질서에서 법의 근거를 찾으려 했고, <strong>아리스토텔레스</strong>는 목적론적 본성과 공동선을 통해 자연적 정의를 논의. 스토아학파는 로마법에 영향을 주어 자연법이 법적 정당성 기준으로 자리잡음. 중세 <strong>㉠토마스 아퀴나스</strong>는 자연법을 <span class="hl">영원법의 일부</span>로 보았고, 인간이 이성적 존재이기에 선을 추구하는 본성 속에서 자연법을 인식할 수 있다고 설명.',
+          summary: '전개: 고대 철학자 → 스토아학파 → 로마법 → 중세 아퀴나스. / 아퀴나스: 영원법(신이 부여한 보편 질서)의 일부로 자연법 이해. 인간 이성으로 인식 가능. 실정법은 자연법에 부합할 때 정당성.',
+          core: '자연법의 철학적 기초와 발전 과정'
+        },
+        {
+          num: 3,
+          title: '㉡자크 마리탱의 자연법',
+          content: '현대에 들어 마리탱은 자연법을 <strong>인간 존재의 본질 속에 내재한 내면적 질서</strong>로 재해석. 인간은 선을 추구하고 공동체적 삶을 영위하려는 성향을 지니며, 이성적 추론 이전에 이 성향을 통해 자연법을 <strong>직관적으로 인식</strong>. 자연법은 외부에서 강제로 부과되는 규칙이 아니라 <strong>인간답게 살아가기 위해 스스로 따르는 삶의 원리</strong>. 마리탱은 자연법이 본능처럼 저절로 작동하는 것이 아님을 강조하고, <strong>지적 성찰과 교육</strong>, 문화적·사회적 조건이 중요함을 지적. <span class="hl">"존재하는 자연법"과 "인식된 자연법"의 구별</span>로 설명. 자연법은 보편적 규범이며, 근대 이후 <strong>인권 개념의 철학적 기초</strong>가 됨.',
+          summary: '마리탱: 자연법을 인간 본질 속 내면적 질서로 재해석. 선을 지향하는 성향을 통한 직관적 인식. 지적 성찰·교육 필요. 자연법은 보편적이나 인식·적용 방식은 사회·문화적 조건에 따라 달라질 수 있음. 인권 = 자연법의 표현.',
+          core: '자크 마리탱의 자연법'
+        },
+        {
+          num: 4,
+          title: '㉢요하네스 메스너의 자연법',
+          content: '메스너는 마리탱의 이해를 <strong>사회적 실천과 제도적 구현</strong>에 초점을 맞춰 확장. 인간 본성 안에는 반드시 실현해야 할 <strong>실존적 목적들</strong>(자기 보존과 완성, 자녀의 출산과 교육, 타인에 대한 배려, 사회적 공익 증진 등)이 내재. 자연법은 개인의 양심에 머무르는 도덕 원리가 아니라 <strong>실존적 목적들을 사회 구조·제도 속에서 실질적으로 구현하는 원리</strong>여야 함. 예: 노동자의 권리 보장·사회적 약자를 위한 복지 정책은 자연법의 요청. 자연법은 <strong>공동체 전체의 정의와 질서를 뒷받침하는 구체적인 제도적 기반</strong>이 되어야 함.',
+          summary: '메스너: 자연법을 사회적 실천·제도적 구현의 원리로 봄. 실존적 목적들(자기 보존·자녀 교육·타인 배려·공익 증진)이 본성 내재. 복지·노동권·사회 약자 보호는 자연법의 사회적 실천.',
+          core: '요하네스 메스너의 자연법'
+        },
+        {
+          num: 5,
+          title: '마리탱과 메스너의 의의',
+          content: '두 사람 모두 자연법을 인간 본성·이성에 근거한 보편적 질서로 이해하며 <strong>사회 속에서 구현되어야 한다</strong>는 점에서 공통. 그러나 <strong>㉮마리탱은 자연법의 사회적 실현을 "도덕적 성숙이 확산된 결과"</strong>로, <strong>㉯메스너는 "공동체가 제도적으로 실현해야 할 과제"</strong>로 본다는 점에서 차이. 두 관점은 개인의 도덕적 자율성과 사회적 연대를 부각하며 인간 존엄성과 사회 정의를 동시에 고려하도록 이끈다.',
+          summary: '공통점: 자연법은 보편적이며 사회 속에서 구현되어야 함. / 차이점: 마리탱=도덕적 성숙 확산 결과(㉮), 메스너=공동체 제도 실현 과제(㉯).',
+          core: '마리탱과 메스너 논의의 의의'
+        }
+      ],
+      vocab: [
+        { term: '실정법(實定法)', def: '국가가 제정하여 시행하는 구체적 법률, 강제력과 절차성을 가짐' },
+        { term: '자연법(自然法)', def: '인간의 본성과 이성에 근거한 보편적·도덕적 규범, 시대·사회에 따라 변하지 않음' },
+        { term: '영원법(永遠法)', def: '아퀴나스 철학에서 신이 우주·인간에 부여한 보편적 질서이자 규범' },
+        { term: '부합(符合)', def: '부신이 꼭 들어맞듯 사물·현상이 서로 꼭 들어맞음' },
+        { term: '보편성(普遍性)', def: '모든 것에 두루 미치거나 통하는 성질' },
+        { term: '규범(規範)', def: '인간이 행동·판단할 때 마땅히 따르고 지켜야 할 가치 판단의 기준' },
+        { term: '순응(順應)', def: '환경·변화에 적응하여 익숙해지거나 체계·명령에 따르다' },
+        { term: '연대(連帶)', def: '여럿이 함께 무슨 일을 하거나 함께 책임을 짐' },
+      ],
+      tags: ['인문예술', '철학', '자연법', '마리탱', '메스너', '아퀴나스']
+    },
+
+    {
+      id: 'leadership',
+      title: '리더십 이론',
+      subtitle: '상황 중심에서 동기 중심으로',
+      category: '사회·문화 1강',
+      source: '수능특강 독서 109-113쪽',
+      theme: '리더십 이론의 발전 과정 — 상황 중심에서 동기 중심으로',
+      summary: '여러 리더십 이론을 소개하기보다 <strong>리더십 이론이 어떻게 발전해 왔는지</strong>를 설명. 피들러(상황적 리더십) → 허시·블랜차드(구성원 성숙도) → 번스·바스(거래적·변혁적) → 로크·데시·라이언(동기 부여) 순으로 전개.',
+      paragraphs: [
+        {
+          num: 1,
+          title: '피들러의 상황적 리더십 이론',
+          content: '피들러는 리더를 <strong>업무 지향적</strong>(목표 달성 중시) 스타일과 <strong>관계 지향적</strong>(구성원 관계·소통 중시) 스타일로 구분. 상황의 호의성은 <strong>① 리더와 구성원의 관계 ② 업무 구조 ③ 리더의 권한</strong>이라는 세 요인으로 결정. 상황의 호의성이 <strong>매우 낮거나 매우 높을 때</strong>는 업무 지향적 리더가, <strong>중간 정도일 때</strong>는 관계 지향적 리더가 효과적. "리더십은 능력이 아니라 <span class="hl">㉠적합성</span>이다."',
+          summary: '피들러: 상황의 호의성(리더-구성원 관계, 업무 구조, 리더 권한)에 따라 효과적 리더십 유형이 달라짐. 극단적(매우 낮/매우 높)=업무 지향, 중간=관계 지향.',
+          core: '피들러의 관점: 상황에 따라 적합한 리더십의 종류가 다름'
+        },
+        {
+          num: 2,
+          title: '허시·블랜차드의 상황적 리더십',
+          content: '피들러가 리더 스타일을 고정된 것으로 본 것을 비판. 구성원의 <strong>성숙도</strong>(업무 성숙도=역량 / 심리적 성숙도=의지)에 따라 리더가 스타일을 바꿔야 함. <strong>과업 행동</strong>(구체적 지시·감독) + <strong>관계 행동</strong>(인간적 관계·동기 부여)의 높낮이에 따라 네 가지 스타일: 역량↓의지↓ → <strong>지시형</strong>(과업↑관계↓) / 의지↑ → <strong>코치형</strong>(과업↑관계↑) / 역량↑ → <strong>지원형</strong>(과업↓관계↑) / 역량↑의지↑ → <strong>위임형</strong>(과업↓관계↓). "<span class="hl">㉡유연성</span>은 성공적인 리더십의 상징이다."',
+          summary: '허시·블랜차드: 구성원 성숙도(역량+의지)에 따라 리더가 리더십 스타일 조정. 지시형/코치형/지원형/위임형. 유연성 강조.',
+          core: '허시·블랜차드의 관점: 구성원 성숙도에 따라 리더십 조정'
+        },
+        {
+          num: 3,
+          title: '번스의 변혁적 리더십과 바스의 조합론',
+          content: '<strong>번스</strong>는 기존 이론들이 리더-구성원 관계를 <strong>거래적 리더십</strong>(보상·처벌 중심)으로만 인식했다고 비판. <strong>변혁적 리더십</strong>은 구성원의 창의성을 자극하고 책임 분권화를 지향. 변혁적 리더는 공동 목표 추구, 멘토로서 영감, 개인적 관심·조언을 제공하여 구성원의 동기·가치관을 변화시킨다. 리더와 구성원은 <strong>상호 변화적 관계</strong>. <strong>바스</strong>는 번스와 달리 변혁적·거래적 리더십이 <strong>상호 배타적이 아니며, 적절히 조합</strong>해 성과를 달성할 수 있다고 주장.',
+          summary: '번스: 변혁적 리더십 강조(동기·가치관 변화, 상호 변화적 관계). / 바스: 거래적+변혁적 리더십 조합을 통한 효과적 성과 달성.',
+          core: '번스와 바스의 관점: 변혁적 리더십과 리더십의 조합'
+        },
+        {
+          num: 4,
+          title: '로크와 데시·라이언의 동기 부여',
+          content: '동기 부여가 리더십의 핵심으로 자리잡음. <strong>로크</strong>: 뚜렷하고 도전적인 목표가 있어야 사람들이 의도적 노력을 기울이며, 목표가 <strong>특정적이고 어려울수록</strong>, <strong>공개적으로 제시</strong>했을 때 성과가 높아짐. <strong>데시와 라이언</strong>(자기 결정 이론): 사람들은 통제받기를 원하지 않으므로 <strong>행동을 스스로 결정·통제할 수 있다고 느낄 때</strong> 내적 동기가 부여. 물적 보상은 내적 동기를 <strong>감소</strong>시키고, 칭찬·의사 결정 참여·자율권 부여는 내적 동기를 <strong>증가</strong>시킴.',
+          summary: '로크: 도전적·공개적 목표 제시로 동기 부여. / 데시·라이언: 내적 동기 중심(물적 보상↓, 자율권·참여↑).',
+          core: '로크의 리더십, 데시·라이언의 자기 결정 이론'
+        }
+      ],
+      vocab: [
+        { term: '호의성(好意性)', def: '리더가 자신의 집단에 영향을 미칠 수 있는 정도' },
+        { term: '역량(力量)', def: '어떤 일을 해낼 수 있는 힘, 업무 성숙도' },
+        { term: '포괄(包括)', def: '일정한 대상이나 현상 따위를 한데 묶어서 어떤 범위나 한계 안에 모두 들게 함' },
+        { term: '부여(附與)', def: '사람에게 권리·명예·임무 따위를 지니도록 해 주거나 사물·일에 가치·의의를 붙여 줌' },
+        { term: '타산적(打算的)', def: '자신에게 도움이 되는지를 따져 헤아리는' },
+        { term: '분권화(分權化)', def: '통치 권력이나 권리가 분산됨. 또는 그렇게 되게 함' },
+        { term: '적합성(適合性) ㉠', def: '상황의 특성에 따라 그에 맞는 리더십을 가진 리더가 필요함을 나타내는 말' },
+        { term: '유연성(柔軟性) ㉡', def: '상황의 변화에 따라 리더가 리더십 스타일을 적절히 바꾸어야 함' },
+      ],
+      tags: ['사회문화', '경영', '리더십', '피들러', '허시', '번스', '동기부여']
+    },
+
+    {
+      id: 'huseong',
+      title: '후성 유전학과 항암 치료',
+      subtitle: '유전자 발현 조절과 암의 가역적 치료',
+      category: '과학·기술 1강',
+      source: '수능특강 독서 168-171쪽',
+      theme: '후성 유전의 원리와 이를 이용한 항암 치료',
+      summary: '개념(후성 유전) → 작용 방식(DNA 메틸화·히스톤 아세틸화) → 문제 발생(암 메커니즘) → 해결(후성 유전적 항암제) → 이론 확장(이중 적중 모델)의 흐름.',
+      paragraphs: [
+        {
+          num: 1,
+          title: '후성 유전의 개념',
+          content: '생명체의 유전 정보는 DNA 염기 서열에 저장. 동일한 염기 서열을 가진 세포들이라도 유전자 발현 양상은 다를 수 있음. <strong>후성 유전</strong>이란 <span class="hl">DNA 염기 서열의 변화 없이 화학적 변형을 통해 유전자 발현을 조절하는 과정</span>. 대표 예: <strong>DNA 메틸화, 히스톤 아세틸화</strong>.',
+          summary: '후성 유전 = DNA 염기 서열 변화 없이 화학적 변형으로 유전자 발현 조절. 예: DNA 메틸화, 히스톤 아세틸화.',
+          core: '후성 유전의 개념'
+        },
+        {
+          num: 2,
+          title: 'DNA 메틸화와 히스톤 아세틸화',
+          content: '<strong>DNA 메틸화</strong>(억제): 프로모터 내 사이토신(CpG)에 메틸기 부착 → DNMT(DNA 메틸화 효소)가 촉진 → 메틸화된 DNA는 전사 인자 결합 방해(정지 신호) → <span class="hl">유전자 전사 억제</span>. <br><strong>히스톤 아세틸화</strong>(촉진): 히스톤 꼬리의 라이신 잔기에 아세틸기 결합 → 히스톤-DNA 상호작용 느슨 → 전사 인자 접근 용이 → <span class="hl">유전자 발현 촉진</span>. <br><strong>히스톤 탈아세틸화 효소(HDAC)</strong>: 아세틸기 제거 → 구조 조밀 → 유전자 발현 억제.',
+          summary: 'DNA 메틸화 = 메틸기 부착(프로모터 CpG) → 구조 응축 → 전사 억제(OFF). 히스톤 아세틸화 = 아세틸기 결합(라이신) → 구조 이완 → 전사 촉진(ON). HDAC = 아세틸기 제거 → 발현 억제.',
+          core: 'DNA 메틸화(억제)와 히스톤 아세틸화(촉진)'
+        },
+        {
+          num: 3,
+          title: '후성 유전적 오류와 암 발생',
+          content: '정상 세포에서는 <strong>종양 억제 유전자</strong>가 활성화되어 세포 분열을 조절. 그러나 후성 유전적 시스템에 오류 발생 → 종양 억제 유전자 프로모터에 <strong>과도한 DNA 메틸화</strong>가 일어나거나 <strong>히스톤에서 아세틸기 제거</strong> → 종양 억제 유전자 전사 억제 → <strong>세포 주기 조절 시스템 붕괴</strong> → <strong>세포 자살 프로그램 비활성화</strong> → 세포가 사멸하지 않고 무한 증식 → 정상 세포가 <strong>암세포</strong>로 변질.',
+          summary: '종양 억제 유전자에 후성 유전적 오류 → 전사 억제 → 세포 주기 조절 시스템 붕괴 → 세포 자살 프로그램 비활성화 → 암세포 발생(무한 증식).',
+          core: '후성 유전적 오류와 암 발생의 관계'
+        },
+        {
+          num: 4,
+          title: '기존 항암제와 후성 유전적 항암제',
+          content: '<strong>㉠기존 항암제</strong>: 빠르게 분열하는 암세포를 직접 공격 → 분열 속도가 빠른 정상 세포도 손상(부작용). <strong>㉡새로운 항암제(후성 유전적)</strong>: 후성 유전적 메커니즘을 복원. <strong>5-아자사이티딘·5-아자-2-디옥시사이티딘</strong> = DNMT 저해 → 과도한 메틸화 제거 → 전사 기능 회복 → 종양 억제 유전자 활성화 → 암세포 성장 저지. <strong>보리노스타트</strong> = HDAC 저해 → 히스톤 아세틸화 상태 유지 → 억제된 종양 억제 유전자 발현 촉진 → 세포 자살 프로그램 재가동.',
+          summary: '기존 항암제: 빠른 분열 세포 공격(부작용). / 후성 유전 항암제: DNMT 억제(메틸화 감소)·HDAC 억제(아세틸화 유지) → 종양 억제 유전자 활성화 → 암세포 사멸.',
+          core: '기존 항암제의 한계와 후성 유전적 항암제의 작용 원리'
+        },
+        {
+          num: 5,
+          title: '이중 적중 모델의 확장',
+          content: '기존 <strong>누드슨의 "이중 적중 모델"</strong>: 종양 억제 유전자의 두 대립 유전자 모두에 돌연변이가 발생해야 종양 발생(망막 아세포종 등 유전성 암 설명). 후성 유전학 발전으로 <strong>확장된 이중 적중 모델</strong>: ① 하나의 대립 유전자에 돌연변이, 다른 하나에 후성 유전적 오류 발생해도 종양 가능. ② <strong>두 대립 유전자 모두 후성 유전적 오류만 있어도 암 발병</strong> 가능. <strong>㉮후성 유전적 오류는 돌연변이와 달리 가역적 특성</strong>을 지니므로, 약물 치료로 암세포가 정상 세포로 돌아올 수 있음.',
+          summary: '이중 적중 모델: 두 대립 유전자 돌연변이 → 종양. / 확장 모델: 돌연변이+후성 오류 OR 후성 오류만으로도 발병. 후성 오류는 가역적 → 치료 가능.',
+          core: '후성 유전학의 발전과 암 발생 모델의 확장'
+        }
+      ],
+      vocab: [
+        { term: 'DNA 메틸화', def: '사이토신에 메틸기 부착 → 유전자 전사 억제' },
+        { term: '히스톤 아세틸화', def: '히스톤 라이신에 아세틸기 결합 → 유전자 발현 촉진' },
+        { term: 'DNMT', def: 'DNA 메틸화 효소 — 메틸화 촉진' },
+        { term: 'HDAC', def: '히스톤 탈아세틸화 효소 — 아세틸기 제거로 발현 억제' },
+        { term: '프로모터', def: '전사가 시작되는 DNA 부위, RNA 중합 효소가 결합하는 곳' },
+        { term: '전사(轉寫)', def: 'DNA의 유전 정보가 전령 RNA에 옮겨지는 과정' },
+        { term: '종양 억제 유전자', def: '세포 분열을 조절하여 무제한 증식을 방지하는 유전자' },
+        { term: '이중 적중 모델', def: '누드슨 제안 — 두 대립 유전자 모두에 돌연변이가 발생해야 종양이 생긴다는 모델' },
+        { term: '가역적(可逆的)', def: '원래 상태로 되돌릴 수 있는 성질' },
+      ],
+      tags: ['과학기술', '생명과학', '유전학', '후성유전', '항암치료']
+    },
+
+    {
+      id: 'aristotle',
+      title: '아리스토텔레스의 비극론',
+      subtitle: '카타르시스의 다양한 해석',
+      category: '인문·예술 5강',
+      source: '수능특강 독서 76-79쪽',
+      theme: '아리스토텔레스의 비극론(플롯·인물·카타르시스)과 후대의 해석',
+      summary: '개념 정의 → 비극의 핵심 요소(플롯, 반전·인지) → 비극 인물의 조건 → 카타르시스의 세 해석(윤리·정신분석·인지) → 후대의 비판과 의의.',
+      paragraphs: [
+        {
+          num: 1,
+          title: '비극에 대한 아리스토텔레스의 관점',
+          content: '아리스토텔레스는 인간이 무언가를 <strong>모방</strong>하려는 본성을 가졌으며, 문학의 본질 역시 모방이라고 봄. 비극도 완결된 사건의 모방. 그는 적절한 감정을 느낄 수 있는 안정된 성품이 <strong>선한 인격·미덕 함양 + 진리에 도달하는 바탕</strong>이 된다고 보고, 비극이 관객에게 주는 <strong>연민과 공포</strong>가 이러한 성품 함양의 중요한 수단이라 봄.',
+          summary: '아리스토텔레스: 인간 본성=모방, 문학=모방, 비극=완결된 사건의 모방. 연민·공포로 선한 인격과 미덕 함양.',
+          core: '비극의 효과를 긍정적으로 인식한 아리스토텔레스'
+        },
+        {
+          num: 2,
+          title: '플롯과 반전·인지',
+          content: '비극의 6가지 요소: <strong>플롯, 인물의 성격, 사상, 언어, 음악, 시각적 요소</strong>. 가장 중요한 것은 <strong>플롯</strong>(행위·사건의 구성). 사건은 <strong>개연성</strong>을 갖춰야 관객이 몰입하며, 공포·연민은 <strong>앞선 사건의 인과적 결과로 예상치 못한 순간에</strong> 일어나야 함. 살인·폭력 같은 부도덕한 내용도 공포·연민을 불러일으키는 장치가 될 수 있음. 플롯의 핵심 요소: <strong>반전</strong>(상황이 정반대로 급변, 인물 의도와 반대 결과) + <strong>인지</strong>(모르다가 아는 상태로 바뀜). 반전·인지를 포함하면 <strong>복합 플롯</strong>, 포함하지 않으면 단순 플롯. 복합 플롯이 더 훌륭함.',
+          summary: '비극 6요소 중 플롯이 가장 중요. 개연성(인과성) 필수. 반전=상황 급변, 인지=모름→앎 상태 전환. 복합 플롯(반전·인지 포함) > 단순 플롯.',
+          core: '플롯의 핵심 요소인 반전과 인지'
+        },
+        {
+          num: 3,
+          title: '비극 인물의 조건',
+          content: '<strong>희극</strong>의 주인공 = 보통 사람보다 모자란 인물, 우스꽝스러운 모습. <strong>비극</strong>의 주인공 = <span class="hl">고귀한 신분, 인간적 결함이 있어야 하고, 악행이 아닌 과오·실수로 불행</span>해져야 함. 주인공은 선하지도 악하지도 않아야 하며, <strong>자신이 저지른 잘못보다 더 큰 고통</strong>을 겪어야 함. 이유: 의로운 인물의 불행은 반감을, 악인의 불행은 당연한 일로만 인식되어 연민·공포를 불러일으키지 못함. <strong>연민</strong>: 잘못·실수에 비해 더 큰 불행을 경험할 때. <strong>공포</strong>: 자신과 닮은(인간적 결함) 주인공의 불운이 나에게도 일어날 수 있다는 인식.',
+          summary: '비극 주인공 조건: ① 고귀한 신분 ② 인간적 결함 ③ 악행이 아닌 과오·실수 ④ 자신의 잘못보다 큰 고통. 관객 반응: 연민=잘못보다 큰 불행, 공포=자신과 닮은 주인공의 불운.',
+          core: '비극 인물의 조건'
+        },
+        {
+          num: 4,
+          title: '카타르시스의 세 해석',
+          content: '비극의 궁극 목적 = <strong>카타르시스</strong>. 후대 학자들의 해석: <br><strong>㉠윤리학적 해석</strong>: 관객의 감정 중 불균형·과잉된 부분을 <span class="hl">도덕적으로 정화</span>. 감정 정제·조절에 초점 → 도덕적 성숙. <br><strong>㉡정신 분석학적 해석</strong>: 마음속 억눌린 병적 감정의 <span class="hl">분출</span>. 부정적 감정 해소에 초점 → 정서적·심리적 건강. 비극 인물에 투사하여 감정 분출. <br><strong>㉢인지적 해석</strong>: 작품 이해의 형성. 본성적 앎의 욕구 → 관객이 작품에 재현된 것을 깨닫는 <span class="hl">인식의 획득</span>을 통해 즐거움 → 인지적 즐거움.',
+          summary: '㉠ 윤리학적=감정 정화·도덕적 성숙 / ㉡ 정신분석학적=억눌린 감정 분출·심리적 건강 / ㉢ 인지적=인식 획득·인지적 즐거움.',
+          core: '카타르시스에 대한 대표적인 세 가지 해석'
+        },
+        {
+          num: 5,
+          title: '후대의 비판과 의의',
+          content: '<strong>19세기 말 자연주의 연극론자들</strong>: 아리스토텔레스와 달리 <strong>하층 계급 인물을 주인공</strong>으로 삼아 사회적 문제를 드러냄. <strong>니체</strong>: 비극은 관객에게 연민·공포를 불러일으키는 것이 아니라 <strong>인간의 실존을 인식하고 삶에 대한 의지를 갖게 해야 한다</strong>고 비판. 그러나 이러한 비판에도 불구하고 아리스토텔레스의 이론은 여전히 많은 예술 분야에서 사용됨.',
+          summary: '자연주의 연극론자: 하층 계급 주인공으로 사회 문제 부각. / 니체: 연민·공포가 아닌 실존 인식·삶의 의지. / 여전히 많은 예술에 영향.',
+          core: '아리스토텔레스 비극론에 대한 비판 및 의의'
+        }
+      ],
+      vocab: [
+        { term: '모방(模倣)', def: '다른 것을 본뜨거나 본받음 — 아리스토텔레스는 문학의 본질로 봄' },
+        { term: '개연성(蓋然性)', def: '절대적으로 확실하지 않으나 아마 그럴 것이라고 생각되는 성질, 앞선 사건으로부터의 인과적 결과' },
+        { term: '반전(反轉)', def: '상황·사건 흐름이 정반대로 급변, 인물 의도와 반대되는 결과' },
+        { term: '인지(認知)', def: '인물이 무언가를 모르다가 아는 상태로 바뀜' },
+        { term: '복합 플롯', def: '반전 또는 인지를 포함하는 플롯 (더 훌륭함)' },
+        { term: '카타르시스', def: '비극의 궁극 목적, 연민·공포를 통해 달성' },
+        { term: '과오(過誤)', def: '부주의·태만에서 비롯된 잘못이나 허물 — 비극 주인공의 불행 원인' },
+        { term: '정화(淨化)', def: '불순하거나 더러운 것을 깨끗하게 함' },
+        { term: '투사(投射)', def: '자기의 감정·의지·욕구를 다른 사람이나 사물에 투영함' },
+        { term: '실존(實存)', def: '사물의 본질이 아닌, 그 사물이 존재하는 그 자체' },
+      ],
+      tags: ['인문예술', '미학', '비극', '아리스토텔레스', '카타르시스', '플롯']
+    },
+
+    {
+      id: 'chakomo',
+      title: '착오 송금',
+      subtitle: '문제의 원인과 쟁점, 제도적 보완',
+      category: '사회·문화 5강',
+      source: '수능특강 독서 127-131쪽',
+      theme: '착오 송금의 개념, 법적 쟁점, 당사자들의 권리·의무, 제도적 보완',
+      summary: '개념→처리 절차→법적 근거→수취인 책임→판례→은행 역할과 제도→종합 정리의 흐름.',
+      paragraphs: [
+        {
+          num: 1,
+          title: '착오 송금의 발생',
+          content: '디지털 금융 기술 발달로 송금이 편리해졌으나 <strong>착오 송금</strong>이라는 문제가 발생. <span class="hl">착오 송금이란 송금인이 실수로 의도하지 않은 계좌에 돈을 보내는 경우</span>. 입력 오류, 수취인 착오 선택 등 다양한 원인으로 발생.',
+          summary: '디지털 금융 발달로 착오 송금 발생. 정의: 실수로 의도하지 않은 계좌에 돈을 보내는 경우. 원인: 입력 오류·수취인 착오 선택 등.',
+          core: '디지털 금융 발달로 인한 착오 송금 문제의 발생'
+        },
+        {
+          num: 2,
+          title: '처리 절차와 현실적 한계',
+          content: '처리 절차: <strong>송금인 신고 → 은행 중개(수취인 연락, 반환 유도) → 수취인 동의 시 간단 환급 / 거부·미연락 시 송금인이 직접 법적 절차</strong>. 송금인의 어려움: 법적 대응 비용·시간·절차적 복잡성, 수취인 연락처 파악 곤란, 소액일 경우 회수 비용이 실익 초과. → 송금인은 <strong>제도적 보완·금융 기관의 적극적 역할</strong>을 요구하는 입장.',
+          summary: '절차: 신고→은행 중개→동의 시 환급/거부 시 법적 절차. 한계: 비용·시간, 연락처 곤란, 소액은 회수 비용이 실익 초과.',
+          core: '착오 송금 발생 시의 일반적인 처리 절차와 현실적 한계'
+        },
+        {
+          num: 3,
+          title: '민법 제741조 — 부당 이득 반환',
+          content: '착오 송금인은 <strong>민법 제741조</strong>에 따라 <strong>부당 이득 반환 청구</strong> 가능. 민법 제741조: "법률상 원인 없이 타인의 재산·노무로 이익을 얻고 이로 인해 타인에게 손해를 가한 자는 그 이익을 반환해야 한다." 민사 소송을 통해 수취인 상대로 반환 청구. 한계: 소송의 번거로움·비용·시간, 수취인 고의적 회피 시 부담 증가.',
+          summary: '민법 제741조 → 부당 이득 반환 청구. 한계: 소송 절차 번거로움, 시간·비용, 수취인 고의 회피.',
+          core: '법률적 관점에서 착오 송금인의 권리와 수취인의 의무'
+        },
+        {
+          num: 4,
+          title: '횡령죄와 보관자의 지위',
+          content: '일부 수취인은 착오 송금임을 인지하지 못할 수 있음. 그러나 <strong>반환 요청을 받거나 은행 연락을 받으면 수취인은 "보관자"</strong>가 됨. <strong>형사상</strong>: 송금 실수임을 인지하고도 고의로 반환 거부하거나 임의 사용 시 <strong>횡령죄</strong> 성립 → 형사 처벌 가능. 횡령죄 = 타인의 재산을 보관하는 자가 반환 거부·임의 사용하는 죄.',
+          summary: '반환 요청/은행 연락 → 수취인은 보관자. 인지+고의 반환 거부·임의 사용 → 횡령죄 성립 → 형사 처벌.',
+          core: '수취인의 행위가 위법으로 판단되는 경우: 횡령죄 성립'
+        },
+        {
+          num: 5,
+          title: '선의와 악의 — 2021년 판례',
+          content: '<strong>선의</strong>: 착오 송금임을 몰랐던 경우 → <span class="hl">민사적 반환 의무만 존재, 형사 처벌 대상 아님</span>. <strong>악의</strong>: 송금 실수임을 알고도 반환 거부·소비한 경우 → 형사적 책임 성립. <strong>2021년 판례</strong>: A가 실수로 920만 원 송금, 수취인이 인지 후 반환하지 않고 생활비로 소비 → 법원 "<strong>자금 출처를 알고 있었는데 반환하지 않고 소비한 점에서 불법 영득 의사가 인정</strong>" → 징역 2개월, 집행 유예 1년.',
+          summary: '선의(몰랐음) → 민사 반환 의무만. 악의(알고도 거부·소비) → 형사 책임. 2021년 판례: 920만 원 소비로 불법 영득 의사 인정, 징역 2개월·집유 1년.',
+          core: '악의의 수취인이 반환을 거부한 경우의 처벌과 판례'
+        },
+        {
+          num: 6,
+          title: '은행의 역할과 착오 송금 반환 지원 제도',
+          content: '은행은 송금 통로 역할이며 <strong>착오 송금을 발생시킨 주체가 아님</strong>. 할 수 있는 일: 수취인 연락, 반환 의사 확인, 신고 절차 안내. 할 수 없는 일: 개인 정보 제공·반환 강제(<strong>개인 정보 보호법</strong> 등에 의한 제한). <strong>착오 송금 반환 지원 제도</strong>(예금 보험 공사 운영): 송금인 신청 → 예금 보험 공사가 <strong>부당 이득 반환 채권 매입</strong> → 수취인에게 자진 반환 안내 → 불응 시 <strong>법원에 지급 명령 신청</strong> → <span class="hl">회수 비용 공제 후 남은 금액 송금인에게 반환</span>. 신청 요건: ① 5만 원 이상 1억 원 이하 ② 송금일로부터 1년 이내 ③ 수취인이 자발적 반환하지 않았을 것.',
+          summary: '은행: 연락·안내 가능, 개인정보 제공·반환 강제 불가. 착오 송금 반환 지원 제도(예금보험공사): 채권 매입→자진 반환 안내→불응 시 지급 명령. 요건: 5만~1억원, 1년 이내, 자발적 반환 없었음.',
+          core: '은행의 역할과 착오 송금 반환 지원 제도'
+        },
+        {
+          num: 7,
+          title: '종합 — 개인 차원과 공공 차원',
+          content: '착오 송금은 기술의 편리함과 인간의 실수가 만나는 지점에서 발생. 세 당사자(송금인-억울한 손실 / 수취인-법적 책임 가능 / 은행-중재자, 강제력 부족)의 입장이 모두 일리가 있어 이해관계 충돌. 따라서 착오 송금은 단순한 금융 실수가 아니라 <strong>개인 차원의 신중함 + 공공 차원의 제도적 완성</strong>이 모두 요구되는 영역.',
+          summary: '세 당사자 이해관계 충돌. 개인 차원 신중함 + 공공 차원 제도적 완성 필요.',
+          core: '착오 송금 문제의 개인 차원과 공공 차원의 의미'
+        }
+      ],
+      vocab: [
+        { term: '착오 송금', def: '송금인이 실수로 의도하지 않은 계좌에 돈을 보내는 경우' },
+        { term: '수취인(受取人)', def: '일정 금액을 지급받도록 지정된 사람' },
+        { term: '환급(還給)', def: '도로 돌려줌' },
+        { term: '부당 이득(不當利得)', def: '법률상 원인 없이 부당한 방법으로 남에게 손해를 주면서 얻는 이익' },
+        { term: '민법 제741조', def: '부당 이득 반환 의무를 규정한 민법 조항' },
+        { term: '횡령죄', def: '타인의 재산을 보관하는 자가 반환 거부·임의 사용 시 성립하는 형사 범죄' },
+        { term: '선의·악의', def: '선의=착오 송금임을 몰랐음(민사만) / 악의=알고도 반환 거부(형사 책임)' },
+        { term: '불법 영득(不法領得)', def: '부당하게 권리자를 배척하고 타인의 물건을 자기 소유물처럼 이용·처분하는 행위' },
+        { term: '집행 유예', def: '3년 이하 징역·금고형이 선고된 범죄자에게 일정 기간 형의 집행을 유예하는 일' },
+        { term: '예금 보험 공사', def: '착오 송금 반환 지원 제도를 운영하는 기관' },
+      ],
+      tags: ['사회문화', '법', '금융', '민법', '형법', '제도']
+    },
+  ]
+};
+
+
+// ===== data_part4.js =====
+// DATA PART 4: 문제 데이터 (OX, 객관식, 빈칸, 플래시카드)
+
+const QUIZ_DATA = {
+
+  // ========== OX 퀴즈 (학습지 Q1~Q23) ==========
+  ox: [
+    // 자연법
+    { workId:'jayeonbeop', q:'법은 실정법을 중심으로 구성되지만, 자연법이라는 개념도 존재한다.', a:true },
+    { workId:'jayeonbeop', q:'실정법은 국가가 제정한 규범이라는 점에서 강제력과 절차적 명확성을 가지므로 법의 도덕적 정당성을 확보할 수 있다.', a:false, exp:'실정법만으로는 근본적 정의와 도덕적 정당성을 충분히 설명하기 어렵다.' },
+    { workId:'jayeonbeop', q:'자연법은 시대와 사회를 초월해 인간의 본성과 이성에 기반한 도덕 규범이므로 보편성·불변성을 지닌다.', a:true },
+    { workId:'jayeonbeop', q:'자연법은 인간의 이성과 본성에 근거한 보편적 기준이므로, 특정 사회의 합의나 제도적 승인 없이도 법의 정당성을 판단하는 기준이 될 수 있다.', a:true },
+    { workId:'jayeonbeop', q:'헤라클레이토스나 아리스토텔레스는 인간과 자연의 보편적 질서 속에서 법의 근거를 찾으려고 하였다.', a:true },
+    { workId:'jayeonbeop', q:'아퀴나스는 자연법이 인간의 이성으로 인식될 수 있으므로 자연법은 신의 뜻과는 별개의 영역에 속한다고 보았다.', a:false, exp:'아퀴나스는 자연법을 신이 부여한 영원법의 일부로 보았다. 신의 뜻과 분리된 영역이 아니다.' },
+    { workId:'jayeonbeop', q:'자크 마리탱은 자연법을 외부 규칙이 아닌 인간의 내면적 질서로 규정하고, 인간의 본성적 성향이 자연법의 근원이라고 보았다.', a:true },
+    { workId:'jayeonbeop', q:'자크 마리탱은 자연법의 보편성은 각 사회에서 동일한 제도와 법률 형태로 구현된다고 보았다.', a:false, exp:'자연법은 보편적이지만 구체적 인식·적용 방식은 사회·문화적 조건에 따라 달라질 수 있다고 보았다.' },
+    { workId:'jayeonbeop', q:'자연법 사상은 특정 종교나 문화에 국한되지 않는 보편성으로 인해 근대 이후 인권 개념의 철학적 기초가 되었다.', a:true },
+    { workId:'jayeonbeop', q:'요하네스 메스너는 자연법을 제도나 정책에서 실현해야 함을 강조하였다.', a:true },
+    { workId:'jayeonbeop', q:'메스너는 자연법을 인간 내면의 양심에 의해 자율적으로 실현되는 도덕 원리로 보았으며, 이를 제도나 사회 구조와 직접 연결짓는 데에는 신중한 입장을 취하였다.', a:false, exp:'메스너는 오히려 자연법을 사회 구조·제도와 직접 연결지어야 한다고 주장했다.' },
+
+    // 리더십
+    { workId:'leadership', q:'피들러는 업무의 구조화가 명확할수록 상황의 호의성이 낮다고 보았다.', a:false, exp:'업무 구조화가 명확할수록 상황의 호의성이 높다.' },
+    { workId:'leadership', q:'피들러는 상황의 호의성이 중간일 때 업무 지향 리더가 가장 효과적이라고 보았다.', a:false, exp:'중간일 때는 관계 지향 리더가 효과적이다.' },
+    { workId:'leadership', q:'㉠적합성은 상황의 특성에 따라 그에 맞는 리더십을 가진 리더가 필요함을 나타내는 말이다.', a:true },
+    { workId:'leadership', q:'허시와 블랜차드는 구성원의 역량과 의지가 모두 높을 때는 리더가 이에 호응하여 업무를 명확하게 지시해야 한다고 보았다.', a:false, exp:'역량·의지 모두 높을 때는 위임형 리더십(과업·관계 모두 낮게)이 효과적이다.' },
+    { workId:'leadership', q:'㉡유연성은 상황의 변화에 따라 리더가 리더십 스타일을 적절히 바꾸어야 함을 나타내는 말이다.', a:true },
+    { workId:'leadership', q:'번스는 변혁적 리더십을 가진 리더는 구성원의 동기와 가치관을 변화시키면서도 자신은 구성원에게 영향을 받지 않는다고 보았다.', a:false, exp:'번스는 리더와 구성원이 상호 변화적 관계라고 보았다.' },
+    { workId:'leadership', q:'바스는 변혁적 리더십과 거래적 리더십을 모두 활용하는 리더가 성과를 효과적으로 달성할 수 있다고 보았다.', a:true },
+    { workId:'leadership', q:'로크는 조직의 목표에 대한 공개적 제시가 구성원들의 동기 부여에 부정적인 영향을 미친다고 보았다.', a:false, exp:'로크는 공개적으로 제시했을 때 더 효과적이라고 보았다.' },
+    { workId:'leadership', q:'데시와 라이언은 물적 보상이 내적 동기를 감소시킨다고 보았다.', a:true },
+
+    // 후성 유전
+    { workId:'huseong', q:'후성 유전은 DNA 염기 서열의 변화에 의해 유전자 발현이 조절되는 과정이다.', a:false, exp:'후성 유전은 DNA 염기 서열의 변화 없이 화학적 변형을 통해 조절된다.' },
+    { workId:'huseong', q:'동일한 유전 정보를 가지고 있더라도 실제로 작동하여 단백질을 만들어 내는 양상은 다를 수 있다.', a:true },
+    { workId:'huseong', q:'DNA 메틸화와 히스톤 아세틸화는 모두 유전자 발현을 억제하는 과정이다.', a:false, exp:'DNA 메틸화는 억제, 히스톤 아세틸화는 촉진한다.' },
+    { workId:'huseong', q:'CpG의 사이토신에 메틸기가 부착되면 전사 인자들의 결합이 어려운 구조로 DNA가 변화한다.', a:true },
+    { workId:'huseong', q:'히스톤 아세틸화는 DNA와 히스톤의 결합을 느슨하게 하여 유전자 발현을 촉진한다.', a:true },
+    { workId:'huseong', q:'HDAC의 활성이 높으면 히스톤이 탈아세틸화되어 DNA와 히스톤 간의 상호 작용이 강화된다.', a:true },
+    { workId:'huseong', q:'후성 유전적 변화는 DNA나 히스톤 단백질에 화학적 변형을 일으켜 유전자 전사를 억제하는 방향으로만 작용한다.', a:false, exp:'메틸화는 억제, 아세틸화는 촉진으로 두 방향 모두 가능하다.' },
+    { workId:'huseong', q:'세포 자살 프로그램의 비활성화란 손상된 세포가 스스로 사멸하여 개체를 보호하는 기능이 작동하지 않게 된다는 것을 뜻한다.', a:true },
+    { workId:'huseong', q:'5-아자사이티딘 계열 약물은 DNA 메틸화를 제거함으로써 유전자 발현을 정상화한다.', a:true },
+    { workId:'huseong', q:'보리노스타트는 HDAC를 저해하는 방식으로 종양 억제 유전자에 부착된 메틸기를 제거하여 발현을 복원한다.', a:false, exp:'보리노스타트는 HDAC 저해로 아세틸화 상태를 유지시키는 것이지, 메틸기 제거와는 관련 없다.' },
+    { workId:'huseong', q:'누드슨의 이중 적중 모델은 후성 유전학의 발전으로 두 대립 유전자 모두의 후성 유전 오류만으로도 암이 발생할 수 있다는 모델로 확장되었다.', a:true },
+
+    // 착오 송금
+    { workId:'chakomo', q:'착오 송금이란 송금인이 실수로 의도하지 않은 계좌에 돈을 보내는 경우를 말한다.', a:true },
+    { workId:'chakomo', q:'착오 송금은 디지털 금융 기술의 발달과는 무관하게 발생하는 전통적 금융 문제이다.', a:false, exp:'디지털 금융 기술 발달과 함께 더 빈번하게 발생하는 문제이다.' },
+    { workId:'chakomo', q:'착오 송금이 발생한 후 일정 시간 이내에 신고하면 특별한 절차 없이 은행으로부터 해당 금액을 보상받을 수 있다.', a:false, exp:'수취인 거부 시 송금인이 직접 법적 절차를 진행해야 한다. 은행이 보상하는 것이 아니다.' },
+    { workId:'chakomo', q:'수취인이 반환에 동의하면 간단하게 환급 절차가 이루어진다.', a:true },
+    { workId:'chakomo', q:'소액 착오 송금의 경우, 회수에 드는 행정적 노력과 비용이 실익을 초과할 수 있다.', a:true },
+    { workId:'chakomo', q:'착오 송금인은 민법 제741조에 따라 부당 이득 반환을 청구할 수 있다.', a:true },
+    { workId:'chakomo', q:'수취인이 법률상 원인 없이 타인의 재산을 임의로 사용하면 민법 제741조에 의해 벌금형의 처벌을 받게 된다.', a:false, exp:'민법 제741조는 민사 조항(반환 의무)이다. 임의 사용은 형법상 횡령죄에 해당하며, 민법 제741조에 의한 벌금형은 성립하지 않는다.' },
+    { workId:'chakomo', q:'수취인이 자신의 계좌에 입금된 돈이 착오 송금임을 인지한 상태에서 이를 임의로 사용했다면, 횡령죄가 성립하여 형사 처벌을 받을 수 있다.', a:true },
+    { workId:'chakomo', q:'횡령죄는 착오 송금임을 인지하지 못한 상태에서 돈을 사용한 경우에도 성립한다.', a:false, exp:'횡령죄는 인지하고도 고의로 반환 거부·임의 사용한 경우에만 성립한다.' },
+    { workId:'chakomo', q:'선의란 착오 송금임을 몰랐던 경우로, 이때는 민사적 반환 의무만 존재하며 형사 처벌 대상은 아니다.', a:true },
+    { workId:'chakomo', q:'은행은 착오 송금 문제를 해결하는 적극적 주체로서 수취인에게 반환을 강제할 수 있는 법적 권한을 갖고 있다.', a:false, exp:'은행은 반환을 강제할 권한이 없다.' },
+    { workId:'chakomo', q:'착오 송금인이 착오 송금 반환 지원 제도를 이용하려면 예금 보험 공사가 발행하는 부당 이득 반환 채권을 매입해야 한다.', a:false, exp:'부당 이득 반환 채권을 매입하는 주체는 예금 보험 공사이지 송금인이 아니다.' },
+
+    // 아리스토텔레스 비극론
+    { workId:'aristotle', q:'아리스토텔레스는 인간이 무언가를 모방하려는 본성을 갖고 있으며, 문학의 본질 역시 모방이라고 보았다.', a:true },
+    { workId:'aristotle', q:'아리스토텔레스는 비극이 관객에게 느끼게 하는 연민과 공포가 선한 인격과 미덕을 기르는 데 도움이 된다고 보았다.', a:true },
+    { workId:'aristotle', q:'아리스토텔레스는 반전 또는 인지의 포함 여부로 플롯을 단순 플롯과 복합 플롯으로 구분하였다.', a:true },
+    { workId:'aristotle', q:'반전은 인물이 무언가를 모르다가 아는 상태로 바뀌는 것이고, 인지는 사건의 흐름이 정반대로 급변하는 것이다.', a:false, exp:'반대다. 반전=사건 흐름이 정반대로 급변, 인지=모름→앎 상태 전환.' },
+    { workId:'aristotle', q:'아리스토텔레스는 비극의 주인공은 고귀한 신분의 인물로서 인간적인 결함이 있어야 한다고 보았다.', a:true },
+    { workId:'aristotle', q:'아리스토텔레스는 의로운 인물이 불행해지는 것은 관객에게 연민을 불러일으킬 수 있다고 보았다.', a:false, exp:'의로운 인물의 불행은 반감을 일으켜 연민·공포를 불러일으키지 못한다.' },
+    { workId:'aristotle', q:'관객이 잘못이나 실수에 비해 주인공이 더 큰 불행을 경험한다고 판단하면 연민을 느낀다.', a:true },
+    { workId:'aristotle', q:'니체는 비극이 연민과 공포를 불러일으키는 것이 아니라 삶에 대한 의지를 갖게 해야 한다고 보았다.', a:true },
+    { workId:'aristotle', q:'자연주의 연극론자들은 아리스토텔레스와 달리 연극에서 하층 계급의 인물을 통해 사회적 문제를 드러내고자 하였다.', a:true },
+    { workId:'aristotle', q:'아리스토텔레스의 비극론은 후대의 비판에 의해 현대 예술에서는 더 이상 사용되지 않는다.', a:false, exp:'여전히 많은 예술 분야에서 사용되며 영향을 미친다.' },
+
+    // 문학 작품 OX (문학학습지 기반)
+    { workId:'myeonangjeongga', q:'면앙정가의 화자는 면앙정을 기준으로 아래쪽 풍경은 "면(俛)", 위쪽 풍경은 "앙(仰)"의 시선으로 바라본다.', a:true },
+    { workId:'myeonangjeongga', q:'면앙정가의 마지막 "역군은이샷다"는 자연과 합일된 화자가 임금을 비판하는 표현이다.', a:false, exp:'임금의 은혜에 감사하는 유교적 충의 의식을 표현한 것이다.' },
+    { workId:'myeonangjeongga', q:'"경궁요대와 옥해은산이 눈 아래 벌였구나"에서 백색 이미지는 눈 덮인 겨울 산천을 표현한다.', a:true },
+    { workId:'sachinga', q:'사친가는 "사친(思親)" 즉 "어버이를 그리워하며 생각한다"는 의미를 주제로 한다.', a:true },
+    { workId:'sachinga', q:'사친가의 후렴구는 "슬프도다 우리 부모 ~ 모르시나"로 각 달마다 반복된다.', a:true },
+    { workId:'sachinga', q:'사친가의 ㉢ "불로초와 불사약"은 현실에서 쉽게 구할 수 있는 대상을 의미한다.', a:false, exp:'현실에서 구할 수 없는 것으로, 부모 살아생전 효도 실천이 어렵다는 의미다.' },
+    { workId:'soksamiingok', q:'속사미인곡은 조선 후기 유배 가사로, 유배지의 고난이 자세히 서술된다.', a:true },
+    { workId:'soksamiingok', q:'속사미인곡의 "가을 부채"는 임을 향한 화자의 애정을 드러낸다.', a:false, exp:'쓸모없어 버려진 화자 자신, 임과 헤어진 처지를 나타낸다.' },
+    { workId:'monggeumpo', q:'몽금포 타령의 포구는 제한되지 않은 공간으로, 바다를 통해 다른 곳과 연결된 출입구이다.', a:true },
+    { workId:'monggeumpo', q:'몽금포 타령의 화자는 강호 생활을 즐기는 가어옹(假漁翁)으로 형상화된다.', a:false, exp:'실제 고기를 잡는 진어옹(실어옹)의 모습이다. 가어옹은 어부별곡의 화자.' },
+    { workId:'eobubyeolgok', q:'어부별곡의 화자는 자연에 머물면서도 속세에 미련을 버리지 못한 데 따른 고뇌를 드러낸다.', a:true },
+    { workId:'ppaeatgin_deul', q:'빼앗긴 들에도 봄은 오는가의 마지막 "봄조차 빼앗기겠네"는 국권 상실로 상징적 의미로서의 봄마저 빼앗길 위기의식을 담고 있다.', a:true },
+    { workId:'ppaeatgin_deul', q:'ⓐ"아이"는 화자가 동경하는 또 다른 자기 자신을 의미한다.', a:false, exp:'화자가 자조(自嘲)의 대상으로 삼는 자기 자신이다.' },
+    { workId:'choto', q:'초토의 시 1에서 "그림자"는 처음에는 울상이었다가 나중에는 웃으며 앞장서는 변화를 보인다.', a:true },
+    { workId:'choto', q:'초토의 시 1의 "잿더미"와 "개나리"의 대비는 전쟁의 폐허 속 생명력을 부각한다.', a:true },
+    { workId:'owol_sosik', q:'오월 소식의 "페스탈로치"는 강화도에 교원으로 발령 난 이를 비판하는 표현이다.', a:false, exp:'그 대상에 대한 정다움과 애정을 드러낸 비유이다.' },
+    { workId:'pocheonimun', q:'포천이문에서 하 공은 저승의 인물로서 작가의 목소리를 대변한다.', a:true },
+    { workId:'pocheonimun', q:'포천이문의 하 공은 북벌론에 전적으로 찬성하는 입장을 드러낸다.', a:false, exp:'하 공은 북벌론을 탁상공론이라 비판하며 화의를 고수해야 한다고 본다.' },
+    { workId:'wangsujae', q:'왕수재는 구미호가 둔갑한 부인의 미모에 속아 활을 쏘지 못했다.', a:true },
+    { workId:'wangsujae', q:'「왕수재취득용녀설」은 「거타지 설화」를 원천으로 삼는다.', a:true },
+    { workId:'seohae', q:'서해무릉기에서 금산사 부처는 남녀 주인공의 재회를 돕는 비현실적 조력자이다.', a:true },
+    { workId:'bansijeon', q:'반씨전의 갈등 중심축은 동서(同壻) 간의 대립이다.', a:true },
+    { workId:'bansijeon', q:'반씨전에서 반 씨 모자는 일위 부인의 꿈속 예언을 듣고 위기를 피한다.', a:true },
+    { workId:'hyeonmongssangryonggi', q:'현몽쌍룡기의 정 소저는 자신을 구한 사람이 정혼자임을 알면서도 신분을 밝히지 않았다.', a:true },
+  ],
+
+  // ========== 객관식 문제 (수능특강 기출) ==========
+  mcq: [
+    // 자연법
+    {
+      workId:'jayeonbeop',
+      q:'윗글에 대한 이해로 적절하지 않은 것은?',
+      opts:[
+        '법은 실정법을 중심으로 구성되지만, 자연법이라는 개념도 존재한다.',
+        '헤라클레이토스나 아리스토텔레스는 인간과 자연의 보편적 질서 속에서 법의 근거를 찾으려고 하였다.',
+        '인간의 이성을 보편적 도덕 질서를 인식할 수 있는 능력으로 이해한 사상은 로마법의 발전 과정에 영향을 주었다.',
+        '스토아학파는 인간 이성이 자연 질서와 조화를 이루어야 하며, 그 안에서 선과 정의를 실현할 수 있다고 보았다.',
+        '아퀴나스는 자연법이 인간의 이성으로 인식될 수 있으므로 자연법은 신의 뜻과는 별개의 영역에 속한다고 보았다.'
+      ],
+      a:4,
+      exp:'아퀴나스는 자연법을 신이 부여한 영원법의 일부로 보았다. 자연법이 이성으로 인식될 수 있다고 해서 신의 뜻과 별개인 것은 아니다.'
+    },
+
+    // 리더십
+    {
+      workId:'leadership',
+      q:'윗글의 내용과 일치하는 것은?',
+      opts:[
+        '피들러는 업무의 구조화가 명확할수록 상황의 호의성이 낮다고 보았다.',
+        '로크는 조직의 목표에 대한 공개적 제시가 구성원들의 동기 부여에 부정적인 영향을 미친다고 보았다.',
+        '바스는 변혁적 리더십과 거래적 리더십을 모두 활용하는 리더가 성과를 효과적으로 달성할 수 있다고 보았다.',
+        '허시와 블랜차드는 구성원의 역량과 의지가 모두 높을 때는 리더가 이에 호응하여 업무를 명확하게 지시해야 한다고 보았다.',
+        '번스는 변혁적 리더십을 가진 리더는 구성원의 동기와 가치관을 변화시키면서도 자신은 구성원에게 영향을 받지 않는다고 보았다.'
+      ],
+      a:2,
+      exp:'바스는 번스와 달리 변혁적 리더십과 거래적 리더십이 상호 배타적이 아니며, 둘의 조합으로 성과를 효과적으로 달성할 수 있다고 주장했다.'
+    },
+    {
+      workId:'leadership',
+      q:'문맥을 고려하여 ㉠적합성과 ㉡유연성의 의미를 이해한 내용으로 가장 적절한 것은?',
+      opts:[
+        '㉠과 ㉡ 모두 리더로서 성공하기 위한 자질을 타고나야 함을 강조하는 말이다.',
+        '㉠과 ㉡ 모두 리더가 업무 능력을 갖추는 것보다 구성원의 성향을 고려하여 긍정적인 관계를 형성하는 것이 중요함을 나타내는 말이다.',
+        '㉠은 리더가 구성원에게 명확하고 구체적으로 지시를 내려야 함을, ㉡은 리더가 구성원의 자율성과 창의성을 최대한 보장해야 함을 드러내는 말이다.',
+        '㉠은 상황의 특성에 따라 그에 맞는 리더십을 가진 리더가 필요함을, ㉡은 상황의 변화에 따라 리더가 리더십 스타일을 적절하게 바꾸어야 함을 나타내는 말이다.',
+        '㉠은 리더가 가진 권력이 클수록 리더십의 효과가 커질 수 있음을, ㉡은 리더가 구성원에게 동기 부여를 많이 할수록 리더십의 효과가 커질 수 있음을 강조하는 말이다.'
+      ],
+      a:3,
+      exp:'㉠적합성 = 상황 특성에 맞는 리더십이 필요함(피들러). ㉡유연성 = 상황 변화에 따라 리더십 스타일을 바꿔야 함(허시·블랜차드).'
+    },
+
+    // 후성 유전
+    {
+      workId:'huseong',
+      q:'윗글을 이해한 내용으로 적절하지 않은 것은?',
+      opts:[
+        'CpG의 사이토신에 메틸기가 부착되면 전사 인자들의 결합이 어려운 구조로 DNA가 변화한다.',
+        'HDAC의 활성이 높으면 히스톤이 탈아세틸화되어 DNA와 히스톤 간의 상호 작용이 강화된다.',
+        '5-아자사이티딘 계열 약물은 종양 억제 유전자의 전사를 직접 촉진하는 것이 아니라, 전사를 방해하는 DNA 메틸화를 제거함으로써 유전자 발현을 정상화한다.',
+        '보리노스타트는 HDAC를 저해하는 방식으로 종양 억제 유전자에 부착된 메틸기를 제거하여 종양 억제 유전자의 발현을 복원한다.',
+        '누드슨의 이중 적중 모델은 후성 유전학의 발전으로 두 대립 유전자 모두의 후성 유전 오류만으로도 암이 발생할 수 있다는 모델로 확장되었다.'
+      ],
+      a:3,
+      exp:'보리노스타트는 HDAC 저해로 아세틸화 상태를 유지시키는 약물이며, 메틸기 제거와는 관련이 없다.'
+    },
+    {
+      workId:'huseong',
+      q:'㉠기존의 항암제와 ㉡새로운 항암제(후성 유전적)을 비교하여 이해한 내용으로 가장 적절한 것은?',
+      opts:[
+        '㉠은 세포 공격을 통해 암세포를 파괴하는 반면, ㉡은 종양 억제 유전자의 기능을 억제하는 방식으로 세포 자살을 유도한다.',
+        '㉠은 돌연변이를 교정하여 유전자의 기능을 회복시키지만, ㉡은 유전자 발현 자체에는 영향을 미치지 않고 세포 증식만 억제한다.',
+        '㉠은 비가역적인 손상을 통해 암세포를 사멸시키는 반면, ㉡은 가역적인 변화를 통해 유전자 발현을 조절할 뿐 세포 사멸을 유도하지는 못한다.',
+        '㉠은 세포가 분열하는 과정에 직접 개입하여 증식을 억제하는 반면, ㉡은 암을 유발하는 특정 유전자의 돌연변이를 직접 교정하여 암세포를 정상 세포로 전환한다.',
+        '㉠은 분열 속도가 비정상적으로 빠른 세포를 직접 파괴하는 방식을 취하지만, ㉡은 유전자 발현을 조절하는 본래의 세포 프로그램을 정상으로 되돌리는 방식을 취한다.'
+      ],
+      a:4,
+      exp:'㉠ 기존 항암제 = 빠르게 분열하는 세포 공격(정상 세포까지 손상). ㉡ 새로운 항암제 = 후성 유전적 메커니즘 복원으로 본래 프로그램을 정상화.'
+    },
+
+    // 착오 송금
+    {
+      workId:'chakomo',
+      q:'윗글의 내용과 일치하는 것은?',
+      opts:[
+        '은행은 착오 송금 문제를 해결하는 적극적 주체로서 수취인에게 반환을 강제할 수 있는 법적 권한을 갖고 있다.',
+        '착오 송금이 발생한 후 일정 시간 이내에 신고하면 특별한 절차 없이 은행으로부터 해당 금액을 보상받을 수 있다.',
+        '착오 송금이 발생했을 때 착오 송금인이 민사 소송을 진행하기 위해서는 착오 송금 금액이 최소 5만 원 이상이어야 한다.',
+        '착오 송금인이 착오 송금 반환 지원 제도를 이용하려면 예금 보험 공사가 발행하는 부당 이득 반환 채권을 매입해야 한다.',
+        '착오 송금한 송금인의 신청이 있을 경우 예금 보험 공사는 수취인에게 자진으로 돌려줄 것을 안내하고 이에 불응 시 법원에 착오 송금에 대한 지급 명령을 신청할 수 있다.'
+      ],
+      a:4,
+      exp:'① 은행은 반환 강제 권한 없음 / ② 송금인이 직접 법적 절차 / ③ "5만 원 이상"은 반환 지원 제도 요건 / ④ 채권 매입 주체는 예금 보험 공사 / ⑤ 정답(6문단).'
+    },
+    {
+      workId:'chakomo',
+      q:'윗글에 제시된 "수취인"에 대한 이해로 적절하지 않은 것은?',
+      opts:[
+        '수취인이 법률상 원인 없이 타인의 재산을 임의로 사용하면 민법 제741조에 의해 벌금형의 처벌을 받게 된다.',
+        '수취인이 자신의 계좌에 잘못 입금된 돈을 입금 즉시 반환했다면, 반환 이후에는 민사상 및 형사상 책임을 지지 않아도 된다.',
+        '수취인이 자신의 통장에 입금된 금액이 송금 실수임을 은행을 통해 고지받았다면, 수취인은 착오 송금된 돈을 맡고 있는 보관자가 된다.',
+        '수취인이 자신의 계좌에 갑작스럽게 입금된 금액을 자신의 정당한 수입으로 오해하여 인출했다면, 수취인의 행동을 악의로 판단하기 어렵다.',
+        '수취인이 자신의 계좌에 입금된 돈이 착오 송금임을 인지한 상태에서 이를 임의로 사용했다면, 횡령죄가 성립하여 형사 처벌을 받을 수 있다.'
+      ],
+      a:0,
+      exp:'민법 제741조는 민사 조항(부당 이득 반환 의무)이다. 임의 사용은 형법상 횡령죄에 해당하며, 민법 제741조에 의한 벌금형은 성립하지 않는다.'
+    },
+
+    // 아리스토텔레스 비극론
+    {
+      workId:'aristotle',
+      q:'윗글의 내용과 일치하지 않는 것은?',
+      opts:[
+        '아리스토텔레스는 작품에 담긴 사상과 음악도 비극을 이루는 구성 요소라고 보았다.',
+        '아리스토텔레스는 반전 또는 인지의 포함 여부로 플롯을 단순 플롯과 복합 플롯으로 구분하였다.',
+        '니체는 비극이 연민과 공포를 불러일으키는 것이 아니라 삶에 대한 의지를 갖게 해야 한다고 보았다.',
+        '자연주의 연극론자들은 아리스토텔레스와 달리 연극에서 하층 계급의 인물을 통해 사회적 문제를 드러내고자 하였다.',
+        '아리스토텔레스는 비극과 달리 희극은 보통 사람보다 모자란 존재로 인식되는 인물을 주인공으로 삼아 그의 영웅적 모습을 보이는 것이라고 보았다.'
+      ],
+      a:4,
+      exp:'희극의 주인공은 보통 사람보다 모자란 인물이되, "영웅적 모습"이 아니라 "우스꽝스러운 모습"으로 그려진다고 했다.'
+    },
+    {
+      workId:'aristotle',
+      q:'㉠윤리학적, ㉡정신 분석학적, ㉢인지적 해석에 대한 이해로 적절하지 않은 것은?',
+      opts:[
+        '㉠은 관객이 카타르시스를 통해 도덕적으로 더 나은 인간이 될 수 있다고 본다.',
+        '㉢은 관객이 플롯에 대한 이해를 바탕으로 작품에 무엇이 재현되었는지 깨닫는 것과 카타르시스를 관련지어 이해한다.',
+        '㉠과 ㉡ 모두 부정적 감정을 없애거나 정화하는 것과 카타르시스를 관련지어 이해한다.',
+        '㉠과 ㉢ 모두 관객이 자신의 감정을 정확히 이해하는 것을 카타르시스라고 본다.',
+        '㉡은 비극을 통해 정서적, 심리적 건강을 얻을 수 있다고 보고, ㉢은 인식의 획득을 통해 인간의 본성적 욕구를 충족할 수 있다고 본다.'
+      ],
+      a:3,
+      exp:'㉠은 감정 정화, ㉢은 작품 이해의 형성(인식 획득)이므로, "감정을 정확히 이해"하는 것이 공통이라고 볼 수 없다.'
+    },
+
+    // 문학 — 면앙정가
+    {
+      workId:'myeonangjeongga',
+      q:'ⓐ"구름탄청학"과 ⓑ"녹양에 우는 꾀꼬리"에 대한 이해로 가장 적절한 것은?',
+      opts:[
+        'ⓐ는 화자의 처지를 우회적으로 드러내는 대상이고, ⓑ는 화자의 처지를 직접적으로 드러내는 대상이다.',
+        'ⓐ는 추상적 사물을 구체화하여 드러내는 대상이고, ⓑ는 화자의 이동 경로를 구체적으로 드러내는 대상이다.',
+        'ⓐ는 이상적 세계의 몽환적 분위기를 환기하는 대상이고, ⓑ는 현실 세계에 몽환적 분위기를 형성하는 대상이다.',
+        'ⓐ는 화자가 위치한 공간의 광활함을 부각하는 대상이고, ⓑ는 화자가 위치한 공간의 역동성을 부각하는 대상이다.',
+        'ⓐ는 화자가 바라보는 사물의 외형적 특징을 비유하는 대상이고, ⓑ는 풍경을 바라보는 화자의 정서가 투영된 대상이다.'
+      ],
+      a:4,
+      exp:'ⓐ 구름 탄 청학 = 정자의 외형을 비유한 대상. ⓑ 녹양 꾀꼬리 = "교태 겨워하는구나"에 화자의 흥취가 투영된 대상.'
+    },
+
+    // 속사미인곡
+    {
+      workId:'soksamiingok',
+      q:'ⓐ"가을 부채"와 ⓑ"부용(芙蓉) 치마"에 대한 설명으로 가장 적절한 것은?',
+      opts:[
+        'ⓐ와 ⓑ는 모두 임을 원망하는 화자의 심정을 드러낸다.',
+        'ⓐ와 ⓑ는 모두 임과 재회할 수 없다는 인식에서 비롯된 체념의 정서를 드러낸다.',
+        'ⓐ는 임과 헤어진 처지에 놓인 화자 자신을, ⓑ는 임을 향한 화자의 애정을 나타낸다.',
+        'ⓐ는 결핍의 상황을 극복하려는 화자의 의지를, ⓑ는 결핍의 상황에서 비롯된 화자의 슬픔을 드러낸다.',
+        'ⓐ는 화자가 기대하는 미래의 긍정적 상황을, ⓑ는 화자가 기대하는 바를 이루려는 노력을 나타낸다.'
+      ],
+      a:2,
+      exp:'ⓐ 가을 부채는 쓸모없어 버려진 자기 자신, ⓑ 부용 치마는 임을 위해 단장하고자 하는 애정이다.'
+    },
+
+    // 빼앗긴 들에도 봄은 오는가 — 기호 문제
+    {
+      workId:'ppaeatgin_deul',
+      q:'㉠~㉤에 대한 이해로 적절하지 않은 것은?',
+      opts:[
+        '㉠은 화자가 느끼는 답답함을 드러내기 위해 "하늘"과 "들"을 향한 의문문을 연달아 제시한 것이다.',
+        '㉡은 "보리밭"의 청신한 모습을 시각화하기 위해 의인법을 구사한 것이다.',
+        '㉢은 "도랑"을 모성적 존재로 형상화하기 위해 청각적 이미지를 활용한 것이다.',
+        '㉣은 공간의 누추함과 대비되는 "아이들 얼굴"의 생동감을 강조하기 위해 직유법을 사용한 것이다.',
+        '㉤은 돌아서는 "햇발"과 마찬가지로 현실을 달관하려는 화자의 태도를 부각하기 위해 현재형 어미를 사용한 것이다.'
+      ],
+      a:4,
+      exp:'㉤ "나도 돌아선다"는 눈부심에 대한 자연스러운 반응이지 "현실 달관"과는 거리가 멀다.'
+    },
+
+    // 포천이문
+    {
+      workId:'pocheonimun',
+      q:'㉠"지금의 가르침은 참으로 간명하면서도 핵심을 찌른 말씀"의 내용으로 가장 적절한 것은?',
+      opts:[
+        '나랏일의 가장 중요한 분야가 잘 관리되어야 나머지 분야도 잘 운영된다.',
+        '분야별로 나랏일을 맡을 사람을 잘 가려 써야 국정의 폐단을 막을 수 있다.',
+        '나랏일을 맡은 사람들을 신뢰해야 그들이 자기 직분에 충실하여 나랏일이 잘 돌아가게 된다.',
+        '나랏일을 맡을 사람들을 많이 뽑을 수 있게 국가 재정이 풍부해야 국정 운영을 잘할 수 있다.',
+        '나랏일을 맡은 사람들끼리 경쟁하게 하여 게으른 자는 도태되게 해야 국정 운영이 올바르게 된다.'
+      ],
+      a:1,
+      exp:'하 공은 "게으른 종을 도태시키고 똑똑한 자로 대체"하는 유추를 통해 인재 등용의 중요성을 말했다. → 분야별 인재를 잘 가려 써야 한다.'
+    },
+
+    // 왕수재
+    {
+      workId:'wangsujae',
+      q:'윗글의 인물에 대한 이해로 가장 적절한 것은?',
+      opts:[
+        '상사는 배가 움직이지 않는 것이 해신의 장난 때문이라고 믿었다.',
+        '뱃사람들은 일행 중에 해신을 도울 수 있는 사람이 있다고 생각하였다.',
+        '왕수재는 상사의 말을 듣고 부정한 사람을 찾아내는 방법을 알아내었다.',
+        '노인은 왕수재에게 자신을 도와줄 사람을 구해 줄 수 있는가를 물어보았다.',
+        '부인은 노인의 말을 듣지 않은 왕수재로 인해 노인과의 대결을 회피할 수 있었다.'
+      ],
+      a:0,
+      exp:'"배 안에 있던 한 사람"이 해신의 장난이라 말하자, 상사가 그 말을 옳게 여기고 기도하며 제사를 지냈다.'
+    },
+
+    // 반씨전
+    {
+      workId:'bansijeon',
+      q:'ⓐ일위 부인과 ⓑ한 노인에 대한 설명으로 가장 적절한 것은?',
+      opts:[
+        'ⓐ가 반 씨에게 한 말을 ⓑ가 한 번 더 반복하여 반 씨 모자의 행동 변화를 촉구한다.',
+        'ⓐ와 나눈 대화에서 풀리지 않았던 반 씨의 의문이 ⓑ를 만나고 난 후에 해소하게 된다.',
+        '반 씨 모자는 ⓐ가 알려 준 문제의 원인에 대한 정보를 바탕으로 ⓑ를 만나 문제를 해결하게 된다.',
+        '반 씨 모자는 ⓐ의 도움으로 위기 상황에서 목숨을 구하고 이후 또 다른 조력자인 ⓑ를 만나게 된다.',
+        'ⓐ가 반 씨 모자를 현실 세계에서 비현실 세계로 이동시킨 결과 ⓑ를 만나 서사의 전환점을 마련하게 된다.'
+      ],
+      a:3,
+      exp:'ⓐ(꿈속 부인)의 경고로 반 씨 모자는 불을 피해 목숨 구함. 이후 산중에서 ⓑ(산신령)를 만나 정신이 쇄락해짐.'
+    },
+
+    // 어부별곡
+    {
+      workId:'eobubyeolgok',
+      q:'㉠~㉤에 대한 이해로 가장 적절한 것은?',
+      opts:[
+        '㉠: 돛이 있는 모습을 자신의 상황과 동일하다고 여기는 인식이 드러나 있다.',
+        '㉡: 임을 태우러 가는 배와 임을 태우고 오는 배에 차이가 있다는 인식이 드러나 있다.',
+        '㉢: 세상 사람들에게 옳고 그름의 기준을 정해 주고자 하는 태도가 드러나 있다.',
+        '㉣: 자신이 앞으로 수행해야 하는 임무에 대한 의무감이 드러나 있다.',
+        '㉤: 자연물의 속성을 인간의 삶과 대비하여 교훈을 주고자 하는 태도가 드러나 있다.'
+      ],
+      a:1,
+      exp:'㉡은 (가) 몽금포 타령의 "임 실러 갈 적엔 반돛, 임 싣고 올 적엔 온 돛" 구절. 만선의 기쁨을 돛의 차이로 표현. (※ 다른 선지는 (나) 어부별곡의 ㉢~㉤이며 모두 해석이 틀림.)'
+    },
+  ],
+
+  // ========== 빈칸 채우기 (서답형 연습) ==========
+  fill: [
+    // 자연법
+    { workId:'jayeonbeop', q:'자연법은 인간의 (______)과 이성에 근거한 보편적 규범이다.', a:['본성'], exp:'1문단 핵심 개념' },
+    { workId:'jayeonbeop', q:'아퀴나스는 자연법을 (______)의 일부로 보았다.', a:['영원법'], exp:'㉠아퀴나스의 자연법 인식 근거' },
+    { workId:'jayeonbeop', q:'마리탱은 자연법을 인간 존재의 본질 속에 내재한 (______) 질서로 재해석하였다.', a:['내면적'], exp:'현대 마리탱의 자연법' },
+    { workId:'jayeonbeop', q:'메스너는 인간 본성 안에 반드시 실현해야 할 (______) 목적들이 내재한다고 보았다.', a:['실존적'], exp:'요하네스 메스너의 자연법' },
+    { workId:'jayeonbeop', q:'마리탱의 관점에서 자연법의 사회적 실현은 개인의 (______)가 확산된 결과이다.', a:['도덕적 성숙','도덕적성숙'], exp:'㉮와 ㉯의 차이점' },
+
+    // 리더십
+    { workId:'leadership', q:'피들러는 상황의 호의성을 결정하는 세 가지 요인으로 리더-구성원 관계, (______), 리더의 권한을 제시했다.', a:['업무 구조','업무구조'], exp:'피들러의 상황적 리더십' },
+    { workId:'leadership', q:'허시와 블랜차드의 상황적 리더십에서 구성원의 역량과 의지가 모두 높을 때는 (______)형 리더십이 효과적이다.', a:['위임'], exp:'4가지 리더십 스타일' },
+    { workId:'leadership', q:'번스가 비판한 리더십은 보상·처벌 중심의 (______) 리더십이다.', a:['거래적'], exp:'번스와 바스의 구분' },
+    { workId:'leadership', q:'데시와 라이언의 자기 결정 이론에서 내적 동기를 감소시키는 요인은 (______) 보상이다.', a:['물적'], exp:'로크와 데시·라이언' },
+
+    // 후성 유전
+    { workId:'huseong', q:'후성 유전이란 DNA 염기 서열의 변화 없이 (______) 변형을 통해 유전자 발현을 조절하는 과정이다.', a:['화학적'], exp:'후성 유전의 정의' },
+    { workId:'huseong', q:'DNA 메틸화는 주로 사이토신과 구아닌이 인접한 서열인 (______)에서 일어난다.', a:['CpG'], exp:'DNA 메틸화 부위' },
+    { workId:'huseong', q:'히스톤 꼬리 부분의 (______) 잔기에 아세틸기가 결합하면 히스톤과 DNA의 상호 작용이 느슨해진다.', a:['라이신'], exp:'히스톤 아세틸화' },
+    { workId:'huseong', q:'보리노스타트는 (______)를 저해하여 히스톤의 아세틸화 상태를 유지시킨다.', a:['HDAC'], exp:'후성 유전 항암제' },
+    { workId:'huseong', q:'누드슨의 이중 적중 모델에 따르면 종양 억제 유전자의 (______) 대립 유전자 모두에 돌연변이가 발생해야 종양이 생긴다.', a:['두','2'], exp:'기존 모델' },
+
+    // 착오 송금
+    { workId:'chakomo', q:'착오 송금인은 민법 제(______)조에 따라 부당 이득 반환을 청구할 수 있다.', a:['741'], exp:'민법 제741조' },
+    { workId:'chakomo', q:'착오 송금 반환 지원 제도는 (______)이/가 운영한다.', a:['예금 보험 공사','예금보험공사','예보'], exp:'제도 운영 주체' },
+    { workId:'chakomo', q:'수취인이 송금 실수임을 인지하고도 고의로 반환 거부하거나 임의 사용한 경우, (______)죄가 성립한다.', a:['횡령'], exp:'형사 책임' },
+    { workId:'chakomo', q:'착오 송금 반환 지원 제도의 신청 요건은 건당 5만 원 이상 (______)원 이하이다.', a:['1억','1억 원','1억원'], exp:'제도 요건' },
+
+    // 아리스토텔레스 비극론
+    { workId:'aristotle', q:'아리스토텔레스는 비극의 6가지 요소 중 (______)이/가 가장 중요한 요소라고 하였다.', a:['플롯'], exp:'비극의 가장 중요한 요소' },
+    { workId:'aristotle', q:'플롯의 핵심 요소 중 상황이 정반대로 급변하는 것을 (______)이라 한다.', a:['반전'], exp:'반전과 인지' },
+    { workId:'aristotle', q:'플롯의 핵심 요소 중 인물이 무언가를 모르다가 아는 상태로 바뀌는 것을 (______)이라 한다.', a:['인지'], exp:'반전과 인지' },
+    { workId:'aristotle', q:'관객은 잘못이나 실수에 비해 주인공이 더 큰 불행을 경험한다고 판단하면 (______)을 느낀다.', a:['연민'], exp:'관객의 반응' },
+    { workId:'aristotle', q:'카타르시스의 (______)적 해석은 억눌린 감정의 분출로 이해한다.', a:['정신 분석학','정신분석학','정신 분석','정신분석'], exp:'㉡ 정신 분석학적 해석' },
+
+    // 문학
+    { workId:'myeonangjeongga', q:'「면앙정가」의 "면(俛)"은 (______)보다, "앙(仰)"은 (______)보다의 뜻이다. 쉼표로 구분해서 답하세요.', a:['굽어, 우러러','굽어,우러러','굽어보다, 우러러보다','굽어보다,우러러보다'], exp:'면앙정의 뜻' },
+    { workId:'myeonangjeongga', q:'「면앙정가」의 마지막 구절 "이 몸이 이러함도 (______)이샷다"는 유교적 충의 의식을 드러낸다.', a:['역군은'], exp:'역군은=또한 임금의 은혜' },
+    { workId:'sachinga', q:'「사친가」는 정월부터 오월까지 각 달의 절기를 배경으로 (______)에 대한 그리움과 효의 실천을 강조하는 가사이다.', a:['부모'], exp:'핵심 주제' },
+    { workId:'soksamiingok', q:'「속사미인곡」에서 화자가 유배지에서 바라는 "우리 임"은 (______)을 의미한다.', a:['임금','왕','군왕'], exp:'연군 가사의 특징' },
+    { workId:'monggeumpo', q:'「몽금포 타령」에서 만선의 기쁨은 "(______)을 받고서 돌아를 오셨네"로 표현된다.', a:['봉죽'], exp:'황해도 방언 — 만선' },
+    { workId:'eobubyeolgok', q:'「어부별곡」의 화자는 실제 어부가 아닌 사대부가 어부로 자처하는 (______)옹의 모습이다.', a:['가어','假漁'], exp:'가어옹 vs 진어옹' },
+    { workId:'ppaeatgin_deul', q:'「빼앗긴 들에도 봄은 오는가」의 마지막 행 "들을 빼앗겨 (______)조차 빼앗기겠네"는 국권 상실의 위기의식을 드러낸다.', a:['봄'], exp:'상징적 의미의 봄' },
+    { workId:'choto', q:'「초토의 시 1」에서 폐허 속 생명력을 상징하는 꽃은 (______)이다.', a:['개나리'], exp:'"잿더미가 소복한 울타리에 개나리가 망울졌다"' },
+    { workId:'owol_sosik', q:'「오월 소식」에서 강화도에 교원으로 발령 난 이를 비유한 이국적 시어는 "(______)"이다.', a:['페스탈로치'], exp:'모더니즘의 이국적 시어' },
+    { workId:'pocheonimun', q:'「포천이문」에서 하 공(하륜)은 북벌론에 대해 천시·지리·(______)의 세 제약을 들어 반론한다.', a:['인사'], exp:'천시·지리·인사의 제약' },
+    { workId:'wangsujae', q:'「왕수재취득용녀설」에서 노인(서해 용왕의 아들)과 싸우는 요물의 정체는 삼천 년 묵은 (______)이다.', a:['구미호','여우'], exp:'구미호의 둔갑' },
+    { workId:'seohae', q:'「서해무릉기」에서 남녀 주인공의 재회를 돕는 비현실적 조력자는 (______)의 부처이다.', a:['금산사'], exp:'금산사 부처' },
+    { workId:'bansijeon', q:'「반씨전」의 주된 갈등 축은 (______) 간의 대립이다.', a:['동서','同壻'], exp:'맏며느리 반 씨 vs 둘째·셋째 며느리' },
+    { workId:'hyeonmongssangryonggi', q:'「현몽쌍룡기」의 정 소저가 집을 떠난 것은 계모 (______) 씨 때문이다.', a:['박'], exp:'박 씨의 모함' },
+  ],
+
+  // ========== 플래시카드 (개념·어휘) ==========
+  flashcards: {
+    concept: [
+      { term:'반전(反轉)', def:'상황·사건 흐름이 정반대로 급변하는 것. 인물의 의도와 반대되는 결과가 나타남. (아리스토텔레스 비극론의 플롯 핵심 요소)', cat:'문학 개념' },
+      { term:'인지(認知)', def:'인물이 무언가를 모르다가 아는 상태로 바뀌는 것. 반전과 함께 복합 플롯의 핵심 요소.', cat:'문학 개념' },
+      { term:'개연성(蓋然性)', def:'앞선 사건으로부터의 인과적 결과. 비극의 사건 구성에서 필수.', cat:'문학 개념' },
+      { term:'카타르시스', def:'비극의 궁극 목적. 연민과 공포를 통해 도달. 윤리학적(정화), 정신분석학적(분출), 인지적(이해) 해석이 있다.', cat:'문학 개념' },
+      { term:'연민', def:'관객이 잘못·실수에 비해 주인공이 더 큰 불행을 경험한다고 판단할 때 느끼는 감정.', cat:'문학 개념' },
+      { term:'공포', def:'관객이 자신과 닮은(인간적 결함) 주인공이 불운을 겪을 때, 자신에게도 그런 일이 일어날 수 있다는 생각에서 느끼는 감정.', cat:'문학 개념' },
+      { term:'복합 플롯', def:'반전 또는 인지를 포함하는 플롯. 아리스토텔레스가 단순 플롯보다 훌륭한 것으로 봄.', cat:'문학 개념' },
+      { term:'모방(模倣)', def:'아리스토텔레스가 본 문학의 본질. 비극 또한 완결된 사건의 모방.', cat:'문학 개념' },
+      { term:'강호한정(江湖閑情)', def:'자연에 묻혀 한가로이 지내는 정서. 「면앙정가」와 같은 사대부 가사의 전형적 주제.', cat:'문학 개념' },
+      { term:'월령체(月令體)', def:'달마다 풍속·절기·자연의 변화를 배경으로 내용을 구성하는 형식. 「사친가」가 대표적.', cat:'문학 개념' },
+      { term:'진어옹(眞漁翁)', def:'생계를 위해 실제로 고기 잡는 어부. 「몽금포 타령」의 화자.', cat:'문학 개념' },
+      { term:'가어옹(假漁翁)', def:'강호 생활을 즐기는 사대부가 어부로 자처하는 모습. 「어부별곡」의 화자.', cat:'문학 개념' },
+      { term:'유배 가사', def:'유배지의 시련과 임금에 대한 충정을 노래한 가사. 조선 후기 「속사미인곡」은 고난의 구체적 서술과 적극적 태도가 특징.', cat:'문학 개념' },
+      { term:'혼사 장애 모티프', def:'남녀의 결합 과정에서 부딪히는 장애. 계모·납치·신분 차이 등. 「서해무릉기」·「현몽쌍룡기」의 핵심.', cat:'문학 개념' },
+      { term:'음모 모티프', def:'"악인의 음모 → 선인의 위기 → 고난 극복 → 권선징악"의 구조. 「반씨전」의 전형.', cat:'문학 개념' },
+      { term:'비현실적 조력자', def:'남녀 주인공에게 도움을 주어 애정 성취에 정당성을 부여하는 초현실적 존재. 「서해무릉기」의 금산사 부처, 「반씨전」의 일위 부인·산신령.', cat:'문학 개념' },
+      { term:'자연법(自然法)', def:'인간의 본성과 이성에 근거한 보편적·도덕적 규범. 시대·사회에 따라 변하지 않음.', cat:'독서 핵심' },
+      { term:'실정법(實定法)', def:'국가가 제정하여 시행하는 구체적 법률. 강제력과 절차성을 가짐.', cat:'독서 핵심' },
+      { term:'영원법', def:'아퀴나스 철학에서 신이 부여한 보편 질서이자 규범. 자연법은 그 일부.', cat:'독서 핵심' },
+      { term:'실존적 목적(메스너)', def:'인간 본성 안에 내재한 자기 보존·완성, 자녀의 출산과 교육, 타인 배려, 공익 증진 등.', cat:'독서 핵심' },
+      { term:'상황의 호의성(피들러)', def:'리더가 집단에 영향을 미칠 수 있는 정도. 리더-구성원 관계, 업무 구조, 리더 권한의 세 요인.', cat:'독서 핵심' },
+      { term:'거래적 리더십', def:'보상·처벌 중심, 기준 달성 시 보상·규율 위반 시 조치. 번스가 비판.', cat:'독서 핵심' },
+      { term:'변혁적 리더십', def:'구성원의 창의성 자극, 책임 분권화. 공동 목표 추구·멘토로서 영감 제공으로 구성원의 동기·가치관 변화. 번스 주장.', cat:'독서 핵심' },
+      { term:'지시형/코치형/지원형/위임형', def:'허시·블랜차드의 4가지 리더십. 구성원의 역량·의지에 따라 과업 행동·관계 행동의 높낮이를 조절.', cat:'독서 핵심' },
+      { term:'자기 결정 이론', def:'데시·라이언 — 사람들은 스스로 결정·통제할 수 있다고 느낄 때 내적 동기가 부여됨.', cat:'독서 핵심' },
+      { term:'DNA 메틸화', def:'프로모터 내 사이토신(CpG)에 메틸기 부착 → 유전자 전사 억제. DNMT가 촉매.', cat:'독서 핵심' },
+      { term:'히스톤 아세틸화', def:'히스톤 라이신 잔기에 아세틸기 결합 → 구조 이완 → 유전자 발현 촉진.', cat:'독서 핵심' },
+      { term:'DNMT', def:'DNA 메틸화 효소. 5-아자사이티딘 계열 약물이 저해함.', cat:'독서 핵심' },
+      { term:'HDAC', def:'히스톤 탈아세틸화 효소. 아세틸기 제거로 발현 억제. 보리노스타트가 저해함.', cat:'독서 핵심' },
+      { term:'종양 억제 유전자', def:'세포 분열을 조절하여 무제한 증식을 방지. 후성 유전 오류로 억제되면 암 발생.', cat:'독서 핵심' },
+      { term:'이중 적중 모델', def:'누드슨 — 두 대립 유전자 모두에 돌연변이가 발생해야 종양이 생긴다는 모델.', cat:'독서 핵심' },
+      { term:'가역적(可逆的)', def:'원래 상태로 되돌릴 수 있는 성질. 후성 유전적 오류는 가역적이므로 약물 치료가 가능.', cat:'독서 핵심' },
+      { term:'착오 송금', def:'송금인이 실수로 의도하지 않은 계좌에 돈을 보내는 경우.', cat:'독서 핵심' },
+      { term:'부당 이득', def:'법률상 원인 없이 타인의 재산으로 이익을 얻고 손해를 가한 경우. 민법 제741조.', cat:'독서 핵심' },
+      { term:'횡령죄', def:'타인의 재산을 보관하는 자가 반환 거부·임의 사용 시 성립. 착오 송금을 인지하고도 사용한 경우.', cat:'독서 핵심' },
+      { term:'선의 vs 악의', def:'선의=착오 송금임을 몰랐음(민사만 책임). 악의=알고도 반환 거부(형사 책임).', cat:'독서 핵심' },
+      { term:'예금 보험 공사', def:'착오 송금 반환 지원 제도 운영 기관. 부당 이득 반환 채권 매입 → 수취인 자진 반환 안내 → 불응 시 지급 명령 신청.', cat:'독서 핵심' },
+    ],
+    word: [
+      { term:'결초보은(結草報恩)', def:'죽은 뒤에라도 은혜를 잊지 않고 갚음을 이르는 말.', cat:'고전 산문' },
+      { term:'상전벽해(桑田碧海)', def:'뽕나무밭이 푸른 바다로 변한다는 뜻. 세상일의 변천이 심함.', cat:'고전 산문' },
+      { term:'용렬(庸劣)하다', def:'사람이 변변하지 못하고 졸렬하다.', cat:'고전 산문' },
+      { term:'오합지졸(烏合之卒)', def:'까마귀가 모인 것처럼 질서 없이 모인 병졸.', cat:'고전 산문' },
+      { term:'탁상공론(卓上空論)', def:'현실성이 없는 허황한 이론이나 논의.', cat:'고전 산문' },
+      { term:'유민(遺民)', def:'망하여 없어진 나라의 백성.', cat:'고전 산문' },
+      { term:'경복(敬服)', def:'존경하여 복종하거나 감복함.', cat:'고전 산문' },
+      { term:'목욕재계(沐浴齋戒)', def:'부정을 타지 않도록 깨끗이 목욕하고 몸가짐을 가다듬는 일.', cat:'고전 산문' },
+      { term:'궁벽(窮僻)하다', def:'매우 후미지고 으슥하다.', cat:'고전 산문' },
+      { term:'묘리(妙理)', def:'묘한 이치.', cat:'고전 산문' },
+      { term:'장려(壯麗)하다', def:'웅장하고 화려하다.', cat:'고전 산문' },
+      { term:'신궁(神弓)', def:'귀신 같은 활이라는 뜻. 활을 잘 쏘는 사람이나 그 활.', cat:'고전 산문' },
+      { term:'둔갑(遁甲)', def:'술법을 써서 자기 몸을 감추거나 다른 것으로 바꿈.', cat:'고전 산문' },
+      { term:'은인(隱人)', def:'산야에 숨어 사는 사람. 벼슬하지 않고 숨어 사는 사람.', cat:'고전 산문' },
+      { term:'연보(蓮步)', def:'미인의 정숙하고 아름다운 걸음걸이를 비유적으로 이르는 말.', cat:'고전 산문' },
+      { term:'풍상(風霜)', def:'바람과 서리. 세상의 어려움과 고생을 비유적으로.', cat:'고전 산문' },
+      { term:'천신만고(千辛萬苦)', def:'천 가지 매운 것과 만 가지 쓴 것. 온갖 어려운 고비를 다 겪음.', cat:'고전 산문' },
+      { term:'계책(計策)', def:'어떤 일을 이루기 위해 꾀하는 방법.', cat:'고전 산문' },
+      { term:'미구(未久)', def:'얼마 오래지 아니함. "미구에 액이 당도하였거늘"', cat:'고전 산문' },
+      { term:'참연(慘然)하다', def:'슬프고 참혹하다.', cat:'고전 산문' },
+      { term:'절치부심(切齒腐心)', def:'몹시 분하여 이를 갈며 속을 썩임.', cat:'고전 산문' },
+      { term:'기군(欺君)', def:'임금을 속임. "기군망상한 죄인"', cat:'고전 산문' },
+      { term:'참소(讒訴)', def:'남을 헐뜯어 죄가 있는 것처럼 꾸며 윗사람에게 고하여 바침.', cat:'고전 산문' },
+      { term:'용약(勇躍)하다', def:'좋아서 뛰다.', cat:'고전 산문' },
+      { term:'분골쇄신(粉骨碎身)', def:'뼈를 가루로 만들고 몸을 부순다는 뜻. 정성으로 노력함.', cat:'고전 산문' },
+      { term:'요행(僥倖)스럽다', def:'뜻밖에 잘되어 다행한 느낌이 있다.', cat:'고전 산문' },
+      { term:'표연(飄然)히', def:'훌쩍 나타나거나 떠나는 모양이 거침없이.', cat:'고전 산문' },
+      { term:'경궁요대(瓊宮瑤臺)', def:'아름다운 구슬로 장식한 집과 누각. 「면앙정가」에서는 눈 덮인 산천의 비유.', cat:'고전 시가' },
+      { term:'낙모가절(落帽佳節)', def:'중양절(9/9)의 별칭. 맹가가 국화주에 취해 모자 떨어진 것도 모른 고사에서.', cat:'고전 시가' },
+      { term:'답청절(踏靑節)', def:'삼짇날의 별칭. 들에 나가 파랗게 난 풀을 밟는 풍습.', cat:'고전 시가' },
+      { term:'수욕정이 풍부지하고', def:'나무는 고요히 있으려 하나 바람이 그치지 않는다는 뜻. 부모 봉양이 때늦음을 한탄하는 표현.', cat:'고전 시가' },
+      { term:'광풍제월(光風霽月)', def:'맑은 날씨에 부는 바람과 활짝 갠 날 밤에 뜨는 달.', cat:'고전 시가' },
+      { term:'신체발부(身體髮膚)', def:'몸과 머리털과 피부. 몸 전체.', cat:'고전 시가' },
+      { term:'편의성(便宜性)', def:'형편이나 조건이 편하고 좋은 특성.', cat:'독서' },
+      { term:'도래(到來)', def:'어떤 시기나 기회가 닥쳐옴.', cat:'독서' },
+      { term:'야기(惹起)', def:'일이나 사건 따위를 끌어 일으킴.', cat:'독서' },
+      { term:'조정(調停)', def:'분쟁을 중간에서 화해시키거나 타협해서 합의하도록 함.', cat:'독서' },
+      { term:'제정(制定)', def:'제도나 법률 따위를 만들어 정함.', cat:'독서' },
+      { term:'보완(補完)', def:'모자라거나 부족한 것을 보충하여 완전하게 함.', cat:'독서' },
+      { term:'국한(局限)', def:'범위를 일정한 부분에 한정함.', cat:'독서' },
+      { term:'채용(採用)', def:'사람을 골라서 씀.', cat:'독서' },
+      { term:'함양(涵養)', def:'능력이나 품성을 길러 쌓거나 갖추다.', cat:'독서' },
+      { term:'인과적(因果的)', def:'원인과 결과 관계를 파악하는.', cat:'독서' },
+      { term:'과오(過誤)', def:'부주의나 태만에서 비롯된 잘못이나 허물.', cat:'독서' },
+      { term:'과잉(過剩)', def:'예정하거나 필요한 수량보다 많아 남아 있음.', cat:'독서' },
+      { term:'정화(淨化)', def:'불순하거나 더러운 것을 깨끗하게 함.', cat:'독서' },
+      { term:'투사(投射)', def:'자기의 감정·의지·욕구를 다른 사람이나 사물에 투영함.', cat:'독서' },
+      { term:'급변(急變)', def:'상황이나 상태가 갑자기 달라짐.', cat:'독서' },
+      { term:'해소(解消)', def:'어려운 일이나 문제가 되는 상태를 해결하여 없애 버림.', cat:'독서' },
+      { term:'충족(充足)', def:'일정한 분량을 채워 모자람이 없게 함.', cat:'독서' },
+      { term:'실존(實存)', def:'사물의 본질이 아닌, 그 사물이 존재하는 그 자체.', cat:'독서' },
+    ],
+  },
+};
+
+
+// ===== app.js =====
+// ============================================================
+// APP LOGIC: 심화 국어 앱
+// ============================================================
+
+// ---------- STATE ----------
+const STATE = {
+  currentTab: 'home',       // home | study | flashcard | quiz | progress
+  currentWorkId: null,
+  currentSubtab: 'original',
+  progress: {},             // { workId: true }
+  flashcardsSeen: {},       // { term: count }
+  quizResults: [],          // [{ date, mode, score, total, categoryOrWorkId }]
+};
+
+const STORAGE_KEY = 'simhwa_kor_v1';
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      Object.assign(STATE, parsed);
+    }
+  } catch(e) {}
+}
+function saveState() {
+  const toSave = {
+    progress: STATE.progress,
+    flashcardsSeen: STATE.flashcardsSeen,
+    quizResults: STATE.quizResults,
+    darkMode: STATE.darkMode,
+  };
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave)); } catch(e) {}
+}
+
+// ---------- UTILITIES ----------
+function el(tag, attrs={}, children=[]) {
+  const e = document.createElement(tag);
+  for (const k in attrs) {
+    if (k === 'class') e.className = attrs[k];
+    else if (k === 'onclick') e.addEventListener('click', attrs[k]);
+    else if (k === 'data') { for(const d in attrs.data) e.dataset[d] = attrs.data[d]; }
+    else if (k === 'html') e.innerHTML = attrs[k];
+    else e.setAttribute(k, attrs[k]);
+  }
+  if (typeof children === 'string') e.textContent = children;
+  else if (Array.isArray(children)) children.forEach(c => c && e.appendChild(typeof c === 'string' ? document.createTextNode(c) : c));
+  return e;
+}
+
+function escapeHTML(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function calcDday() {
+  const exam = new Date(EXAM_DATE + 'T09:00:00');
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const diff = Math.ceil((exam - today) / (1000 * 60 * 60 * 24));
+  return diff;
+}
+
+// Find a work by id
+function findWork(id) {
+  for (const catKey in WORKS) {
+    const cat = WORKS[catKey];
+    for (const item of cat.items) {
+      if (item.id === id) return { cat: catKey, work: item };
+    }
+  }
+  return null;
+}
+
+// Normalize answer for fill-in
+function normalizeAnswer(s) {
+  return String(s).replace(/\s+/g, ' ').trim().toLowerCase();
+}
+
+// ---------- MAIN RENDER ----------
+function render() {
+  const root = document.body;
+  let header = document.querySelector('header');
+  let nav = document.querySelector('.bottom-nav');
+  let main = document.getElementById('main-content');
+  let ddayBanner = document.querySelector('.dday-banner');
+  let modalRoot = document.getElementById('modal-root');
+
+  // First run — build the persistent shell (header + nav + main slot)
+  if (!header || !main || !nav) {
+    root.innerHTML = '';
+
+    header = el('header');
+    header.appendChild(buildHeaderContent());
+    root.appendChild(header);
+
+    // D-Day banner wrapper (always in DOM; contents swapped each render)
+    ddayBanner = el('div', { id: 'dday-slot' });
+    root.appendChild(ddayBanner);
+
+    main = el('main', { id: 'main-content' });
+    root.appendChild(main);
+
+    nav = buildBottomNav();
+    root.appendChild(nav);
+
+    modalRoot = el('div', { id: 'modal-root' });
+    root.appendChild(modalRoot);
+  } else {
+    // Subsequent renders — just refresh the in-place elements without nuking header
+    // Preserve hidden state across re-renders
+    const wasHidden = header.classList.contains('hidden');
+
+    // Update header icon (dark mode toggle may have changed)
+    header.innerHTML = '';
+    header.appendChild(buildHeaderContent());
+    if (wasHidden) header.classList.add('hidden');
+
+    // Update bottom nav active state
+    const newNav = buildBottomNav();
+    nav.replaceWith(newNav);
+
+    // Clear dday slot (will re-populate below)
+    if (!ddayBanner) {
+      ddayBanner = el('div', { id: 'dday-slot' });
+      main.parentNode.insertBefore(ddayBanner, main);
+    }
+    ddayBanner.innerHTML = '';
+  }
+
+  // Populate D-Day banner (only on home)
+  const bannerEl = buildDdayBanner();
+  if (bannerEl) ddayBanner.appendChild(bannerEl);
+
+  // Render the tab content into main
+  renderTab();
+}
+
+function buildHeaderContent() {
+  const inner = el('div', { class: 'header-inner' });
+
+  const logoWrap = el('div', { class: 'logo-wrap' });
+  logoWrap.appendChild(el('div', { class: 'logo-seal' }, '國'));
+  const textWrap = el('div', { class: 'logo-text' });
+  textWrap.appendChild(el('span', { class: 'logo-title' }, '심화 국어'));
+  textWrap.appendChild(el('span', { class: 'logo-sub' }, '중간고사 대비'));
+  logoWrap.appendChild(textWrap);
+  inner.appendChild(logoWrap);
+
+  const right = el('div', { class: 'header-right' });
+  right.appendChild(el('button', {
+    class: 'icon-btn',
+    'aria-label':'다크모드',
+    onclick: toggleDark,
+  }, document.body.classList.contains('dark') ? '◑' : '◐'));
+  right.appendChild(el('button', {
+    class: 'icon-btn',
+    'aria-label':'정보',
+    onclick: showInfoModal,
+  }, 'ⓘ'));
+  inner.appendChild(right);
+
+  return inner;
+}
+
+function buildDdayBanner() {
+  // Only show on home
+  if (STATE.currentTab !== 'home') return null;
+
+  const wrap = el('div', { class: 'dday-banner' });
+  const inner = el('div', { class: 'dday-inner' });
+  const left = el('div');
+  left.appendChild(el('div', { class:'dday-label' }, '2026 · 1학기 · 중간고사'));
+  left.appendChild(el('div', { class:'dday-title' }, '심화 국어 · 4/27(월) 3교시'));
+  inner.appendChild(left);
+  const d = calcDday();
+  const countTxt = d > 0 ? `D-${d}` : d === 0 ? 'D-DAY' : `D+${Math.abs(d)}`;
+  inner.appendChild(el('div', { class:'dday-count' }, countTxt));
+  wrap.appendChild(inner);
+  return wrap;
+}
+
+function buildBottomNav() {
+  const nav = el('div', { class: 'bottom-nav' });
+  const items = [
+    { id: 'home',       label: '홈',     icon: '家' },
+    { id: 'study',      label: '학습',   icon: '學' },
+    { id: 'flashcard',  label: '카드',   icon: '字' },
+    { id: 'quiz',       label: '문제',   icon: '問' },
+    { id: 'progress',   label: '진도',   icon: '記' },
+  ];
+  items.forEach(item => {
+    const btn = el('button', {
+      class: 'nav-item' + (STATE.currentTab === item.id ? ' active' : ''),
+      onclick: () => switchTab(item.id),
+    });
+    btn.appendChild(el('div', { class:'nav-icon' }, item.icon));
+    btn.appendChild(el('div', { class:'nav-label' }, item.label));
+    nav.appendChild(btn);
+  });
+  return nav;
+}
+
+function switchTab(id) {
+  STATE.currentTab = id;
+  STATE.currentWorkId = null;
+  render();
+  window.scrollTo(0, 0);
+}
+
+// ---------- TAB CONTENT DISPATCH ----------
+function renderTab() {
+  const main = document.getElementById('main-content');
+  main.innerHTML = '';
+
+  if (STATE.currentWorkId) {
+    renderWorkDetail(main, STATE.currentWorkId);
+    return;
+  }
+
+  switch (STATE.currentTab) {
+    case 'home':       renderHome(main); break;
+    case 'study':      renderStudyList(main); break;
+    case 'flashcard':  renderFlashcardTab(main); break;
+    case 'quiz':       renderQuizTab(main); break;
+    case 'progress':   renderProgress(main); break;
+  }
+}
+
+// ---------- HOME ----------
+function renderHome(main) {
+  // Hero
+  const hero = el('div', { class: 'home-hero' });
+  hero.appendChild(el('div', { class:'hero-kicker' }, 'Simhwa · Korean · Midterm'));
+  hero.appendChild(el('div', { class:'hero-title', html:'2026학년도 1학기<br>심화 국어 중간고사' }));
+  const doneCount = Object.values(STATE.progress).filter(v => v).length;
+  const totalCount = countAllWorks();
+  hero.appendChild(el('div', { class:'hero-desc',
+    html: `선택형 18문항 + 서답형 4문항 · 50분<br><strong style="color:var(--ink)">진도: ${doneCount} / ${totalCount}</strong> 작품·지문 완료`
+  }));
+  main.appendChild(hero);
+
+  // Categories
+  main.appendChild(makeSectionTitle('학습 영역', '4 areas'));
+  const grid = el('div', { class:'category-grid' });
+  for (const catKey of ['gojeon_siga', 'hyundae_si', 'gojeon_sanmun', 'dokseo']) {
+    const cat = WORKS[catKey];
+    const total = cat.items.length;
+    const done = cat.items.filter(it => STATE.progress[it.id]).length;
+    const pct = total > 0 ? Math.round(done / total * 100) : 0;
+
+    const tile = el('button', {
+      class: 'cat-tile',
+      data: { cat: catKey },
+      onclick: () => { STATE.currentTab = 'study'; STATE.studyCategory = catKey; render(); window.scrollTo(0,0); },
+    });
+    tile.appendChild(el('div', { class:'cat-label' }, cat.hanja));
+    tile.appendChild(el('div', { class:'cat-name' }, cat.label));
+    const cntRow = el('div', { class:'cat-count' });
+    cntRow.appendChild(el('span', { class:'cat-count-num' }, `${done}/${total}`));
+    cntRow.appendChild(el('span', { class:'cat-count-unit' }, '완료'));
+    tile.appendChild(cntRow);
+    const prog = el('div', { class:'cat-progress' });
+    prog.style.width = pct + '%';
+    tile.appendChild(prog);
+    grid.appendChild(tile);
+  }
+  main.appendChild(grid);
+
+  // Quick actions
+  main.appendChild(makeSectionTitle('바로 시작', 'quick start'));
+  const quick = el('div', { class:'quick-actions' });
+  quick.appendChild(makeQuickBtn('📝', 'OX 퀴즈', '학습지 O/X 문제 풀이', () => startQuizMode('ox')));
+  quick.appendChild(makeQuickBtn('✏️', '빈칸 채우기', '서답형 연습', () => startQuizMode('fill')));
+  quick.appendChild(makeQuickBtn('🎴', '개념 카드', '핵심 용어 플래시카드', () => switchTab('flashcard')));
+  quick.appendChild(makeQuickBtn('📚', '기출 문제', '객관식 수능특강 문제', () => startQuizMode('mcq')));
+  main.appendChild(quick);
+
+  // Recent / continue
+  const lastViewed = STATE.lastViewedWork;
+  if (lastViewed) {
+    const found = findWork(lastViewed);
+    if (found) {
+      main.appendChild(makeSectionTitle('이어서 공부', 'continue'));
+      main.appendChild(makeWorkCard(found.work, found.cat, 0));
+    }
+  }
+}
+
+function makeSectionTitle(title, sub) {
+  const h = el('h2', { class:'section-title' });
+  h.appendChild(document.createTextNode(title));
+  if (sub) h.appendChild(el('span', { class:'section-sub' }, sub));
+  return h;
+}
+
+function makeQuickBtn(icon, title, desc, onclick) {
+  const btn = el('button', { class:'quick-btn', onclick });
+  btn.appendChild(el('div', { class:'quick-btn-icon' }, icon));
+  btn.appendChild(el('div', { class:'quick-btn-title' }, title));
+  btn.appendChild(el('div', { class:'quick-btn-desc' }, desc));
+  return btn;
+}
+
+function countAllWorks() {
+  let total = 0;
+  for (const key in WORKS) total += WORKS[key].items.length;
+  return total;
+}
+
+// ---------- STUDY LIST ----------
+function renderStudyList(main) {
+  const catKey = STATE.studyCategory || 'gojeon_siga';
+
+  // Category switcher
+  const pills = el('div', { class:'fc-category-pills' });
+  ['gojeon_siga','hyundae_si','gojeon_sanmun','dokseo'].forEach(k => {
+    const pill = el('button', {
+      class: 'fc-pill' + (k === catKey ? ' active' : ''),
+      onclick: () => { STATE.studyCategory = k; render(); window.scrollTo(0,0); },
+    }, WORKS[k].label);
+    pills.appendChild(pill);
+  });
+  main.appendChild(pills);
+
+  const cat = WORKS[catKey];
+  main.appendChild(makeSectionTitle(cat.label, cat.hanja));
+
+  const list = el('div', { class:'work-list' });
+  cat.items.forEach((item, idx) => {
+    list.appendChild(makeWorkCard(item, catKey, idx + 1));
+  });
+  main.appendChild(list);
+}
+
+function makeWorkCard(item, catKey, num) {
+  const done = !!STATE.progress[item.id];
+  const card = el('button', {
+    class: 'work-card' + (done ? ' done' : ''),
+    onclick: () => openWork(item.id),
+  });
+  card.appendChild(el('span', { class:'work-num' }, num ? String(num).padStart(2,'0') : '·'));
+  const info = el('div', { class:'work-info' });
+  info.appendChild(el('div', { class:'work-title' }, item.title));
+  const metaText = [item.author, item.genre, item.category].filter(Boolean).join(' · ');
+  info.appendChild(el('div', { class:'work-meta' }, metaText));
+  card.appendChild(info);
+  card.appendChild(el('div', { class:'work-check' }, done ? '✓' : ''));
+  return card;
+}
+
+function openWork(id) {
+  STATE.currentWorkId = id;
+  STATE.lastViewedWork = id;
+  STATE.currentSubtab = 'original';
+  saveState();
+  render();
+  window.scrollTo(0, 0);
+}
+
+// ---------- WORK DETAIL ----------
+function renderWorkDetail(main, id) {
+  const found = findWork(id);
+  if (!found) { main.innerHTML = '<p>작품을 찾을 수 없습니다.</p>'; return; }
+  const work = found.work;
+  const catKey = found.cat;
+
+  // Back button
+  const back = el('button', { class:'back-btn', onclick: () => { STATE.currentWorkId = null; render(); window.scrollTo(0,0); } });
+  back.appendChild(document.createTextNode('← 뒤로'));
+  main.appendChild(back);
+
+  // Header
+  const header = el('div', { class:'detail-header' });
+  header.appendChild(el('div', { class:'detail-kicker' }, WORKS[catKey].hanja + (work.hanja ? ' · ' + work.hanja : '')));
+  header.appendChild(el('h1', { class:'detail-title' }, work.title));
+  const subParts = [];
+  if (work.author) subParts.push(work.author);
+  if (work.genre) subParts.push(work.genre);
+  if (work.period) subParts.push(work.period);
+  if (work.category) subParts.push(work.category);
+  if (subParts.length) header.appendChild(el('div', { class:'detail-sub' }, subParts.join(' · ')));
+  if (work.theme) {
+    const theme = el('div', { class:'analysis-body', style:'margin-top:0.6rem;padding:0.6rem 0.8rem;background:var(--paper-soft);border-left:3px solid var(--gold);border-radius:2px;font-size:0.85rem;' });
+    theme.innerHTML = `<strong style="color:var(--gold);font-size:0.7rem;letter-spacing:0.1em;display:block;margin-bottom:0.3rem;">THEME · 주제</strong>${escapeHTML(work.theme)}`;
+    header.appendChild(theme);
+  }
+  main.appendChild(header);
+
+  // Tabs
+  const isDokseo = (catKey === 'dokseo');
+  const tabDefs = isDokseo
+    ? [
+        { id:'original', label:'지문·해설' },
+        { id:'analysis', label:'문단 분석' },
+        { id:'vocab',    label:'어휘' },
+        { id:'quiz',     label:'문제 풀이' },
+      ]
+    : [
+        { id:'original', label:'원문' },
+        { id:'analysis', label:'작품 분석' },
+        { id:'quiz',     label:'문제 풀이' },
+      ];
+
+  const tabs = el('div', { class:'tabs' });
+  tabDefs.forEach(t => {
+    const tab = el('button', {
+      class: 'tab' + (STATE.currentSubtab === t.id ? ' active' : ''),
+      onclick: () => { STATE.currentSubtab = t.id; render(); }
+    }, t.label);
+    tabs.appendChild(tab);
+  });
+  main.appendChild(tabs);
+
+  // Tab content
+  const content = el('div', { class:'tab-content active' });
+  if (isDokseo) renderDokseoDetail(content, work);
+  else renderLitDetail(content, work);
+  main.appendChild(content);
+
+  // Mark as done / Progress toggle
+  const doneBtn = el('button', {
+    class: 'btn btn-primary',
+    style:'margin-top:1.5rem;width:100%;',
+    onclick: () => {
+      STATE.progress[work.id] = !STATE.progress[work.id];
+      saveState();
+      render();
+    }
+  }, STATE.progress[work.id] ? '✓ 학습 완료됨 — 취소' : '학습 완료로 표시');
+  main.appendChild(doneBtn);
+}
+
+function renderLitDetail(container, work) {
+  const sub = STATE.currentSubtab;
+
+  if (sub === 'original') {
+    if (work.summary) {
+      const box = el('div', { class:'analysis-block' });
+      const head = el('div', { class:'analysis-head' });
+      head.appendChild(el('span', { class:'analysis-label' }, 'SUMMARY'));
+      head.appendChild(el('span', { class:'analysis-title' }, '줄거리·배경'));
+      box.appendChild(head);
+      const body = el('div', { class:'analysis-body', html: work.summary });
+      box.appendChild(body);
+      container.appendChild(box);
+    }
+
+    // poem/prose original
+    const origBox = el('div', { class:'work-original' });
+    if (work.original && Array.isArray(work.original)) {
+      work.original.forEach(stanza => {
+        const stDiv = el('div', { class:'poem-stanza' });
+        if (stanza.stanza) {
+          stDiv.appendChild(el('div', { style:'font-family:"JetBrains Mono",monospace;font-size:0.7rem;color:var(--ink-dim);letter-spacing:0.1em;margin-bottom:0.5rem;text-transform:uppercase;' }, stanza.stanza));
+        }
+        (stanza.lines || []).forEach(line => {
+          stDiv.appendChild(el('span', { class:'poem-line' }, line));
+        });
+        origBox.appendChild(stDiv);
+      });
+    } else if (work.passages && Array.isArray(work.passages)) {
+      const proseDiv = el('div', { class:'prose-text' });
+      work.passages.forEach(p => {
+        if (p.label) {
+          proseDiv.appendChild(el('div', { style:'font-family:"JetBrains Mono",monospace;font-size:0.7rem;color:var(--seal);letter-spacing:0.1em;margin:1rem 0 0.4rem;text-transform:uppercase;font-weight:600;' }, p.label));
+        }
+        const para = el('p');
+        para.innerHTML = p.text;
+        proseDiv.appendChild(para);
+      });
+      origBox.appendChild(proseDiv);
+    }
+    if (work.notes) {
+      origBox.appendChild(el('span', { class:'poem-note' }, '【주】 ' + work.notes));
+    }
+    container.appendChild(origBox);
+
+    if (work.tags) {
+      const chipRow = el('div', { class:'chip-row' });
+      work.tags.forEach(t => chipRow.appendChild(el('span', { class:'chip' }, '# ' + t)));
+      container.appendChild(chipRow);
+    }
+  }
+  else if (sub === 'analysis') {
+    (work.analysis || []).forEach(a => {
+      const block = el('div', { class:'analysis-block' });
+      const head = el('div', { class:'analysis-head' });
+      head.appendChild(el('span', { class:'analysis-label' }, a.label));
+      head.appendChild(el('span', { class:'analysis-title' }, a.title));
+      block.appendChild(head);
+      const body = el('div', { class:'analysis-body', html: a.body });
+      block.appendChild(body);
+      container.appendChild(block);
+    });
+  }
+  else if (sub === 'quiz') {
+    renderWorkQuiz(container, work.id);
+  }
+}
+
+function renderDokseoDetail(container, work) {
+  const sub = STATE.currentSubtab;
+
+  if (sub === 'original') {
+    // Show summary + each paragraph plain
+    if (work.summary) {
+      const box = el('div', { class:'analysis-block' });
+      const head = el('div', { class:'analysis-head' });
+      head.appendChild(el('span', { class:'analysis-label' }, 'GLANCE'));
+      head.appendChild(el('span', { class:'analysis-title' }, '지문 개요'));
+      box.appendChild(head);
+      box.appendChild(el('div', { class:'analysis-body', html: work.summary }));
+      container.appendChild(box);
+    }
+    (work.paragraphs || []).forEach(p => {
+      const box = el('div', { class:'para-card open' });
+      const head = el('div', { class:'para-head' });
+      head.appendChild(el('span', { class:'para-num' }, String(p.num)));
+      head.appendChild(el('span', { class:'para-title' }, p.title));
+      box.appendChild(head);
+      const body = el('div', { class:'para-body' });
+      const cnt = el('div', { class:'para-content' });
+      const content = el('p');
+      content.innerHTML = p.content;
+      cnt.appendChild(content);
+      body.appendChild(cnt);
+      box.appendChild(body);
+      container.appendChild(box);
+    });
+  }
+  else if (sub === 'analysis') {
+    (work.paragraphs || []).forEach(p => {
+      const box = el('div', { class:'para-card open' });
+      const head = el('div', { class:'para-head' });
+      head.appendChild(el('span', { class:'para-num' }, String(p.num)));
+      head.appendChild(el('span', { class:'para-title' }, p.title));
+      box.appendChild(head);
+      const body = el('div', { class:'para-body' });
+      const cnt = el('div', { class:'para-content' });
+      if (p.summary) {
+        const sb = el('div', { class:'summary-box' });
+        sb.innerHTML = '<b>문단 요약</b>' + p.summary;
+        cnt.appendChild(sb);
+      }
+      if (p.core) {
+        const cb = el('div', { class:'core-box' });
+        cb.innerHTML = '<b>문단 핵심</b>' + p.core;
+        cnt.appendChild(cb);
+      }
+      body.appendChild(cnt);
+      box.appendChild(body);
+      container.appendChild(box);
+    });
+  }
+  else if (sub === 'vocab') {
+    const block = el('div', { class:'analysis-block' });
+    const head = el('div', { class:'analysis-head' });
+    head.appendChild(el('span', { class:'analysis-label' }, 'VOCAB'));
+    head.appendChild(el('span', { class:'analysis-title' }, '어휘·개념 정리'));
+    block.appendChild(head);
+    const body = el('div', { class:'analysis-body' });
+    const list = el('ul', { class:'kv-list' });
+    (work.vocab || []).forEach(v => {
+      const li = el('li');
+      li.appendChild(el('span', { class:'kv-key' }, v.term));
+      li.appendChild(el('span', { class:'kv-val' }, v.def));
+      list.appendChild(li);
+    });
+    body.appendChild(list);
+    block.appendChild(body);
+    container.appendChild(block);
+  }
+  else if (sub === 'quiz') {
+    renderWorkQuiz(container, work.id);
+  }
+}
+
+// ---------- WORK-SPECIFIC QUIZ ----------
+function renderWorkQuiz(container, workId) {
+  const oxSet = QUIZ_DATA.ox.filter(q => q.workId === workId);
+  const mcqSet = QUIZ_DATA.mcq.filter(q => q.workId === workId);
+  const fillSet = QUIZ_DATA.fill.filter(q => q.workId === workId);
+
+  const wrap = el('div', { style:'display:flex;flex-direction:column;gap:0.6rem;' });
+
+  if (oxSet.length) {
+    wrap.appendChild(makeQuizStartBtn('OX 퀴즈', `O/X · ${oxSet.length}문항`, 'O', () => startQuizFlow(oxSet, 'ox', workId)));
+  }
+  if (mcqSet.length) {
+    wrap.appendChild(makeQuizStartBtn('객관식 기출 문제', `5지선다 · ${mcqSet.length}문항`, '五', () => startQuizFlow(mcqSet, 'mcq', workId)));
+  }
+  if (fillSet.length) {
+    wrap.appendChild(makeQuizStartBtn('빈칸 채우기 (서답형 연습)', `입력 · ${fillSet.length}문항`, '空', () => startQuizFlow(fillSet, 'fill', workId)));
+  }
+
+  if (!wrap.children.length) {
+    const es = el('div', { class:'empty-state' });
+    es.appendChild(el('div', { class:'empty-mark' }, '無'));
+    es.appendChild(el('div', { class:'empty-text' }, '이 작품에 대한 문제가 준비 중입니다.'));
+    wrap.appendChild(es);
+  }
+  container.appendChild(wrap);
+}
+
+function makeQuizStartBtn(title, desc, symbol, onclick) {
+  const btn = el('button', {
+    class:'work-card',
+    style:'cursor:pointer;',
+    onclick,
+  });
+  const sym = el('div', {
+    style:'width:40px;height:40px;display:grid;place-items:center;background:var(--seal);color:var(--paper);font-family:"Nanum Myeongjo",serif;font-weight:900;font-size:18px;border-radius:4px;flex-shrink:0;'
+  }, symbol);
+  btn.appendChild(sym);
+  const info = el('div', { class:'work-info' });
+  info.appendChild(el('div', { class:'work-title' }, title));
+  info.appendChild(el('div', { class:'work-meta' }, desc));
+  btn.appendChild(info);
+  btn.appendChild(el('div', { style:'color:var(--ink-dim);font-size:1rem;' }, '→'));
+  return btn;
+}
+
+// ---------- FLASHCARD TAB ----------
+function renderFlashcardTab(main) {
+  main.appendChild(makeSectionTitle('플래시카드', 'flashcard'));
+
+  // Category pills
+  const types = [
+    { id:'concept', label:'개념', data: QUIZ_DATA.flashcards.concept },
+    { id:'word',    label:'어휘', data: QUIZ_DATA.flashcards.word },
+  ];
+  const type = STATE.fcType || 'concept';
+  const pills = el('div', { class:'fc-category-pills' });
+  types.forEach(t => {
+    pills.appendChild(el('button', {
+      class:'fc-pill' + (type === t.id ? ' active' : ''),
+      onclick: () => { STATE.fcType = t.id; STATE.fcIndex = 0; STATE.fcFlipped = false; render(); },
+    }, `${t.label} (${t.data.length})`));
+  });
+  main.appendChild(pills);
+
+  // Sub category
+  const allCards = (QUIZ_DATA.flashcards[type] || []);
+  const subcats = [...new Set(allCards.map(c => c.cat))];
+  const sub = STATE.fcSub || '전체';
+  const subPills = el('div', { class:'fc-category-pills', style:'margin-top:0.2rem;' });
+  ['전체', ...subcats].forEach(sc => {
+    subPills.appendChild(el('button', {
+      class: 'fc-pill' + (sub === sc ? ' active' : ''),
+      onclick: () => { STATE.fcSub = sc; STATE.fcIndex = 0; STATE.fcFlipped = false; render(); },
+    }, sc));
+  });
+  main.appendChild(subPills);
+
+  // Current cards
+  const cards = sub === '전체' ? allCards : allCards.filter(c => c.cat === sub);
+  if (!cards.length) {
+    const es = el('div', { class:'empty-state' });
+    es.appendChild(el('div', { class:'empty-mark' }, '空'));
+    es.appendChild(el('div', { class:'empty-text' }, '카드가 없습니다.'));
+    main.appendChild(es);
+    return;
+  }
+
+  const idx = Math.min(STATE.fcIndex || 0, cards.length - 1);
+  const card = cards[idx];
+
+  // Flashcard
+  const stack = el('div', { class:'flashcard-stack' });
+  const fc = el('div', {
+    class: 'flashcard' + (STATE.fcFlipped ? ' flipped' : ''),
+    onclick: () => { STATE.fcFlipped = !STATE.fcFlipped; render(); STATE.flashcardsSeen[card.term] = (STATE.flashcardsSeen[card.term]||0)+1; saveState(); },
+  });
+  // Front
+  const front = el('div', { class:'flashcard-face flashcard-front' });
+  front.appendChild(el('div', { class:'flashcard-label' }, card.cat));
+  front.appendChild(el('div', { class:'flashcard-term' }, card.term));
+  front.appendChild(el('div', { class:'flashcard-hint' }, 'TAP TO FLIP'));
+  fc.appendChild(front);
+  // Back
+  const back = el('div', { class:'flashcard-face flashcard-back' });
+  back.appendChild(el('div', { class:'flashcard-label' }, 'DEFINITION'));
+  back.appendChild(el('div', { class:'flashcard-def' }, card.def));
+  back.appendChild(el('div', { class:'flashcard-hint' }, 'TAP TO FLIP'));
+  fc.appendChild(back);
+  stack.appendChild(fc);
+  main.appendChild(stack);
+
+  // Nav
+  const nav = el('div', { class:'flashcard-nav' });
+  nav.appendChild(el('button', {
+    class:'fc-nav-btn',
+    onclick: () => { if ((STATE.fcIndex||0) > 0) { STATE.fcIndex--; STATE.fcFlipped = false; render(); } },
+    ...(idx === 0 ? { disabled:'disabled' } : {}),
+  }, '←'));
+  nav.appendChild(el('div', { class:'flashcard-count' }, `${idx+1} / ${cards.length}`));
+  nav.appendChild(el('button', {
+    class:'fc-nav-btn',
+    onclick: () => { if (idx < cards.length - 1) { STATE.fcIndex = idx+1; STATE.fcFlipped = false; render(); } },
+    ...(idx === cards.length - 1 ? { disabled:'disabled' } : {}),
+  }, '→'));
+  main.appendChild(nav);
+
+  // Shuffle / reset
+  const controls = el('div', { style:'display:flex;gap:0.6rem;margin-top:1rem;' });
+  controls.appendChild(el('button', {
+    class:'btn btn-secondary',
+    onclick: () => {
+      // Shuffle
+      const shuffled = shuffle(cards);
+      STATE.fcShuffled = shuffled;
+      STATE.fcIndex = 0;
+      STATE.fcFlipped = false;
+      // Since cards filter is derived each render, we cheat by swapping underlying data via index
+      // Simpler: use state to control current ordering
+      STATE.fcShuffleCounter = (STATE.fcShuffleCounter||0) + 1;
+      render();
+    }
+  }, '↻ 섞기'));
+  controls.appendChild(el('button', {
+    class:'btn btn-ghost',
+    onclick: () => { STATE.fcIndex = 0; STATE.fcFlipped = false; render(); },
+  }, '처음으로'));
+  main.appendChild(controls);
+}
+
+// ---------- QUIZ TAB ----------
+function renderQuizTab(main) {
+  if (STATE.quizSession) {
+    renderQuizPlay(main);
+    return;
+  }
+  if (STATE.quizResult) {
+    renderQuizResult(main);
+    return;
+  }
+
+  main.appendChild(makeSectionTitle('문제 풀이', 'quiz'));
+
+  const intro = el('div', { class:'analysis-block' });
+  const head = el('div', { class:'analysis-head' });
+  head.appendChild(el('span', { class:'analysis-label' }, 'MODE'));
+  head.appendChild(el('span', { class:'analysis-title' }, '모드를 선택하세요'));
+  intro.appendChild(head);
+  const body = el('div', { class:'analysis-body' });
+  body.innerHTML = '세 가지 모드 중 원하는 방식을 선택해 문제를 풀 수 있어요. 범위를 전체 / 특정 영역 / 특정 작품으로 좁힐 수 있습니다.';
+  intro.appendChild(body);
+  main.appendChild(intro);
+
+  // Mode cards
+  const modes = [
+    { id:'ox', title:'OX 퀴즈', desc:`학습지 O/X 문제 (전체 ${QUIZ_DATA.ox.length}문항)`, sym:'O' },
+    { id:'mcq', title:'객관식 기출', desc:`5지선다 수능특강 문제 (전체 ${QUIZ_DATA.mcq.length}문항)`, sym:'五' },
+    { id:'fill', title:'빈칸 채우기', desc:`서답형 연습 (전체 ${QUIZ_DATA.fill.length}문항)`, sym:'空' },
+  ];
+  const list = el('div', { class:'work-list' });
+  modes.forEach(m => {
+    list.appendChild(makeQuizStartBtn(m.title, m.desc, m.sym, () => startQuizMode(m.id)));
+  });
+  main.appendChild(list);
+
+  // Prior results
+  if (STATE.quizResults && STATE.quizResults.length) {
+    main.appendChild(makeSectionTitle('최근 기록', 'history'));
+    const hlist = el('div', { class:'work-list' });
+    STATE.quizResults.slice(-5).reverse().forEach(r => {
+      const card = el('div', { class:'work-card', style:'cursor:default;' });
+      card.appendChild(el('span', { class:'work-num', style:'min-width:42px;' }, r.modeLabel || r.mode));
+      const info = el('div', { class:'work-info' });
+      info.appendChild(el('div', { class:'work-title' }, `${r.score} / ${r.total} (${Math.round(r.score/r.total*100)}%)`));
+      info.appendChild(el('div', { class:'work-meta' }, new Date(r.date).toLocaleDateString('ko-KR') + (r.scope ? ' · ' + r.scope : '')));
+      card.appendChild(info);
+      hlist.appendChild(card);
+    });
+    main.appendChild(hlist);
+  }
+}
+
+function startQuizMode(mode) {
+  // Show a scope selector
+  const setup = document.createElement('div');
+  setup.className = 'modal-overlay active';
+
+  const modal = el('div', { class:'modal' });
+  modal.appendChild(el('button', { class:'modal-close', onclick: () => setup.remove() }, '×'));
+  modal.appendChild(el('h3', {}, `${mode === 'ox' ? 'OX 퀴즈' : mode === 'mcq' ? '객관식 기출' : '빈칸 채우기'} 시작`));
+
+  const pool = QUIZ_DATA[mode];
+  const catOptions = [
+    { id:'all', label:'전체' },
+    { id:'gojeon_siga', label:'고전 시가' },
+    { id:'hyundae_si', label:'현대시' },
+    { id:'gojeon_sanmun', label:'고전 산문' },
+    { id:'dokseo', label:'독서' },
+  ];
+
+  let scope = 'all';
+  let count = 10;
+
+  const scopeGroup = el('div', { class:'setup-group' });
+  scopeGroup.appendChild(el('div', { class:'setup-label' }, '범위'));
+  const scopeOpts = el('div', { class:'setup-options' });
+  catOptions.forEach(opt => {
+    const o = el('button', {
+      class: 'setup-opt' + (scope === opt.id ? ' active' : ''),
+      onclick: () => {
+        scope = opt.id;
+        scopeOpts.querySelectorAll('.setup-opt').forEach(b => b.classList.remove('active'));
+        o.classList.add('active');
+      }
+    }, opt.label);
+    scopeOpts.appendChild(o);
+  });
+  scopeGroup.appendChild(scopeOpts);
+  modal.appendChild(scopeGroup);
+
+  const countGroup = el('div', { class:'setup-group' });
+  countGroup.appendChild(el('div', { class:'setup-label' }, '문항 수'));
+  const countOpts = el('div', { class:'setup-options' });
+  [5, 10, 20, '전체'].forEach(n => {
+    const o = el('button', {
+      class: 'setup-opt' + (count === n ? ' active' : ''),
+      onclick: () => {
+        count = n;
+        countOpts.querySelectorAll('.setup-opt').forEach(b => b.classList.remove('active'));
+        o.classList.add('active');
+      }
+    }, typeof n === 'number' ? `${n}문항` : n);
+    countOpts.appendChild(o);
+  });
+  countGroup.appendChild(countOpts);
+  modal.appendChild(countGroup);
+
+  const actions = el('div', { class:'quiz-controls' });
+  actions.appendChild(el('button', {
+    class:'btn btn-ghost',
+    onclick: () => setup.remove(),
+  }, '취소'));
+  actions.appendChild(el('button', {
+    class:'btn btn-primary',
+    onclick: () => {
+      let items;
+      if (scope === 'all') items = pool;
+      else {
+        const catWorks = WORKS[scope].items.map(it => it.id);
+        items = pool.filter(q => catWorks.includes(q.workId));
+      }
+      items = shuffle(items);
+      if (typeof count === 'number') items = items.slice(0, count);
+      if (!items.length) { alert('해당 범위에 문제가 없습니다.'); return; }
+      setup.remove();
+      startQuizFlow(items, mode, null, scope);
+    }
+  }, `시작 (${(scope === 'all' ? pool.length : pool.filter(q => WORKS[scope].items.some(it => it.id === q.workId)).length)}문항 중)`));
+  modal.appendChild(actions);
+
+  setup.appendChild(modal);
+  document.body.appendChild(setup);
+}
+
+function startQuizFlow(items, mode, workId, scope) {
+  STATE.quizSession = {
+    items, mode, workId, scope,
+    index: 0, answers: [], startedAt: Date.now(),
+  };
+  STATE.currentTab = 'quiz';
+  STATE.currentWorkId = null;
+  STATE.quizResult = null;
+  render();
+  window.scrollTo(0, 0);
+}
+
+function renderQuizPlay(main) {
+  const s = STATE.quizSession;
+  const q = s.items[s.index];
+  const pct = Math.round((s.index / s.items.length) * 100);
+
+  const wrap = el('div', { class:'quiz-container' });
+
+  // Progress
+  const prog = el('div', { class:'quiz-progress' });
+  prog.appendChild(el('span', {}, `${s.index + 1} / ${s.items.length}`));
+  prog.appendChild(el('span', {}, s.mode === 'ox' ? 'O/X' : s.mode === 'mcq' ? '객관식' : '빈칸'));
+  wrap.appendChild(prog);
+  const bar = el('div', { class:'quiz-bar' });
+  const fill = el('div', { class:'quiz-bar-fill' });
+  fill.style.width = pct + '%';
+  bar.appendChild(fill);
+  wrap.appendChild(bar);
+
+  // Question block
+  const qBlock = el('div', { class:'quiz-question' });
+  // Work context label
+  const workRef = findWork(q.workId);
+  if (workRef) {
+    qBlock.appendChild(el('div', { class:'quiz-q-label' }, `${WORKS[workRef.cat].label} · ${workRef.work.title}`));
+  }
+  qBlock.appendChild(el('div', { class:'quiz-q-text' }, q.q));
+  wrap.appendChild(qBlock);
+
+  // For MCQ, if the work is a dokseo, show passage summary
+  if (s.mode === 'mcq' && workRef && workRef.cat === 'dokseo') {
+    const pass = el('div', { class:'quiz-q-passage' });
+    // Concatenate all paragraph contents into an excerpt
+    const excerpts = (workRef.work.paragraphs || []).map(p => `<strong>${p.num}문단 · ${p.title}</strong><br>${p.content}`).join('<br><br>');
+    pass.innerHTML = excerpts;
+    wrap.appendChild(pass);
+  } else if (s.mode === 'mcq' && workRef) {
+    // For literature: show the work summary
+    const pass = el('div', { class:'quiz-q-passage' });
+    pass.innerHTML = `<strong>${workRef.work.title} — 핵심</strong><br>${workRef.work.summary || ''}`;
+    wrap.appendChild(pass);
+  }
+
+  // Answer area
+  if (s.mode === 'ox') {
+    const row = el('div', { class:'quiz-ox-row' });
+    ['O','X'].forEach((mark, i) => {
+      const btn = el('button', {
+        class:'quiz-ox',
+        onclick: () => submitAnswer(i === 0),
+      }, mark);
+      row.appendChild(btn);
+    });
+    wrap.appendChild(row);
+  }
+  else if (s.mode === 'mcq') {
+    const opts = el('div', { class:'quiz-options' });
+    q.opts.forEach((optText, i) => {
+      const o = el('button', {
+        class:'quiz-opt',
+        onclick: () => submitAnswer(i),
+      });
+      o.appendChild(el('span', { class:'quiz-opt-num' }, `${i+1}`));
+      o.appendChild(el('span', {}, optText));
+      opts.appendChild(o);
+    });
+    wrap.appendChild(opts);
+  }
+  else if (s.mode === 'fill') {
+    const input = el('input', {
+      type:'text',
+      class:'quiz-fill-input',
+      id:'fill-input',
+      placeholder:'정답 입력...',
+      autocomplete:'off',
+      autocapitalize:'none',
+    });
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const val = input.value;
+        submitAnswer(val);
+      }
+    });
+    wrap.appendChild(input);
+    const submitBtn = el('button', {
+      class:'btn btn-primary',
+      style:'margin-top:0.6rem;width:100%;',
+      onclick: () => submitAnswer(input.value),
+    }, '제출');
+    wrap.appendChild(submitBtn);
+    // Focus
+    setTimeout(() => input.focus(), 100);
+  }
+
+  // Exit
+  const exit = el('button', {
+    class:'btn btn-ghost',
+    style:'margin-top:1.5rem;width:100%;',
+    onclick: () => {
+      if (confirm('퀴즈를 중단하시겠어요? 현재 진행 상태가 사라집니다.')) {
+        STATE.quizSession = null;
+        render();
+      }
+    }
+  }, '중단하기');
+  wrap.appendChild(exit);
+
+  main.appendChild(wrap);
+}
+
+function submitAnswer(userAns) {
+  const s = STATE.quizSession;
+  const q = s.items[s.index];
+  let correct = false;
+  if (s.mode === 'ox') {
+    correct = userAns === q.a;
+  } else if (s.mode === 'mcq') {
+    correct = userAns === q.a;
+  } else if (s.mode === 'fill') {
+    const norm = normalizeAnswer(userAns);
+    correct = q.a.some(a => normalizeAnswer(a) === norm);
+  }
+  s.answers.push({ q, userAns, correct });
+
+  // Show feedback for a moment, then advance
+  showAnswerFeedback(q, userAns, correct);
+}
+
+function showAnswerFeedback(q, userAns, correct) {
+  const main = document.getElementById('main-content');
+  main.innerHTML = '';
+  const s = STATE.quizSession;
+
+  const wrap = el('div', { class:'quiz-container' });
+
+  // Progress
+  const prog = el('div', { class:'quiz-progress' });
+  prog.appendChild(el('span', {}, `${s.index + 1} / ${s.items.length}`));
+  prog.appendChild(el('span', { style:'color:' + (correct ? 'var(--moss)' : 'var(--seal)') + ';font-weight:600;' },
+    correct ? '✓ 정답' : '✗ 오답'));
+  wrap.appendChild(prog);
+
+  const qBlock = el('div', { class:'quiz-question' });
+  const workRef = findWork(q.workId);
+  if (workRef) qBlock.appendChild(el('div', { class:'quiz-q-label' }, `${WORKS[workRef.cat].label} · ${workRef.work.title}`));
+  qBlock.appendChild(el('div', { class:'quiz-q-text' }, q.q));
+  wrap.appendChild(qBlock);
+
+  // Show answer
+  if (s.mode === 'ox') {
+    const row = el('div', { class:'quiz-ox-row' });
+    ['O','X'].forEach((mark, i) => {
+      const isSelected = (i === 0) === userAns;
+      const isAns = (i === 0) === q.a;
+      const cls = isAns ? 'correct' : (isSelected ? 'wrong' : '');
+      row.appendChild(el('div', { class:'quiz-ox ' + cls }, mark));
+    });
+    wrap.appendChild(row);
+  }
+  else if (s.mode === 'mcq') {
+    const opts = el('div', { class:'quiz-options' });
+    q.opts.forEach((optText, i) => {
+      const isSelected = i === userAns;
+      const isAns = i === q.a;
+      const cls = isAns ? 'correct' : (isSelected ? 'wrong' : '');
+      const o = el('div', { class:'quiz-opt ' + cls });
+      o.appendChild(el('span', { class:'quiz-opt-num' }, `${i+1}`));
+      o.appendChild(el('span', {}, optText));
+      opts.appendChild(o);
+    });
+    wrap.appendChild(opts);
+  }
+  else if (s.mode === 'fill') {
+    const cls = correct ? 'correct' : 'wrong';
+    const inp = el('div', { class:'quiz-fill-input ' + cls },
+      userAns || '(미입력)');
+    inp.style.pointerEvents = 'none';
+    wrap.appendChild(inp);
+    const ansDisp = el('div', {
+      style:'margin-top:0.6rem;padding:0.7rem 0.9rem;background:rgba(90,107,58,0.1);border-left:3px solid var(--moss);border-radius:2px;font-size:0.88rem;'
+    });
+    ansDisp.innerHTML = `<strong style="color:var(--moss);font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;display:block;margin-bottom:0.3rem;">ANSWER · 정답</strong>${q.a.join(' / ')}`;
+    wrap.appendChild(ansDisp);
+  }
+
+  // Explanation
+  if (q.exp) {
+    const exp = el('div', { class:'quiz-explain' });
+    exp.appendChild(el('span', { class:'quiz-explain-label' }, 'HINT · 해설'));
+    exp.appendChild(document.createTextNode(q.exp));
+    wrap.appendChild(exp);
+  }
+
+  // Next button
+  const nextBtn = el('button', {
+    class:'btn btn-primary',
+    style:'margin-top:1.2rem;width:100%;',
+    onclick: () => {
+      s.index++;
+      if (s.index >= s.items.length) {
+        finishQuiz();
+      } else {
+        render();
+        window.scrollTo(0, 0);
+      }
+    }
+  }, s.index + 1 >= s.items.length ? '결과 보기' : '다음 문제 →');
+  wrap.appendChild(nextBtn);
+
+  main.appendChild(wrap);
+}
+
+function finishQuiz() {
+  const s = STATE.quizSession;
+  const correct = s.answers.filter(a => a.correct).length;
+  const total = s.answers.length;
+  const result = {
+    date: Date.now(),
+    mode: s.mode,
+    modeLabel: s.mode === 'ox' ? 'OX' : s.mode === 'mcq' ? '객관식' : '빈칸',
+    score: correct,
+    total,
+    scope: s.scope === 'all' ? '전체' : (s.scope ? WORKS[s.scope]?.label : null),
+    workId: s.workId,
+    wrongAnswers: s.answers.filter(a => !a.correct).map(a => ({ q: a.q.q, ans: a.q.a, user: a.userAns, exp: a.q.exp })),
+  };
+  STATE.quizResults.push(result);
+  saveState();
+  STATE.quizResult = result;
+  STATE.quizSession = null;
+  render();
+  window.scrollTo(0, 0);
+}
+
+function renderQuizResult(main) {
+  const r = STATE.quizResult;
+  const pct = Math.round(r.score / r.total * 100);
+
+  const screen = el('div', { class:'result-screen' });
+  screen.appendChild(el('div', { class:'result-seal' }, pct >= 80 ? '秀' : pct >= 60 ? '良' : '可'));
+  screen.appendChild(el('div', { class:'result-title' }, pct >= 80 ? '수고하셨습니다!' : pct >= 60 ? '잘 했어요' : '다시 도전해 보세요'));
+  screen.appendChild(el('div', { class:'result-score' }, `${r.score} / ${r.total}`));
+  screen.appendChild(el('div', { class:'result-meta' }, `${pct}% · ${r.modeLabel}` + (r.scope ? ' · ' + r.scope : '')));
+
+  // Controls
+  const controls = el('div', { class:'quiz-controls' });
+  controls.appendChild(el('button', {
+    class:'btn btn-primary',
+    onclick: () => { STATE.quizResult = null; render(); },
+  }, '확인'));
+  screen.appendChild(controls);
+
+  main.appendChild(screen);
+
+  // Wrong answers review
+  if (r.wrongAnswers && r.wrongAnswers.length) {
+    main.appendChild(makeSectionTitle('틀린 문제 복습', 'review'));
+    r.wrongAnswers.forEach(w => {
+      const box = el('div', { class:'analysis-block' });
+      const head = el('div', { class:'analysis-head' });
+      head.appendChild(el('span', { class:'analysis-label' }, 'WRONG'));
+      head.appendChild(el('span', { class:'analysis-title', style:'font-size:0.85rem;' }, w.q.length > 60 ? w.q.slice(0, 60) + '...' : w.q));
+      box.appendChild(head);
+      const body = el('div', { class:'analysis-body' });
+      if (r.mode === 'ox') {
+        body.innerHTML = `정답: <strong>${w.ans ? 'O' : 'X'}</strong>`;
+      } else if (r.mode === 'mcq') {
+        body.innerHTML = `정답: <strong>${(w.ans + 1)}번</strong>`;
+      } else if (r.mode === 'fill') {
+        body.innerHTML = `정답: <strong>${Array.isArray(w.ans) ? w.ans.join(' / ') : w.ans}</strong>`;
+      }
+      if (w.exp) {
+        body.innerHTML += `<div style="margin-top:0.5rem;padding-top:0.5rem;border-top:1px dashed var(--line);font-size:0.85rem;color:var(--ink-soft);">${escapeHTML(w.exp)}</div>`;
+      }
+      box.appendChild(body);
+      main.appendChild(box);
+    });
+  }
+}
+
+// ---------- PROGRESS ----------
+function renderProgress(main) {
+  main.appendChild(makeSectionTitle('학습 진도', 'progress'));
+
+  // Overall
+  const totalWorks = countAllWorks();
+  const doneWorks = Object.values(STATE.progress).filter(v => v).length;
+  const totalQuizzes = (STATE.quizResults || []).length;
+  const avgScore = STATE.quizResults?.length
+    ? Math.round(STATE.quizResults.reduce((sum, r) => sum + (r.score / r.total * 100), 0) / STATE.quizResults.length)
+    : 0;
+
+  const hero = el('div', { class:'home-hero' });
+  hero.appendChild(el('div', { class:'hero-kicker' }, 'Dashboard'));
+  hero.appendChild(el('div', { class:'hero-title', html: `작품 ${doneWorks}/${totalWorks} 완료` }));
+  hero.appendChild(el('div', { class:'hero-desc', html: `누적 퀴즈 <strong>${totalQuizzes}회</strong> · 평균 정답률 <strong>${avgScore}%</strong>` }));
+  main.appendChild(hero);
+
+  // Category breakdown
+  ['gojeon_siga','hyundae_si','gojeon_sanmun','dokseo'].forEach(key => {
+    const cat = WORKS[key];
+    main.appendChild(makeSectionTitle(cat.label, cat.hanja));
+    const list = el('div', { class:'work-list' });
+    cat.items.forEach((item, idx) => {
+      list.appendChild(makeWorkCard(item, key, idx + 1));
+    });
+    main.appendChild(list);
+  });
+
+  // Reset
+  main.appendChild(el('button', {
+    class:'btn btn-ghost',
+    style:'margin-top:2rem;width:100%;',
+    onclick: () => {
+      if (confirm('모든 진도와 기록이 초기화됩니다. 계속할까요?')) {
+        STATE.progress = {};
+        STATE.quizResults = [];
+        STATE.flashcardsSeen = {};
+        saveState();
+        render();
+      }
+    }
+  }, '모든 기록 초기화'));
+}
+
+// ---------- DARK MODE ----------
+function toggleDark() {
+  document.body.classList.toggle('dark');
+  STATE.darkMode = document.body.classList.contains('dark');
+  saveState();
+  render();
+}
+
+// ---------- INFO MODAL ----------
+function showInfoModal() {
+  const overlay = el('div', { class:'modal-overlay active' });
+  const m = el('div', { class:'modal' });
+  m.appendChild(el('button', { class:'modal-close', onclick: () => overlay.remove() }, '×'));
+  m.appendChild(el('h3', {}, '심화 국어 · 중간고사 대비'));
+  m.innerHTML += `
+    <div style="font-size:0.9rem;line-height:1.7;color:var(--ink-soft);">
+      <p style="margin-bottom:0.8rem;"><strong style="color:var(--seal);">2026학년도 1학기</strong> 중간고사 범위를 정리한 국어 학습 앱입니다.</p>
+      <p style="margin-bottom:0.8rem;">선택형 18문항 + 서답형 4문항 · 50분 시험.</p>
+      <p style="margin-bottom:0.8rem;"><strong>범위:</strong></p>
+      <ul style="list-style:none;padding-left:0;font-size:0.85rem;">
+        <li style="padding:0.2rem 0;">· 고전 시가 5작품 (면앙정가, 사친가, 속사미인곡, 몽금포타령, 어부별곡)</li>
+        <li style="padding:0.2rem 0;">· 현대시 3작품 (빼앗긴 들에도 봄은 오는가, 초토의 시, 오월 소식)</li>
+        <li style="padding:0.2rem 0;">· 고전 산문 5작품 (포천이문, 왕수재취득용녀설, 서해무릉기, 반씨전, 현몽쌍룡기)</li>
+        <li style="padding:0.2rem 0;">· 독서 5지문 (자연법, 리더십, 후성 유전, 아리스토텔레스 비극론, 착오 송금)</li>
+      </ul>
+      <p style="margin-top:1rem;font-size:0.8rem;color:var(--ink-dim);">홈 화면에 추가하면 앱처럼 사용할 수 있어요. Safari → 공유 → 홈 화면에 추가.</p>
+    </div>
+  `;
+  overlay.appendChild(m);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
+  document.body.appendChild(overlay);
+}
+
+// ---------- SCROLL: HIDE HEADER ON SCROLL DOWN, SHOW ON SCROLL UP ----------
+let lastScroll = 0;
+let scrollTicking = false;
+const SCROLL_THRESHOLD = 8; // ignore tiny scrolls
+
+function handleScroll() {
+  const y = window.scrollY;
+  const header = document.querySelector('header');
+  if (!header) { scrollTicking = false; return; }
+
+  const delta = y - lastScroll;
+
+  if (y < 80) {
+    // near top — always show
+    header.classList.remove('hidden');
+  } else if (delta > SCROLL_THRESHOLD) {
+    // scrolling down — hide
+    header.classList.add('hidden');
+  } else if (delta < -SCROLL_THRESHOLD) {
+    // scrolling up — show
+    header.classList.remove('hidden');
+  }
+  lastScroll = y;
+  scrollTicking = false;
+}
+
+function attachScrollListener() {
+  window.addEventListener('scroll', () => {
+    if (!scrollTicking) {
+      window.requestAnimationFrame(handleScroll);
+      scrollTicking = true;
+    }
+  }, { passive: true });
+}
+
+// ---------- INIT ----------
+function init() {
+  loadState();
+  if (STATE.darkMode) document.body.classList.add('dark');
+  if (window.matchMedia('(display-mode: standalone)').matches) {
+    document.body.classList.add('pwa-mode');
+  }
+  render();
+  attachScrollListener();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
+</script>
+</body>
+</html>
